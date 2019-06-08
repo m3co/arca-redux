@@ -16,12 +16,19 @@ class ArcaSocket {
         io.on('connect', (): void => {
             store.dispatch({
                 type: 'Connect'
-            })
+            });
             io.emit('jsonrpc', {
                 ID: uuid4(),
                 Method: 'Subscribe',
                 Params: {
                     Target: Table,
+                },
+            });
+            io.emit('jsonrpc', {
+                ID: uuid4(),
+                Method: 'GetInfo',
+                Context: {
+                    Source: Table,
                 },
             });
         });
@@ -34,6 +41,15 @@ class ArcaSocket {
                 case 'Unsubscribe':
                     break;
                 case 'Select':
+                    store.dispatch({
+                        type: response.Method,
+                        Context: {
+                            Source: Table
+                        },
+                        Result: response.Result
+                    });
+                    break;
+                case 'GetInfo':
                     store.dispatch({
                         type: response.Method,
                         Context: {

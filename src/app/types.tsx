@@ -9,6 +9,14 @@ export interface ActionSelect<T> extends Action {
     Result: T[];
 }
 
+export interface ActionGetInfo extends Action {
+    type: 'GetInfo';
+    Context: {
+        Source: string;
+    };
+    Result: ArcaInfo;
+}
+
 export interface ActionStatus extends Action {
     type: 'Connect' | 'Disconnect'
 }
@@ -24,6 +32,21 @@ export interface ResponseSubscribeUnsubscribe {
     Result: 'Success'
 }
 
+export interface ArcaInfo {
+    Actions: {
+        Insert: boolean
+        Update: boolean
+        Delete: boolean
+    },
+    Fields: {
+        Editable: boolean
+        Name: string
+        Primary: boolean
+        Required: boolean
+        Type: string
+    }[]
+}
+
 export interface ResponseSelect<T> {
     Context: {
         Target: string
@@ -35,13 +58,25 @@ export interface ResponseSelect<T> {
     Result: T[]
 }
 
-export type ArcaActions = ActionStatus | ActionSelect<AAURow>;
-export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseSelect<AAURow>
+export interface ResponseGetInfo {
+    Context: {
+        Target: string
+    } | {
+        Source: string
+    },
+    ID: string,
+    Method: 'GetInfo',
+    Result: ArcaInfo
+}
+
+export type ArcaActions = ActionStatus | ActionGetInfo | ActionSelect<AAURow>;
+export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseSelect<AAURow>
 
 export interface ArcaState {
     Sources: {
         AAU: {
             Rows: AAURow[];
+            Info: ArcaInfo | null
         };
     };
     active: boolean;
@@ -50,14 +85,15 @@ export interface ArcaState {
 export const initialState: ArcaState = {
     Sources: {
         AAU: {
-            Rows: []
+            Rows: [],
+            Info: null
         }
     },
     active: false
 };
 
 export interface AAURow {
-    ID: string;
+    Key: string;
     Parent: string;
     Expand: boolean;
     Description: string;
@@ -65,4 +101,3 @@ export interface AAURow {
     Price: number;
     P: number;
 }
-

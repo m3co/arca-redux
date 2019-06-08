@@ -8,12 +8,29 @@ export function ArcaReducer(state: ArcaState = initialState, action: ArcaActions
         case 'Disconnect':
             return { ...state, active: false }
         case 'Select':
-            return { ...state, Sources: {
-                AAU: {
-                        Rows: action.Result
+            if (action.Context.Source === 'AAU') {
+                return { ...state,
+                    Sources: { ...state.Sources,
+                        [action.Context.Source]: {
+                            ...state.Sources[action.Context.Source],
+                            Rows: action.Result
+                        }
                     }
                 }
             }
+            return state;
+        case 'GetInfo':
+            if (action.Context.Source === 'AAU') {
+                return { ...state,
+                    Sources: { ...state.Sources,
+                        [action.Context.Source]: {
+                            ...state.Sources[action.Context.Source],
+                            Info: action.Result
+                        }
+                    }
+                };
+            }
+            return state;
         default:
             return state
     }
