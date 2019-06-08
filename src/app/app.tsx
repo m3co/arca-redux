@@ -4,12 +4,12 @@ import { render } from 'react-dom';
 import * as Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
 import { createStore, Store } from 'redux'
-import { ArcaState, ActionsArca, AAUResponse } from './types';
+import { ArcaState, ArcaActions, ArcaResponses } from './types';
 import { ArcaReducer } from './reducer';
 
 class ArcaSocket {
     private io: SocketIOClient.Socket;
-    public constructor(store: Store<ArcaState, ActionsArca>) {
+    public constructor(store: Store<ArcaState, ArcaActions>) {
         const io = this.io = Socket();
         const Table = 'AAU'
 
@@ -26,7 +26,7 @@ class ArcaSocket {
             });
         });
 
-        io.on('jsonrpc', (response: AAUResponse): void => {
+        io.on('jsonrpc', (response: ArcaResponses): void => {
             switch (response.Method) {
                 case 'Subscribe':
                     this.Select(Table);

@@ -13,7 +13,30 @@ export interface ActionStatus extends Action {
     type: 'Connect' | 'Disconnect'
 }
 
-export type ActionsArca = ActionStatus | ActionSelect<AAURow>;
+export interface ResponseSubscribeUnsubscribe {
+    Context: {
+        Target: string
+    } | {
+        Source: string
+    },
+    ID: string,
+    Method: 'Subscribe' | 'Unsubscribe',
+    Result: 'Success'
+}
+
+export interface ResponseSelect<T> {
+    Context: {
+        Target: string
+    } | {
+        Source: string
+    },
+    ID: string,
+    Method: 'Select',
+    Result: T[]
+}
+
+export type ArcaActions = ActionStatus | ActionSelect<AAURow>;
+export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseSelect<AAURow>
 
 export interface ArcaState {
     Sources: {
@@ -43,26 +66,3 @@ export interface AAURow {
     P: number;
 }
 
-export interface AAUResponseSubscribeUnsubscribe {
-    Context: {
-        Target: 'AAU'
-    } | {
-        Source: 'AAU'
-    },
-    ID: string,
-    Method: 'Subscribe' | 'Unsubscribe',
-    Result: 'Success'
-}
-
-export interface AAUResponseSelect {
-    Context: {
-        Target: 'AAU'
-    } | {
-        Source: 'AAU'
-    },
-    ID: string,
-    Method: 'Select',
-    Result: AAURow[]
-}
-
-export type AAUResponse = AAUResponseSubscribeUnsubscribe | AAUResponseSelect

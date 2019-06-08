@@ -1,7 +1,7 @@
 
-import { ArcaState, ActionsArca, initialState } from './types';
+import { ArcaState, ArcaActions, initialState } from './types';
 
-export function ArcaReducer(state: ArcaState = initialState, action: ActionsArca): ArcaState {
+export function ArcaReducer(state: ArcaState = initialState, action: ArcaActions): ArcaState {
     switch (action.type) {
         case 'Connect':
             return { ...state, active: true }
