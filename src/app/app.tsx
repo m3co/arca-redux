@@ -8,75 +8,81 @@ import { ArcaState, ArcaActions, ArcaResponses } from './types';
 import { ArcaReducer } from './reducer';
 
 class ArcaSocket {
-    private io: SocketIOClient.Socket;
-    public constructor(store: Store<ArcaState, ArcaActions>) {
-        const io = this.io = Socket();
-        const Table = 'AAU'
+  private io: SocketIOClient.Socket;
 
-        io.on('connect', (): void => {
-            store.dispatch({
-                type: 'Connect'
-            });
-            io.emit('jsonrpc', {
-                ID: uuid4(),
-                Method: 'Subscribe',
-                Params: {
-                    Target: Table,
-                },
-            });
-            io.emit('jsonrpc', {
-                ID: uuid4(),
-                Method: 'GetInfo',
-                Context: {
-                    Source: Table,
-                },
-            });
-        });
+  public constructor(store: Store<ArcaState, ArcaActions>) {
+    const io = this.io = Socket();
+    const Table = 'AAU'
 
-        io.on('jsonrpc', (response: ArcaResponses): void => {
-            switch (response.Method) {
-                case 'Subscribe':
-                    this.Select(Table);
-                    break;
-                case 'Unsubscribe':
-                    break;
-                case 'Select':
-                    store.dispatch({
-                        type: response.Method,
-                        Context: {
-                            Source: Table
-                        },
-                        Result: response.Result
-                    });
-                    break;
-                case 'GetInfo':
-                    store.dispatch({
-                        type: response.Method,
-                        Context: {
-                            Source: Table
-                        },
-                        Result: response.Result
-                    });
-                    break;
-                default:
-                    console.log(response);
-                    break;
-            }
-        })
-    }
+    io.on('connect', (): void => {
+      store.dispatch({
+        type: 'Connect'
+      });
+    });
 
-    public Select(Table: string): void {
-        this.io.emit('jsonrpc', {
-            ID: uuid4(),
+    io.on('jsonrpc', (response: ArcaResponses): void => {
+      switch (response.Method) {
+        case 'Subscribe':
+          break;
+        case 'Unsubscribe':
+          break;
+        case 'Select':
+          store.dispatch({
+            type: response.Method,
             Context: {
-                Source: Table
+              Source: Table
             },
-            Method: 'Select',
-            Params: {
-                PK: {}
-            }
-        });
-    }
+            Result: response.Result
+          });
+          break;
+        case 'GetInfo':
+          store.dispatch({
+            type: response.Method,
+            Context: {
+              Source: Table
+            },
+            Result: response.Result
+          });
+          break;
+        default:
+          console.log(response);
+          break;
+      }
+    });
+  }
+
+  public Select(Table: string): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Context: {
+        Source: Table
+      },
+      Method: 'Select',
+      Params: {
+        PK: {}
+      }
+    });
+  }
+
+  public Subscribe(Table: string): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Method: 'Subscribe',
+      Params: {
+        Target: Table,
+      },
+    });
+  }
+
+  public GetInfo(Table: string): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Method: 'GetInfo',
+      Context: {
+        Source: Table,
+      },
+    });
+  }
 }
 
 const store = createStore(ArcaReducer);
@@ -84,13 +90,13 @@ const store = createStore(ArcaReducer);
 new ArcaSocket(store);
 
 function checkStore(): void {
-    console.log(store.getState());
+  console.log(store.getState());
 }
 
 render(
-    <div>
-        Finally a connection
-        <button onClick={checkStore}>Revisar</button>
-    </div>,
-    document.getElementById('root')
+  <div>
+  Finally a connection
+    <button onClick={checkStore}>Revisar</button>
+  </div>,
+  document.getElementById('root')
 );
