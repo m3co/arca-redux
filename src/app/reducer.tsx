@@ -21,8 +21,8 @@ export function ArcaReducer(state: ArcaState = initialState, action: ArcaActions
       if (action.Context.Target === 'AAU') {
         return {...state,
           Sources: { ...state.Sources,
-            AAU: { ...state.Sources.AAU,
-              Rows: state.Sources.AAU.Rows.map((row: AAURow): AAURow => (row.Key === action.PK.Key) ? action.Row : row)
+            [action.Context.Target]: { ...state.Sources[action.Context.Target],
+              Rows: state.Sources[action.Context.Target].Rows.map((row: AAURow): AAURow => (row.Key === action.PK.Key) ? action.Row : row)
             }
           }
         };
