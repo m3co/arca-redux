@@ -24,6 +24,16 @@ export interface ActionSelect<T> extends Action {
   Result: T[];
 }
 
+export interface ActionNotify<Row, PK> extends Action {
+  type: 'Notify';
+  Context: {
+    Target: string;
+  };
+  Method: 'delete' | 'update' | 'insert';
+  Row: Row;
+  PK: PK;
+}
+
 export interface ActionGetInfo extends Action {
   type: 'GetInfo';
   Context: {
@@ -76,8 +86,19 @@ export interface ResponseSelect<T> {
   Result: T[];
 }
 
-export type ArcaActions = ActionStatus | ActionGetInfo | ActionSelect<AAURow>;
-export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI | ResponseSelect<AAURow>
+export interface Notification<Target, Row> {
+  Context: {
+    Db: string;
+    Notification: true;
+    Source: string;
+    Target: Target;
+  };
+  Method: 'delete' | 'update' | 'insert';
+  Row: Row;
+}
+
+export type ArcaActions = ActionStatus | ActionGetInfo | ActionSelect<AAURow> | ActionNotify<AAURow, AAUPK>;
+export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI | ResponseSelect<AAURow> | Notification<'AAU', AAURow>
 
 export interface ArcaState {
   Sources: {

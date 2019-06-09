@@ -1,5 +1,5 @@
 
-import { ArcaState, ArcaActions } from './types';
+import { ArcaState, ArcaActions, AAURow } from './types';
 
 const initialState: ArcaState = {
   Sources: {
@@ -17,6 +17,17 @@ export function ArcaReducer(state: ArcaState = initialState, action: ArcaActions
       return { ...state, active: true }
     case 'Disconnect':
       return { ...state, active: false }
+    case 'Notify':
+      if (action.Context.Target === 'AAU') {
+        return {...state,
+          Sources: { ...state.Sources,
+            AAU: { ...state.Sources.AAU,
+              Rows: state.Sources.AAU.Rows.map((row: AAURow): AAURow => (row.Key === action.PK.Key) ? action.Row : row)
+            }
+          }
+        };
+      }
+      return state;
     case 'Select':
       if (action.Context.Source === 'AAU') {
         return { ...state,

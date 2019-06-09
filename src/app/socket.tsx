@@ -25,6 +25,23 @@ export class ArcaSocket {
         case 'Update':
           console.log(response, 'by update'); // Still don't know how to notify about this response... need to talk with @NovikovAntonY
           break;
+        case 'insert':
+        case 'delete':
+        case 'update':
+          if (response.Context.Target === 'AAU') {
+            store.dispatch({
+              type: 'Notify',
+              Context: {
+                Target: response.Context.Target
+              },
+              Method: response.Method,
+              Row: response.Row,
+              PK: {
+                Key: response.Row.Key
+              }
+            });
+          }
+          break;
         case 'Select':
           store.dispatch({
             type: response.Method,
