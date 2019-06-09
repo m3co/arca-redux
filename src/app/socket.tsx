@@ -1,7 +1,7 @@
 
 import * as Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
-import { ArcaState, ArcaActions, ArcaResponses } from './types';
+import { ArcaState, ArcaActions, ArcaResponses, AAURow, AAUPK } from './types';
 import { Store } from 'redux'
 
 export class ArcaSocket {
@@ -21,6 +21,9 @@ export class ArcaSocket {
         case 'Subscribe':
           break;
         case 'Unsubscribe':
+          break;
+        case 'Update':
+          console.log(response, 'by update'); // Still don't know how to notify about this response... need to talk with @NovikovAntonY
           break;
         case 'Select':
           store.dispatch({
@@ -54,6 +57,19 @@ export class ArcaSocket {
         Source: Table
       },
       Method: 'Select'
+    });
+  }
+
+  public Update(Table: string, Row: AAURow, PK: AAUPK): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Context: {
+        Source: Table
+      },
+      Method: 'Update',
+      Params: {
+        Row, PK
+      }
     });
   }
 

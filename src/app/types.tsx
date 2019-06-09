@@ -47,15 +47,6 @@ export interface ResponseSubscribeUnsubscribe {
   Result: 'Success';
 }
 
-export interface ResponseSelect<T> {
-  Context: {
-    Source: string;
-  };
-  ID: string;
-  Method: 'Select';
-  Result: T[];
-}
-
 export interface ResponseGetInfo {
   Context: {
     Source: string;
@@ -65,8 +56,28 @@ export interface ResponseGetInfo {
   Result: ArcaInfo;
 }
 
+export interface ResponseDUI {
+  Context: {
+    Source: string;
+  };
+  ID: string;
+  Method: 'Delete' | 'Update' | 'Insert';
+  Result: {
+    Success: boolean;
+  };
+}
+
+export interface ResponseSelect<T> {
+  Context: {
+    Source: string;
+  };
+  ID: string;
+  Method: 'Select';
+  Result: T[];
+}
+
 export type ArcaActions = ActionStatus | ActionGetInfo | ActionSelect<AAURow>;
-export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseSelect<AAURow>
+export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI | ResponseSelect<AAURow>
 
 export interface ArcaState {
   Sources: {
@@ -86,4 +97,8 @@ export interface AAURow {
   Unit: string;
   Price: number;
   P: number;
+}
+
+export interface AAUPK {
+  Key: string;
 }
