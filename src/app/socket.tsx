@@ -53,10 +53,7 @@ export class ArcaSocket {
       Context: {
         Source: Table
       },
-      Method: 'Select',
-      Params: {
-        PK: {}
-      }
+      Method: 'Select'
     });
   }
 

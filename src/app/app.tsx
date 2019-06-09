@@ -6,20 +6,15 @@ import { ArcaReducer } from './reducer';
 import { ArcaSocket } from './socket';
 
 const store = createStore(ArcaReducer);
-
 const arcaSocket = new ArcaSocket(store);
-
-arcaSocket.Subscribe('AAU');
-arcaSocket.GetInfo('AAU');
-
-function checkStore(): void {
-  console.log(store.getState());
-}
 
 render(
   <div>
-  Finally a connection
-    <button onClick={checkStore}>Revisar</button>
+    Finally a connection
+    <button onClick={() => console.log(store.getState())}>Show State</button>
+    <button onClick={() => arcaSocket.Subscribe('AAU')}>Subscribe</button>
+    <button onClick={() => arcaSocket.GetInfo('AAU')}>GetInfo</button>
+    <button onClick={() => arcaSocket.Select('AAU')}>Select</button>
   </div>,
   document.getElementById('root')
 );
