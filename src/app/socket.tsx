@@ -1,7 +1,7 @@
 
 import * as Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
-import { ArcaState, ArcaActions, ArcaResponses, AAURow, AAUPK } from './types';
+import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries } from './types';
 import { Store } from 'redux'
 
 export class ArcaSocket {
@@ -28,19 +28,14 @@ export class ArcaSocket {
         case 'insert':
         case 'delete':
         case 'update':
-          if (response.Context.Target === 'AAU') {
-            store.dispatch({
-              type: 'Notify',
-              Context: {
-                Target: response.Context.Target
-              },
-              Method: response.Method,
-              Row: response.Row,
-              PK: {
-                Key: response.Row.Key
-              }
-            });
-          }
+          store.dispatch({
+            type: 'Notify',
+            Context: {
+              Target: response.Context.Target
+            },
+            Method: response.Method,
+            Row: response.Row
+          });
           break;
         case 'Select':
           store.dispatch({
@@ -77,7 +72,7 @@ export class ArcaSocket {
     });
   }
 
-  public Update(Table: string, Row: AAURow, PK: AAUPK): void {
+  public Update(Table: string, Entry: ArcaEntries): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Context: {
@@ -85,7 +80,8 @@ export class ArcaSocket {
       },
       Method: 'Update',
       Params: {
-        Row, PK
+        Row: Entry.Row,
+        PK: Entry.PK
       }
     });
   }

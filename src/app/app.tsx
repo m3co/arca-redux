@@ -15,7 +15,7 @@ function UpdateEntry(): void {
     Key: row.Key
   };
   row.Description = uuid4() + ' desmonte casa existente + retiro';
-  arcaSocket.Update('AAU', row, PK);
+  arcaSocket.Update('AAU', { Row: row, PK } );
 }
 
 render(

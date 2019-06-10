@@ -1,5 +1,5 @@
 
-import { ArcaState, ArcaActions, AAURow } from './types';
+import { ArcaState, ArcaActions, ArcaEntries, ArcaInfo, AAU } from './types';
 
 const initialState: ArcaState = {
   Sources: {
@@ -18,40 +18,56 @@ export function ArcaReducer(state: ArcaState = initialState, action: ArcaActions
     case 'Disconnect':
       return { ...state, active: false }
     case 'Notify':
+      let Rows: ArcaEntries["Row"][];
       if (action.Context.Target === 'AAU') {
-        return {...state,
-          Sources: { ...state.Sources,
-            [action.Context.Target]: { ...state.Sources[action.Context.Target],
-              Rows: state.Sources[action.Context.Target].Rows.map((row: AAURow): AAURow => (row.Key === action.PK.Key) ? action.Row : row)
-            }
-          }
-        };
+        Rows = state.Sources.AAU.Rows.map((row: AAU["Row"]): AAU["Row"] =>
+          (row.Key === action.Row.Key) ? action.Row : row);
+      } else {
+        return state;
       }
-      return state;
-    case 'Select':
-      if (action.Context.Source === 'AAU') {
-        return { ...state,
-          Sources: { ...state.Sources,
-            [action.Context.Source]: {
-              ...state.Sources[action.Context.Source],
-              Rows: action.Result
-            }
+      return {...state,
+        Sources: { ...state.Sources,
+          [action.Context.Target]: { ...state.Sources[action.Context.Target],
+            Rows: Rows
           }
         }
-      }
-      return state;
-    case 'GetInfo':
+      };
+    case 'Select':
+    {
+      let Entries: {
+        Rows: ArcaEntries["Row"][];
+        Info: ArcaInfo | null;
+      } = {
+        Rows: action.Result,
+        Info: null
+      };
       if (action.Context.Source === 'AAU') {
-        return { ...state,
-          Sources: { ...state.Sources,
-            [action.Context.Source]: {
-              ...state.Sources[action.Context.Source],
-              Info: action.Result
-            }
-          }
-        };
+        Entries.Info = state.Sources[action.Context.Source].Info;
       }
-      return state;
+      return { ...state,
+        Sources: { ...state.Sources,
+          [action.Context.Source]: Entries
+        }
+      }
+    }
+    case 'GetInfo':
+    {
+      let Entries: {
+        Rows: ArcaEntries["Row"][];
+        Info: ArcaInfo | null;
+      } = {
+        Rows: [],
+        Info: action.Result
+      };
+      if (action.Context.Source === 'AAU') {
+        Entries.Rows = state.Sources[action.Context.Source].Rows;
+      }
+      return { ...state,
+        Sources: { ...state.Sources,
+          [action.Context.Source]: Entries
+        }
+      };
+    }
     default:
       return state
   }

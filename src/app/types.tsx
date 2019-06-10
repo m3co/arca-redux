@@ -16,22 +16,21 @@ export interface ArcaInfo {
   }[];
 }
 
-export interface ActionSelect<T> extends Action {
+export interface ActionSelect<Row> extends Action {
   type: 'Select';
   Context: {
     Source: string;
   };
-  Result: T[];
+  Result: Row[];
 }
 
-export interface ActionNotify<Row, PK> extends Action {
+export interface ActionNotify<Target, Row> extends Action {
   type: 'Notify';
   Context: {
-    Target: string;
+    Target: Target;
   };
   Method: 'delete' | 'update' | 'insert';
   Row: Row;
-  PK: PK;
 }
 
 export interface ActionGetInfo extends Action {
@@ -77,13 +76,13 @@ export interface ResponseDUI {
   };
 }
 
-export interface ResponseSelect<T> {
+export interface ResponseSelect<Row> {
   Context: {
     Source: string;
   };
   ID: string;
   Method: 'Select';
-  Result: T[];
+  Result: Row[];
 }
 
 export interface Notification<Target, Row> {
@@ -97,29 +96,34 @@ export interface Notification<Target, Row> {
   Row: Row;
 }
 
-export type ArcaActions = ActionStatus | ActionGetInfo | ActionSelect<AAURow> | ActionNotify<AAURow, AAUPK>;
-export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI | ResponseSelect<AAURow> | Notification<'AAU', AAURow>
+export type ArcaActions = ActionStatus | ActionGetInfo |
+ActionSelect<AAU["Row"]> | ActionNotify<'AAU', AAU["Row"]>;
+export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
+ResponseSelect<AAU["Row"]> | Notification<'AAU', AAU["Row"]>
 
 export interface ArcaState {
   Sources: {
     AAU: {
-      Rows: AAURow[];
+      Rows: AAU["Row"][];
       Info: ArcaInfo | null;
     };
   };
   active: boolean;
 }
 
-export interface AAURow {
-  Key: string;
-  Parent: string;
-  Expand: boolean;
-  Description: string;
-  Unit: string;
-  Price: number;
-  P: number;
+export interface AAU {
+  Row: {
+    Key: string;
+    Parent: string;
+    Expand: boolean;
+    Description: string;
+    Unit: string;
+    Price: number;
+    P: number;
+  };
+  PK: {
+    Key: string;
+  };
 }
 
-export interface AAUPK {
-  Key: string;
-}
+export type ArcaEntries = AAU;
