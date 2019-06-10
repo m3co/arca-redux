@@ -2,11 +2,11 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux'
-import { ArcaReducer } from './reducer';
+import { Reducer } from './reducers';
 import { ArcaSocket } from './socket';
 import { v4 as uuid4 } from 'uuid';
 
-const store = createStore(ArcaReducer);
+const store = createStore(Reducer);
 const arcaSocket = new ArcaSocket(store);
 
 function UpdateEntry(): void {

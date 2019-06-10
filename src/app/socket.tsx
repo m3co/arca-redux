@@ -1,7 +1,7 @@
 
 import * as Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
-import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries } from './types';
+import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries } from './reducers/types';
 import { Store } from 'redux'
 
 export class ArcaSocket {
