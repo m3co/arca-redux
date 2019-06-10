@@ -12,8 +12,9 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
         Rows: action.Result,
         Info: null
       };
-      if (action.Context.Source === 'AAU') {
-        Entries.Info = state.Sources[action.Context.Source].Info;
+      switch (action.Context.Source) {
+        case 'AAU':
+          Entries.Info = state.Sources[action.Context.Source].Info;
       }
       return { ...state,
         Sources: { ...state.Sources,

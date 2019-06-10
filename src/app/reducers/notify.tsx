@@ -9,13 +9,11 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
         case 'insert':
         case 'delete':
         case 'update':
-        {
-          let Rows: ArcaEntries["Row"][];
-          if (action.Context.Target === 'AAU') {
-            Rows = state.Sources.AAU.Rows.map((row: ArcaEntries["Row"]): ArcaEntries["Row"] =>
-              (row.Key === action.Row.Key) ? action.Row : row);
-          } else {
-            return state;
+          let Rows: ArcaEntries["Row"][] = [];
+          switch (action.Context.Target) {
+            case 'AAU':
+              Rows = state.Sources.AAU.Rows.map((row: ArcaEntries["Row"]): ArcaEntries["Row"] =>
+                (row.Key === action.Row.Key) ? action.Row : row);
           }
           return {...state,
             Sources: { ...state.Sources,
@@ -24,7 +22,6 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               }
             }
           };
-        }
         default:
           return state;
       }

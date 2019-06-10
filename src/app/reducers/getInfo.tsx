@@ -12,8 +12,9 @@ export function Getinfo(state: ArcaState = initialState, action: ArcaActions): A
         Rows: [],
         Info: action.Result
       };
-      if (action.Context.Source === 'AAU') {
-        Entries.Rows = state.Sources[action.Context.Source].Rows;
+      switch (action.Context.Source) {
+        case 'AAU':
+          Entries.Rows = state.Sources[action.Context.Source].Rows;
       }
       return { ...state,
         Sources: { ...state.Sources,
