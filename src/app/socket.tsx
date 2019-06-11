@@ -39,7 +39,7 @@ export class ArcaSocket {
                 Row: response.Row as AAU["Row"]
               });
               break;
-            case 'FACADParamsBIC':
+            case 'FACAD-ParamsBIC':
               store.dispatch({
                 type: 'Notify',
                 Context: {
@@ -59,16 +59,16 @@ export class ArcaSocket {
               store.dispatch({
                 type: 'Select',
                 Context: {
-                  Source: 'AAU'
+                  Source: response.Context.Source
                 },
                 Result: response.Result as AAU["Row"][]
               });
               break;
-            case 'FACADParamsBIC':
+            case 'FACAD-ParamsBIC':
               store.dispatch({
                 type: 'Select',
                 Context: {
-                  Source: 'FACADParamsBIC'
+                  Source: response.Context.Source
                 },
                 Result: response.Result as FACADParamsBIC["Row"][]
               });

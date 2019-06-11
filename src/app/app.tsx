@@ -28,9 +28,9 @@ render(
       }}>Update</button>
     </div>
     <div>
-      <button onClick={(): void => arcaSocket.Subscribe('FACADParamsBIC')}>Subscribe</button>
-      <button onClick={(): void => arcaSocket.GetInfo('FACADParamsBIC')}>GetInfo</button>
-      <button onClick={(): void => arcaSocket.Select('FACADParamsBIC')}>Select</button>
+      <button onClick={(): void => arcaSocket.Subscribe('FACAD-ParamsBIC')}>Subscribe</button>
+      <button onClick={(): void => arcaSocket.GetInfo('FACAD-ParamsBIC')}>GetInfo</button>
+      <button onClick={(): void => arcaSocket.Select('FACAD-ParamsBIC')}>Select</button>
     </div>
   </div>,
   document.getElementById('root')

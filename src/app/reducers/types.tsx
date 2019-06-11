@@ -97,21 +97,21 @@ export interface Notification<Target, Row> {
 }
 
 export type ArcaActions = ActionStatus | ActionGetInfo |
-ActionSelect<'AAU', AAU["Row"]> | ActionNotify<'AAU', AAU["Row"]> |
-ActionSelect<'FACADParamsBIC', FACADParamsBIC["Row"]> | ActionNotify<'FACADParamsBIC', FACADParamsBIC["Row"]>
+ActionSelect<'AAU', AAU['Row']> | ActionNotify<'AAU', AAU['Row']> |
+ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']>
 
 export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
-ResponseSelect<'AAU', AAU["Row"]> | Notification<'AAU', AAU["Row"]> |
-ResponseSelect<'FACADParamsBIC', FACADParamsBIC["Row"]> | Notification<'FACADParamsBIC', FACADParamsBIC["Row"]>
+ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
+ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']>
 
 export interface ArcaState {
   Sources: {
     AAU: {
-      Rows: AAU["Row"][];
+      Rows: AAU['Row'][];
       Info: ArcaInfo | null;
     };
     FACADParamsBIC: {
-      Rows: FACADParamsBIC["Row"][];
+      Rows: FACADParamsBIC['Row'][];
       Info: ArcaInfo | null;
     };
   };
@@ -119,7 +119,6 @@ export interface ArcaState {
 }
 
 export interface AAU {
-  Name: 'AAU';
   Row: {
     Key: string;
     Parent: string;
@@ -137,7 +136,6 @@ export interface AAU {
 export type ReportType = 'Schedule' | 'MaterialTakeoff' | 'KeynoteLegend' | 'KeySchedule' | 'RevisionSchedule' | 'NoteBlock';
 
 export interface FACADParamsBIC {
-  Name: 'FACAD-ParamsBIC';
   Row: {
     ReportType: ReportType;
     BuiltInCategory: string;

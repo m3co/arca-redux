@@ -10,7 +10,7 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
         case 'delete':
         case 'update':
           switch (action.Context.Target) {
-            case 'FACADParamsBIC': {
+            case 'FACAD-ParamsBIC': {
               const Row = action.Row as FACADParamsBIC["Row"];
               let PK: FACADParamsBIC["PK"];
               let keys: (keyof typeof PK)[];
@@ -18,8 +18,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               keys = Object.keys(PK) as (keyof typeof PK)[];
               return {...state,
                 Sources: { ...state.Sources,
-                  [action.Context.Target]: { ...state.Sources[action.Context.Target],
-                    Rows: state.Sources[action.Context.Target].Rows.map((row) =>
+                  FACADParamsBIC: { ...state.Sources.FACADParamsBIC,
+                    Rows: state.Sources.FACADParamsBIC.Rows.map((row) =>
                       (keys.every((key) => PK[key] === row[key])) ? Row : row)
                   }
                 }
