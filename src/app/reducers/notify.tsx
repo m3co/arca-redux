@@ -9,16 +9,18 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
         case 'insert':
         case 'delete':
         case 'update':
-          let Rows: ArcaEntries["Row"][] = [];
+          let PK: ArcaEntries["PK"];
+          let keys: (keyof typeof PK)[];
           switch (action.Context.Target) {
             case 'AAU':
-              Rows = state.Sources.AAU.Rows.map((row: ArcaEntries["Row"]): ArcaEntries["Row"] =>
-                (row.Key === action.Row.Key) ? action.Row : row);
+              PK = { Key: action.Row.Key };
+              keys = Object.keys(PK) as (keyof typeof PK)[];
           }
           return {...state,
             Sources: { ...state.Sources,
               [action.Context.Target]: { ...state.Sources[action.Context.Target],
-                Rows: Rows
+                Rows: state.Sources[action.Context.Target].Rows.map((row) =>
+                  (keys.every((key) => PK[key] === row[key])) ? action.Row : row)
               }
             }
           };
