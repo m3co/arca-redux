@@ -1,7 +1,7 @@
 
 import * as Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
-import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries } from './reducers/types';
+import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries, AAU, FACADParamsBIC } from './reducers/types';
 import { Store } from 'redux'
 
 export class ArcaSocket {
@@ -28,23 +28,54 @@ export class ArcaSocket {
         case 'insert':
         case 'delete':
         case 'update':
-          store.dispatch({
-            type: 'Notify',
-            Context: {
-              Target: response.Context.Target
-            },
-            Method: response.Method,
-            Row: response.Row
-          });
+          switch (response.Context.Target) {
+            case 'AAU':
+              store.dispatch({
+                type: 'Notify',
+                Context: {
+                  Target: response.Context.Target
+                },
+                Method: response.Method,
+                Row: response.Row as AAU["Row"]
+              });
+              break;
+            case 'FACADParamsBIC':
+              store.dispatch({
+                type: 'Notify',
+                Context: {
+                  Target: response.Context.Target
+                },
+                Method: response.Method,
+                Row: response.Row as FACADParamsBIC["Row"]
+              });
+              break;
+            default:
+              break;
+          }
           break;
         case 'Select':
-          store.dispatch({
-            type: response.Method,
-            Context: {
-              Source: response.Context.Source
-            },
-            Result: response.Result
-          });
+          switch (response.Context.Source) {
+            case 'AAU':
+              store.dispatch({
+                type: 'Select',
+                Context: {
+                  Source: 'AAU'
+                },
+                Result: response.Result as AAU["Row"][]
+              });
+              break;
+            case 'FACADParamsBIC':
+              store.dispatch({
+                type: 'Select',
+                Context: {
+                  Source: 'FACADParamsBIC'
+                },
+                Result: response.Result as FACADParamsBIC["Row"][]
+              });
+              break;
+            default:
+              break;
+          }
           break;
         case 'GetInfo':
           store.dispatch({

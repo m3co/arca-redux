@@ -16,10 +16,10 @@ export interface ArcaInfo {
   }[];
 }
 
-export interface ActionSelect<Row> extends Action {
+export interface ActionSelect<Source, Row> extends Action {
   type: 'Select';
   Context: {
-    Source: string;
+    Source: Source;
   };
   Result: Row[];
 }
@@ -76,9 +76,9 @@ export interface ResponseDUI {
   };
 }
 
-export interface ResponseSelect<Row> {
+export interface ResponseSelect<Source, Row> {
   Context: {
-    Source: string;
+    Source: Source;
   };
   ID: string;
   Method: 'Select';
@@ -97,9 +97,12 @@ export interface Notification<Target, Row> {
 }
 
 export type ArcaActions = ActionStatus | ActionGetInfo |
-ActionSelect<AAU["Row"]> | ActionNotify<'AAU', AAU["Row"]>;
+ActionSelect<'AAU', AAU["Row"]> | ActionNotify<'AAU', AAU["Row"]> |
+ActionSelect<'FACADParamsBIC', FACADParamsBIC["Row"]> | ActionNotify<'FACADParamsBIC', FACADParamsBIC["Row"]>
+
 export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
-ResponseSelect<AAU["Row"]> | Notification<'AAU', AAU["Row"]>
+ResponseSelect<'AAU', AAU["Row"]> | Notification<'AAU', AAU["Row"]> |
+ResponseSelect<'FACADParamsBIC', FACADParamsBIC["Row"]> | Notification<'FACADParamsBIC', FACADParamsBIC["Row"]>
 
 export interface ArcaState {
   Sources: {
@@ -107,11 +110,16 @@ export interface ArcaState {
       Rows: AAU["Row"][];
       Info: ArcaInfo | null;
     };
+    FACADParamsBIC: {
+      Rows: FACADParamsBIC["Row"][];
+      Info: ArcaInfo | null;
+    };
   };
   active: boolean;
 }
 
 export interface AAU {
+  Name: 'AAU';
   Row: {
     Key: string;
     Parent: string;
@@ -126,4 +134,20 @@ export interface AAU {
   };
 }
 
-export type ArcaEntries = AAU;
+export type ReportType = 'Schedule' | 'MaterialTakeoff' | 'KeynoteLegend' | 'KeySchedule' | 'RevisionSchedule' | 'NoteBlock';
+
+export interface FACADParamsBIC {
+  Name: 'FACAD-ParamsBIC';
+  Row: {
+    ReportType: ReportType;
+    BuiltInCategory: string;
+    Field: string;
+  };
+  PK: {
+    ReportType: ReportType;
+    BuiltInCategory: string;
+    Field: string;
+  }
+}
+
+export type ArcaEntries = AAU | FACADParamsBIC;

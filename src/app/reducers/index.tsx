@@ -9,6 +9,10 @@ export const initialState: ArcaState = {
     AAU: {
       Rows: [],
       Info: null
+    },
+    FACADParamsBIC: {
+      Rows: [],
+      Info: null
     }
   },
   active: false

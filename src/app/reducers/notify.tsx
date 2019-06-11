@@ -1,5 +1,5 @@
 
-import { ArcaState, ArcaActions, ArcaEntries } from './types';
+import { ArcaState, ArcaActions, ArcaEntries, FACADParamsBIC, AAU } from './types';
 import { initialState } from './'
 
 export function Notify(state: ArcaState = initialState, action: ArcaActions): ArcaState {
@@ -9,21 +9,39 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
         case 'insert':
         case 'delete':
         case 'update':
-          let PK: ArcaEntries["PK"];
-          let keys: (keyof typeof PK)[];
           switch (action.Context.Target) {
-            case 'AAU':
-              PK = { Key: action.Row.Key };
+            case 'FACADParamsBIC': {
+              const Row = action.Row as FACADParamsBIC["Row"];
+              let PK: FACADParamsBIC["PK"];
+              let keys: (keyof typeof PK)[];
+              PK = { ReportType: Row.ReportType, BuiltInCategory: Row.BuiltInCategory, Field: Row.Field };
               keys = Object.keys(PK) as (keyof typeof PK)[];
-          }
-          return {...state,
-            Sources: { ...state.Sources,
-              [action.Context.Target]: { ...state.Sources[action.Context.Target],
-                Rows: state.Sources[action.Context.Target].Rows.map((row) =>
-                  (keys.every((key) => PK[key] === row[key])) ? action.Row : row)
-              }
+              return {...state,
+                Sources: { ...state.Sources,
+                  [action.Context.Target]: { ...state.Sources[action.Context.Target],
+                    Rows: state.Sources[action.Context.Target].Rows.map((row) =>
+                      (keys.every((key) => PK[key] === row[key])) ? Row : row)
+                  }
+                }
+              };
             }
-          };
+            case 'AAU': {
+              const Row = action.Row as AAU["Row"];
+              let PK: AAU["PK"];
+              let keys: (keyof typeof PK)[];
+              PK = { Key: Row.Key };
+              keys = Object.keys(PK) as (keyof typeof PK)[];
+              return {...state,
+                Sources: { ...state.Sources,
+                  [action.Context.Target]: { ...state.Sources[action.Context.Target],
+                    Rows: state.Sources[action.Context.Target].Rows.map((row) =>
+                      (keys.every((key) => PK[key] === row[key])) ? Row : row)
+                  }
+                }
+              };
+            }
+          }
+          return state;
         default:
           return state;
       }
