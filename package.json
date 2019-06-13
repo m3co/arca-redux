@@ -1,11 +1,11 @@
 {
-  "name": "jest-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "arca-redux",
+  "version": "1.0.7",
+  "description": "El puente entre arca-server y web mediante websocket",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
-    "build": "webpack -p",
-    "start": "webpack-dev-server -d --content-base ./public",
+    "build": "tsc",
     "lint": "esw src/**/*.tsx --fix --watch --color",
     "test": "jest --watchAll"
   },
@@ -22,24 +22,16 @@
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-watch": "^5.1.2",
-    "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.2",
-    "typescript": "^3.5.1",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.3",
-    "webpack-dev-server": "^3.7.1"
+    "typescript": "^3.5.1"
   },
   "dependencies": {
-    "@types/react": "^16.8.19",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-redux": "^7.0.9",
+    "@types/redux": "^3.6.0",
     "@types/socket.io-client": "^1.4.32",
     "@types/uuid": "^3.4.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
     "socket.io": "^2.2.0",
     "socket.io-client": "^2.2.0",
     "uuid": "^3.3.2"
