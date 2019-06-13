@@ -3,10 +3,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/app/app.tsx',
+  entry: './demo/app.tsx',
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/templates/index.html'
+      template: './demo/templates/index.html'
     }),
   ],
   output: {

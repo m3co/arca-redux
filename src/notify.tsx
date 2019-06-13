@@ -1,6 +1,6 @@
 
 import { ArcaState, ArcaActions, FACADParamsBIC, FACADSchedules, AAU } from './types';
-import { initialState } from './'
+import { initialState } from '.'
 
 export function Notify(state: ArcaState = initialState, action: ArcaActions): ArcaState {
   switch (action.type) {

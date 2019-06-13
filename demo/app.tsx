@@ -2,10 +2,10 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux'
-import { Reducer } from './reducers';
-import { ArcaSocket } from './socket';
+import { Reducer } from '../src';
+import { ArcaSocket } from '../src/socket';
 import { v4 as uuid4 } from 'uuid';
-import { FACADSchedules } from './reducers/types'
+import { FACADSchedules } from '../src/types'
 
 const store = createStore(Reducer);
 const arcaSocket = new ArcaSocket(store);

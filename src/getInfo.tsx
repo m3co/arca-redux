@@ -1,6 +1,6 @@
 
 import { ArcaState, ArcaActions, ArcaEntries, ArcaInfo } from './types';
-import { initialState } from './'
+import { initialState } from '.'
 
 export function Getinfo(state: ArcaState = initialState, action: ArcaActions): ArcaState {
   switch (action.type) {

@@ -1,7 +1,7 @@
 
 import { ArcaState, ArcaActions, ArcaEntries, ArcaInfo,
   AAU, FACADParamsBIC, FACADSchedules } from './types';
-import { initialState } from './'
+import { initialState } from '.'
 
 export function Select(state: ArcaState = initialState, action: ArcaActions): ArcaState {
   switch (action.type) {
