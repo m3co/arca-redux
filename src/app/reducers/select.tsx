@@ -1,5 +1,6 @@
 
-import { ArcaState, ArcaActions, ArcaEntries, ArcaInfo, AAU, FACADParamsBIC } from './types';
+import { ArcaState, ArcaActions, ArcaEntries, ArcaInfo,
+  AAU, FACADParamsBIC, FACADSchedules } from './types';
 import { initialState } from './'
 
 export function Select(state: ArcaState = initialState, action: ArcaActions): ArcaState {
@@ -28,6 +29,15 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
                 FACADParamsBIC: {
                   Rows: Entries.Rows as FACADParamsBIC["Row"][],
                   Info: state.Sources.FACADParamsBIC.Info
+                }
+              }
+            };
+          case 'FACAD-Schedules':
+            return { ...state,
+              Sources: { ...state.Sources,
+                FACADSchedules: {
+                  Rows: Entries.Rows as FACADSchedules["Row"][],
+                  Info: state.Sources.FACADSchedules.Info
                 }
               }
             };

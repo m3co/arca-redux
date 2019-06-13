@@ -98,11 +98,13 @@ export interface Notification<Target, Row> {
 
 export type ArcaActions = ActionStatus | ActionGetInfo |
 ActionSelect<'AAU', AAU['Row']> | ActionNotify<'AAU', AAU['Row']> |
-ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']>
+ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
+ActionSelect<'FACAD-Schedules', FACADSchedules['Row']> | ActionNotify<'FACAD-Schedules', FACADSchedules['Row']>;
 
 export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
 ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
-ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']>
+ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
+ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']>;
 
 export interface ArcaState {
   Sources: {
@@ -112,6 +114,10 @@ export interface ArcaState {
     };
     FACADParamsBIC: {
       Rows: FACADParamsBIC['Row'][];
+      Info: ArcaInfo | null;
+    };
+    FACADSchedules: {
+      Rows: FACADSchedules['Row'][];
       Info: ArcaInfo | null;
     };
   };
@@ -148,4 +154,16 @@ export interface FACADParamsBIC {
   }
 }
 
-export type ArcaEntries = AAU | FACADParamsBIC;
+export interface FACADSchedules {
+  Row: {
+    ID: number;
+    Name: string;
+    BuiltInCategory: string;
+    PathName: string;
+  };
+  PK: {
+    ID: number;
+  }
+}
+
+export type ArcaEntries = AAU | FACADParamsBIC | FACADSchedules;

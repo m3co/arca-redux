@@ -13,6 +13,10 @@ export const initialState: ArcaState = {
     FACADParamsBIC: {
       Rows: [],
       Info: null
+    },
+    FACADSchedules: {
+      Rows: [],
+      Info: null
     }
   },
   active: false

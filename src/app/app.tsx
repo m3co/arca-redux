@@ -5,7 +5,7 @@ import { createStore } from 'redux'
 import { Reducer } from './reducers';
 import { ArcaSocket } from './socket';
 import { v4 as uuid4 } from 'uuid';
-import { AAU } from './reducers/types';
+import { FACADSchedules } from './reducers/types'
 
 const store = createStore(Reducer);
 const arcaSocket = new ArcaSocket(store);
@@ -20,17 +20,39 @@ render(
       <button onClick={(): void => arcaSocket.Select('AAU')}>Select</button>
       <button onClick={(): void => {
         const row = {...store.getState().Sources.AAU.Rows[3]};
-        const PK = {
-          Key: row.Key
-        } as AAU["Row"];
         row.Description = uuid4() + ' desmonte casa existente + retiro';
-        arcaSocket.Update('AAU', { Row: row, PK } );
+        arcaSocket.Update('AAU', { Row: row, PK: {
+          Key: row.Key
+        }} );
       }}>Update</button>
     </div>
     <div>
       <button onClick={(): void => arcaSocket.Subscribe('FACAD-ParamsBIC')}>Subscribe</button>
       <button onClick={(): void => arcaSocket.GetInfo('FACAD-ParamsBIC')}>GetInfo</button>
       <button onClick={(): void => arcaSocket.Select('FACAD-ParamsBIC')}>Select</button>
+    </div>
+    <div>
+      <button onClick={(): void => arcaSocket.Subscribe('FACAD-Schedules')}>Subscribe</button>
+      <button onClick={(): void => arcaSocket.GetInfo('FACAD-Schedules')}>GetInfo</button>
+      <button onClick={(): void => arcaSocket.Select('FACAD-Schedules')}>Select</button>
+      <button onClick={(): void => {
+        const row: FACADSchedules["Row"] = {
+          ID: 0,
+          Name: uuid4() + ' nombre',
+          PathName: uuid4() + ' direccion',
+          BuiltInCategory: 'INVALID'
+        };
+
+        arcaSocket.Insert('FACAD-Schedules', row);
+      }}>Insert</button>
+      <button onClick={(): void => {
+        const rows = store.getState().Sources.FACADSchedules.Rows;
+        const PK: FACADSchedules["PK"] = {
+          ID: rows[rows.length - 1].ID
+        };
+
+        arcaSocket.Delete('FACAD-Schedules', PK);
+      }}>Delete</button>
     </div>
   </div>,
   document.getElementById('root')

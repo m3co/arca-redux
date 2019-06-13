@@ -1,7 +1,8 @@
 
 import * as Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
-import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries, AAU, FACADParamsBIC } from './reducers/types';
+import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries,
+  AAU, FACADParamsBIC, FACADSchedules } from './reducers/types';
 import { Store } from 'redux'
 
 export class ArcaSocket {
@@ -49,6 +50,16 @@ export class ArcaSocket {
                 Row: response.Row as FACADParamsBIC["Row"]
               });
               break;
+            case 'FACAD-Schedules':
+              store.dispatch({
+                type: 'Notify',
+                Context: {
+                  Target: response.Context.Target
+                },
+                Method: response.Method,
+                Row: response.Row as FACADSchedules["Row"]
+              });
+              break;
             default:
               break;
           }
@@ -73,6 +84,15 @@ export class ArcaSocket {
                 Result: response.Result as FACADParamsBIC["Row"][]
               });
               break;
+            case 'FACAD-Schedules':
+              store.dispatch({
+                type: 'Select',
+                Context: {
+                  Source: response.Context.Source
+                },
+                Result: response.Result as FACADSchedules["Row"][]
+              });
+              break;
             default:
               break;
           }
@@ -93,21 +113,47 @@ export class ArcaSocket {
     });
   }
 
-  public Select(Table: string): void {
+  public Select(Source: string): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Context: {
-        Source: Table
+        Source
       },
       Method: 'Select'
     });
   }
 
-  public Update(Table: string, Entry: ArcaEntries): void {
+  public Insert(Source: string, Row: ArcaEntries["Row"]): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Context: {
-        Source: Table
+        Source
+      },
+      Method: 'Insert',
+      Params: {
+        Row
+      }
+    });
+  }
+
+  public Delete(Source: string, PK: ArcaEntries["PK"]): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Context: {
+        Source
+      },
+      Method: 'Delete',
+      Params: {
+        PK
+      }
+    });
+  }
+
+  public Update(Source: string, Entry: ArcaEntries): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Context: {
+        Source
       },
       Method: 'Update',
       Params: {
@@ -117,22 +163,22 @@ export class ArcaSocket {
     });
   }
 
-  public Subscribe(Table: string): void {
+  public Subscribe(Target: string): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'Subscribe',
       Params: {
-        Target: Table,
+        Target
       },
     });
   }
 
-  public GetInfo(Table: string): void {
+  public GetInfo(Source: string): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'GetInfo',
       Context: {
-        Source: Table,
+        Source
       },
     });
   }
