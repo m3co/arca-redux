@@ -96,10 +96,17 @@ export interface Notification<Target, Row> {
   Row: Row;
 }
 
-export type ArcaActions = ActionStatus | ActionGetInfo |
-ActionSelect<'AAU', AAU['Row']> | ActionNotify<'AAU', AAU['Row']> |
-ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-ActionSelect<'FACAD-Schedules', FACADSchedules['Row']> | ActionNotify<'FACAD-Schedules', FACADSchedules['Row']>;
+export type ArcaActionsNotify =
+  ActionNotify<'AAU', AAU['Row']> |
+  ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
+  ActionNotify<'FACAD-Schedules', FACADSchedules['Row']>;
+
+export type ArcaActionsSelect =
+ActionSelect<'AAU', AAU['Row']> |
+ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
+ActionSelect<'FACAD-Schedules', FACADSchedules['Row']>;
+
+export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | ArcaActionsSelect;
 
 export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
 ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
