@@ -98,11 +98,13 @@ export interface Notification<Target, Row> {
 
 export type ArcaActionsNotify =
   ActionNotify<'AAU', AAU['Row']> |
+  ActionNotify<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
   ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
   ActionNotify<'FACAD-Schedules', FACADSchedules['Row']>;
 
 export type ArcaActionsSelect =
 ActionSelect<'AAU', AAU['Row']> |
+ActionSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
 ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
 ActionSelect<'FACAD-Schedules', FACADSchedules['Row']>;
 
@@ -110,6 +112,7 @@ export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | Arc
 
 export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
 ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
+ResponseSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> | Notification<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
 ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
 ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']>;
 
@@ -117,6 +120,10 @@ export interface ArcaState {
   Sources: {
     AAU: {
       Rows: AAU['Row'][];
+      Info: ArcaInfo | null;
+    };
+    FACADBuiltInCategories: {
+      Rows: FACADBuiltInCategories['Row'][];
       Info: ArcaInfo | null;
     };
     FACADParamsBIC: {
@@ -148,6 +155,15 @@ export interface AAU {
 
 export type ReportType = 'Schedule' | 'MaterialTakeoff' | 'KeynoteLegend' | 'KeySchedule' | 'RevisionSchedule' | 'NoteBlock';
 
+export interface FACADBuiltInCategories {
+  Row: {
+    BuiltInCategory: string;
+  };
+  PK: {
+    BuiltInCategory: string;
+  };
+}
+
 export interface FACADParamsBIC {
   Row: {
     ReportType: ReportType;
@@ -173,4 +189,8 @@ export interface FACADSchedules {
   };
 }
 
-export type ArcaEntries = AAU | FACADParamsBIC | FACADSchedules;
+export type ArcaEntries =
+  AAU |
+  FACADBuiltInCategories |
+  FACADParamsBIC |
+  FACADSchedules;

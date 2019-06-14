@@ -1,5 +1,5 @@
 
-import { ArcaState, ArcaActionsNotify, FACADParamsBIC, FACADSchedules, AAU } from '../types';
+import { ArcaState, ArcaActionsNotify, FACADBuiltInCategories, FACADParamsBIC, FACADSchedules, AAU } from '../types';
 import { initialState } from '..';
 
 export function update(state: ArcaState = initialState, action: ArcaActionsNotify): ArcaState {
@@ -14,6 +14,21 @@ export function update(state: ArcaState = initialState, action: ArcaActionsNotif
         Sources: { ...state.Sources,
           [action.Context.Target]: { ...state.Sources[action.Context.Target],
             Rows: state.Sources[action.Context.Target].Rows.map((row): AAU["Row"] =>
+              (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
+          }
+        }
+      };
+    }
+    case 'FACAD-BuiltInCategories': {
+      const Row = action.Row as FACADBuiltInCategories["Row"];
+      let PK: FACADBuiltInCategories["PK"];
+      let keys: (keyof typeof PK)[];
+      PK = { BuiltInCategory: Row.BuiltInCategory };
+      keys = Object.keys(PK) as (keyof typeof PK)[];
+      return {...state,
+        Sources: { ...state.Sources,
+          FACADBuiltInCategories: { ...state.Sources.FACADBuiltInCategories,
+            Rows: state.Sources.FACADBuiltInCategories.Rows.map((row): FACADBuiltInCategories["Row"] =>
               (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
           }
         }

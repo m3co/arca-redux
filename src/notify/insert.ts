@@ -1,5 +1,7 @@
 
-import { ArcaState, ArcaActionsNotify, FACADParamsBIC, FACADSchedules, AAU } from '../types';
+import { ArcaState, ArcaActionsNotify,
+  FACADParamsBIC, FACADSchedules, FACADBuiltInCategories,
+  AAU } from '../types';
 import { initialState } from '..';
 
 export function insert(state: ArcaState = initialState, action: ArcaActionsNotify): ArcaState {
@@ -10,6 +12,16 @@ export function insert(state: ArcaState = initialState, action: ArcaActionsNotif
         Sources: { ...state.Sources,
           AAU: { ...state.Sources.AAU,
             Rows: [...state.Sources.AAU.Rows, Row]
+          }
+        }
+      };
+    }
+    case 'FACAD-BuiltInCategories': {
+      const Row = action.Row as FACADBuiltInCategories["Row"];
+      return {...state,
+        Sources: { ...state.Sources,
+          FACADBuiltInCategories: { ...state.Sources.FACADBuiltInCategories,
+            Rows: [...state.Sources.FACADBuiltInCategories.Rows, Row]
           }
         }
       };
