@@ -151,7 +151,7 @@ export interface FACADParamsBIC {
     ReportType: ReportType;
     BuiltInCategory: string;
     Field: string;
-  }
+  };
 }
 
 export interface FACADSchedules {
@@ -163,7 +163,7 @@ export interface FACADSchedules {
   };
   PK: {
     ID: number;
-  }
+  };
 }
 
 export type ArcaEntries = AAU | FACADParamsBIC | FACADSchedules;

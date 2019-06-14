@@ -51,8 +51,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               return {...state,
                 Sources: { ...state.Sources,
                   AAU: { ...state.Sources.AAU,
-                    Rows: state.Sources.AAU.Rows.filter((row) =>
-                      !(keys.every((key) => PK[key] === row[key])))
+                    Rows: state.Sources.AAU.Rows.filter((row): boolean =>
+                      !(keys.every((key): boolean => PK[key] === row[key])))
                   }
                 }
               };
@@ -66,8 +66,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               return {...state,
                 Sources: { ...state.Sources,
                   FACADParamsBIC: { ...state.Sources.FACADParamsBIC,
-                    Rows: state.Sources.FACADParamsBIC.Rows.filter((row) =>
-                      !(keys.every((key) => PK[key] === row[key])))
+                    Rows: state.Sources.FACADParamsBIC.Rows.filter((row): boolean =>
+                      !(keys.every((key): boolean => PK[key] === row[key])))
                   }
                 }
               };
@@ -81,8 +81,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               return {...state,
                 Sources: { ...state.Sources,
                   FACADSchedules: { ...state.Sources.FACADSchedules,
-                    Rows: state.Sources.FACADSchedules.Rows.filter((row) =>
-                      !(keys.every((key) => PK[key] === row[key])))
+                    Rows: state.Sources.FACADSchedules.Rows.filter((row): boolean =>
+                      !(keys.every((key): boolean => PK[key] === row[key])))
                   }
                 }
               };
@@ -100,8 +100,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               return {...state,
                 Sources: { ...state.Sources,
                   [action.Context.Target]: { ...state.Sources[action.Context.Target],
-                    Rows: state.Sources[action.Context.Target].Rows.map((row) =>
-                      (keys.every((key) => PK[key] === row[key])) ? Row : row)
+                    Rows: state.Sources[action.Context.Target].Rows.map((row): AAU["Row"] =>
+                      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
                   }
                 }
               };
@@ -115,8 +115,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               return {...state,
                 Sources: { ...state.Sources,
                   FACADParamsBIC: { ...state.Sources.FACADParamsBIC,
-                    Rows: state.Sources.FACADParamsBIC.Rows.map((row) =>
-                      (keys.every((key) => PK[key] === row[key])) ? Row : row)
+                    Rows: state.Sources.FACADParamsBIC.Rows.map((row): FACADParamsBIC["Row"] =>
+                      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
                   }
                 }
               };
@@ -130,8 +130,8 @@ export function Notify(state: ArcaState = initialState, action: ArcaActions): Ar
               return {...state,
                 Sources: { ...state.Sources,
                   FACADSchedules: { ...state.Sources.FACADSchedules,
-                    Rows: state.Sources.FACADSchedules.Rows.map((row) =>
-                      (keys.every((key) => PK[key] === row[key])) ? Row : row)
+                    Rows: state.Sources.FACADSchedules.Rows.map((row): FACADSchedules["Row"] =>
+                      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
                   }
                 }
               };

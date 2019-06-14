@@ -6,19 +6,15 @@
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "lint": "esw src/**/*.tsx --fix --watch --color",
+    "lint": "esw src/**/*.ts --fix --watch --color",
     "test": "jest --watchAll"
   },
   "author": "Andres Rios <rianby64@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "@types/enzyme": "^3.9.3",
     "@types/jest": "^24.0.13",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-watch": "^5.1.2",
@@ -28,7 +24,6 @@
     "typescript": "^3.5.1"
   },
   "dependencies": {
-    "@types/redux": "^3.6.0",
     "@types/socket.io-client": "^1.4.32",
     "@types/uuid": "^3.4.4",
     "redux": "^4.0.1",
