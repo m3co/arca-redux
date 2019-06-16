@@ -1,6 +1,6 @@
 
 import { ArcaState, ArcaActions, ArcaEntries, ArcaInfo,
-  AAU, FACADParamsBIC, FACADSchedules } from './types';
+  AAU, FACADParamsBIC, FACADSchedules, FACADCFT } from './types';
 import { initialState } from '.'
 
 export function Select(state: ArcaState = initialState, action: ArcaActions): ArcaState {
@@ -41,6 +41,15 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
               }
             }
           };
+          case 'FACAD-CFT':
+            return { ...state,
+              Sources: { ...state.Sources,
+                FACADCFT: {
+                  Rows: Entries.Rows as FACADCFT["Row"][],
+                  Info: state.Sources.FACADCFT.Info
+                }
+              }
+            };
       }
       return state;
     default:

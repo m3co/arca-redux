@@ -6,7 +6,7 @@ import { Getinfo } from './getInfo';
 
 export { ArcaSocket } from './socket';
 
-export { FACADBuiltInCategories, FACADParamsBIC, FACADSchedules, AAU } from './types';
+export { FACADBuiltInCategories, FACADParamsBIC, FACADSchedules, FACADCFT, AAU } from './types';
 
 export const initialState: ArcaState = {
   Sources: {
@@ -25,7 +25,11 @@ export const initialState: ArcaState = {
     FACADBuiltInCategories: {
       Rows: [],
       Info: null,
-    }
+    },
+    FACADCFT: {
+      Rows: [],
+      Info: null,
+    },
   },
   active: false
 };

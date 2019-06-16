@@ -1,5 +1,5 @@
 
-import { ArcaState, ArcaActionsNotify, FACADParamsBIC, FACADSchedules, AAU } from '../types';
+import { ArcaState, ArcaActionsNotify, FACADParamsBIC, FACADSchedules, FACADCFT, AAU } from '../types';
 import { initialState } from '..';
 
 export function remove(state: ArcaState = initialState, action: ArcaActionsNotify): ArcaState {
@@ -59,6 +59,21 @@ export function remove(state: ArcaState = initialState, action: ArcaActionsNotif
         Sources: { ...state.Sources,
           FACADSchedules: { ...state.Sources.FACADSchedules,
             Rows: state.Sources.FACADSchedules.Rows.filter((row): boolean =>
+              !(keys.every((key): boolean => PK[key] === row[key])))
+          }
+        }
+      };
+    }
+    case 'FACAD-CFT': {
+      const Row = action.Row as FACADCFT["Row"];
+      let PK: FACADCFT["PK"];
+      let keys: (keyof typeof PK)[];
+      PK = { ID: Row.ID };
+      keys = Object.keys(PK) as (keyof typeof PK)[];
+      return {...state,
+        Sources: { ...state.Sources,
+          FACADCFT: { ...state.Sources.FACADCFT,
+            Rows: state.Sources.FACADCFT.Rows.filter((row): boolean =>
               !(keys.every((key): boolean => PK[key] === row[key])))
           }
         }

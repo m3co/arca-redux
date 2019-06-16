@@ -100,13 +100,15 @@ export type ArcaActionsNotify =
   ActionNotify<'AAU', AAU['Row']> |
   ActionNotify<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
   ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-  ActionNotify<'FACAD-Schedules', FACADSchedules['Row']>;
+  ActionNotify<'FACAD-Schedules', FACADSchedules['Row']> |
+  ActionNotify<'FACAD-CFT', FACADCFT['Row']>;
 
 export type ArcaActionsSelect =
 ActionSelect<'AAU', AAU['Row']> |
 ActionSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
 ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-ActionSelect<'FACAD-Schedules', FACADSchedules['Row']>;
+ActionSelect<'FACAD-Schedules', FACADSchedules['Row']> |
+ActionSelect<'FACAD-CFT', FACADCFT['Row']>;
 
 export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | ArcaActionsSelect;
 
@@ -114,7 +116,8 @@ export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | Res
 ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
 ResponseSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> | Notification<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
 ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']>;
+ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']> |
+ResponseSelect<'FACAD-CFT', FACADCFT['Row']> | Notification<'FACAD-CFT', FACADCFT['Row']>;
 
 export interface ArcaState {
   Sources: {
@@ -132,6 +135,10 @@ export interface ArcaState {
     };
     FACADSchedules: {
       Rows: FACADSchedules['Row'][];
+      Info: ArcaInfo | null;
+    };
+    FACADCFT: {
+      Rows: FACADCFT['Row'][];
       Info: ArcaInfo | null;
     };
   };
@@ -189,8 +196,27 @@ export interface FACADSchedules {
   };
 }
 
+export interface FACADCFT {
+  Row: {
+    ID: number
+    Project: number
+    Category: string
+    FamilyType: string
+    Key: string
+    KeynoteField: string
+    ConstraintField: string
+    QuantityField: string
+    BuiltInCategory: string
+    ReportType: string
+  }
+  PK: {
+    ID: number;
+  };
+}
+
 export type ArcaEntries =
   AAU |
   FACADBuiltInCategories |
   FACADParamsBIC |
-  FACADSchedules;
+  FACADSchedules |
+  FACADCFT;

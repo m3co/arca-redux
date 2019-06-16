@@ -2,7 +2,7 @@
 import Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
 import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries,
-  AAU, FACADParamsBIC, FACADSchedules } from './types';
+  AAU, FACADParamsBIC, FACADSchedules, FACADCFT } from './types';
 import { Store } from 'redux'
 
 export class ArcaSocket {
@@ -22,9 +22,6 @@ export class ArcaSocket {
         case 'Subscribe':
           break;
         case 'Unsubscribe':
-          break;
-        case 'Update':
-          console.log(response, 'by update'); // Still don't know how to notify about this response... need to talk with @NovikovAntonY
           break;
         case 'insert':
         case 'delete':
@@ -60,6 +57,16 @@ export class ArcaSocket {
                 Row: response.Row as FACADSchedules["Row"]
               });
               break;
+            case 'FACAD-CFT':
+              store.dispatch({
+                type: 'Notify',
+                Context: {
+                  Target: response.Context.Target
+                },
+                Method: response.Method,
+                Row: response.Row as FACADCFT["Row"]
+              });
+              break;
             default:
               break;
           }
@@ -93,6 +100,15 @@ export class ArcaSocket {
                 Result: response.Result as FACADSchedules["Row"][]
               });
               break;
+            case 'FACAD-CFT':
+              store.dispatch({
+                type: 'Select',
+                Context: {
+                  Source: response.Context.Source
+                },
+                Result: response.Result as FACADCFT["Row"][]
+              });
+              break;
             default:
               break;
           }
@@ -107,7 +123,7 @@ export class ArcaSocket {
           });
           break;
         default:
-          console.log(response);
+          console.log(response, 'unprocessed');
           break;
       }
     });

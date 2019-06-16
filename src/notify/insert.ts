@@ -1,6 +1,6 @@
 
 import { ArcaState, ArcaActionsNotify,
-  FACADParamsBIC, FACADSchedules, FACADBuiltInCategories,
+  FACADParamsBIC, FACADSchedules, FACADBuiltInCategories, FACADCFT,
   AAU } from '../types';
 import { initialState } from '..';
 
@@ -42,6 +42,16 @@ export function insert(state: ArcaState = initialState, action: ArcaActionsNotif
         Sources: { ...state.Sources,
           FACADSchedules: { ...state.Sources.FACADSchedules,
             Rows: [...state.Sources.FACADSchedules.Rows, Row]
+          }
+        }
+      };
+    }
+    case 'FACAD-CFT': {
+      const Row = action.Row as FACADCFT["Row"];
+      return {...state,
+        Sources: { ...state.Sources,
+          FACADCFT: { ...state.Sources.FACADCFT,
+            Rows: [...state.Sources.FACADCFT.Rows, Row]
           }
         }
       };
