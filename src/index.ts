@@ -6,6 +6,8 @@ import { Getinfo } from './getInfo';
 
 export { ArcaSocket } from './socket';
 
+export { FACADBuiltInCategories, FACADParamsBIC, FACADSchedules, AAU } from './types';
+
 export const initialState: ArcaState = {
   Sources: {
     AAU: {
