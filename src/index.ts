@@ -1,8 +1,9 @@
 
-import { ArcaState, ArcaActions } from './types';
+import { ArcaState, ArcaActions, AAU } from './types';
 import { Notify } from './notify';
 import { Select } from './select';
 import { Getinfo } from './getInfo';
+import { RequestResponse } from './requestResponses';
 
 export { ArcaSocket } from './socket';
 
@@ -12,23 +13,28 @@ export const initialState: ArcaState = {
   Sources: {
     AAU: {
       Rows: [],
-      Info: null
+      Info: null,
+      RequestResponses: {}
     },
     FACADParamsBIC: {
       Rows: [],
-      Info: null
+      Info: null,
+      RequestResponses: {}
     },
     FACADSchedules: {
       Rows: [],
-      Info: null
+      Info: null,
+      RequestResponses: {}
     },
     FACADBuiltInCategories: {
       Rows: [],
       Info: null,
+      RequestResponses: {}
     },
     FACADCFT: {
       Rows: [],
       Info: null,
+      RequestResponses: {}
     },
   },
   active: false
@@ -40,6 +46,9 @@ export function Reducer(state: ArcaState = initialState, action: ArcaActions): A
       return { ...state, active: true }
     case 'Disconnect':
       return { ...state, active: false }
+    case 'RequestDUI':
+    case 'ResponseDUI':
+      return RequestResponse(state, action);
     case 'Notify':
       return Notify(state, action);
     case 'Select':

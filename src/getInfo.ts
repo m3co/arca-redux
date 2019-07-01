@@ -10,8 +10,8 @@ export function Getinfo(state: ArcaState = initialState, action: ArcaActions): A
           return { ...state,
             Sources: { ...state.Sources,
               AAU: {
-                Rows: state.Sources.AAU.Rows,
-                Info: action.Result
+                ...state.Sources.AAU,
+                Info: action.Result,
               }
             }
           };
@@ -19,8 +19,8 @@ export function Getinfo(state: ArcaState = initialState, action: ArcaActions): A
           return { ...state,
             Sources: { ...state.Sources,
               FACADSchedules: {
-                Rows: state.Sources.FACADSchedules.Rows,
-                Info: action.Result
+                ...state.Sources.FACADSchedules,
+                Info: action.Result,
               }
             }
           };
@@ -28,8 +28,8 @@ export function Getinfo(state: ArcaState = initialState, action: ArcaActions): A
           return { ...state,
             Sources: { ...state.Sources,
               FACADCFT: {
-                Rows: state.Sources.FACADCFT.Rows,
-                Info: action.Result
+                ...state.Sources.FACADCFT,
+                Info: action.Result,
               }
             }
           };
@@ -37,8 +37,8 @@ export function Getinfo(state: ArcaState = initialState, action: ArcaActions): A
           return { ...state,
             Sources: { ...state.Sources,
               FACADParamsBIC: {
-                Rows: state.Sources.FACADParamsBIC.Rows,
-                Info: action.Result
+                ...state.Sources.FACADParamsBIC,
+                Info: action.Result,
               }
             }
           };
@@ -46,8 +46,8 @@ export function Getinfo(state: ArcaState = initialState, action: ArcaActions): A
           return { ...state,
             Sources: { ...state.Sources,
               FACADBuiltInCategories: {
-                Rows: state.Sources.FACADBuiltInCategories.Rows,
-                Info: action.Result
+                ...state.Sources.FACADBuiltInCategories,
+                Info: action.Result,
               }
             }
           };

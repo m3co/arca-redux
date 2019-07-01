@@ -33,6 +33,29 @@ export interface ActionNotify<Target, Row> extends Action {
   Row: Row;
 }
 
+export interface ActionResponseDUI extends Action {
+  type: 'ResponseDUI';
+  Context: {
+    Source: string;
+  };
+  ID: string;
+  Method: 'Delete' | 'Update' | 'Insert';
+  Success: true;
+}
+
+export interface ActionRequestDUI extends Action {
+  type: 'RequestDUI';
+  Context: {
+    Source: string;
+  };
+  ID: string;
+  Method: 'Delete' | 'Update' | 'Insert';
+  Params: {
+    Row?: ArcaEntries["Row"];
+    PK?: ArcaEntries["PK"];
+  };
+}
+
 export interface ActionGetInfo extends Action {
   type: 'GetInfo';
   Context: {
@@ -110,7 +133,8 @@ ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
 ActionSelect<'FACAD-Schedules', FACADSchedules['Row']> |
 ActionSelect<'FACAD-CFT', FACADCFT['Row']>;
 
-export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | ArcaActionsSelect;
+export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | ArcaActionsSelect |
+  ActionRequestDUI | ActionResponseDUI;
 
 export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
 ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
@@ -119,27 +143,44 @@ ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-P
 ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']> |
 ResponseSelect<'FACAD-CFT', FACADCFT['Row']> | Notification<'FACAD-CFT', FACADCFT['Row']>;
 
+interface RequestResponses {
+  [ID: string]: {
+    Context: {
+      Source: string
+    },
+    Params: {
+      PK?: ArcaEntries["PK"],
+      Row?: ArcaEntries["Row"],
+    }
+  }
+};
+
 export interface ArcaState {
   Sources: {
     AAU: {
       Rows: AAU['Row'][];
       Info: ArcaInfo | null;
+      RequestResponses: RequestResponses;
     };
     FACADBuiltInCategories: {
       Rows: FACADBuiltInCategories['Row'][];
       Info: ArcaInfo | null;
+      RequestResponses: RequestResponses;
     };
     FACADParamsBIC: {
       Rows: FACADParamsBIC['Row'][];
       Info: ArcaInfo | null;
+      RequestResponses: RequestResponses;
     };
     FACADSchedules: {
       Rows: FACADSchedules['Row'][];
       Info: ArcaInfo | null;
+      RequestResponses: RequestResponses;
     };
     FACADCFT: {
       Rows: FACADCFT['Row'][];
       Info: ArcaInfo | null;
+      RequestResponses: RequestResponses;
     };
   };
   active: boolean;

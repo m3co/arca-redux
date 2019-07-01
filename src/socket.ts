@@ -8,7 +8,7 @@ import { Store } from 'redux'
 export class ArcaSocket {
   private io: SocketIOClient.Socket;
 
-  public constructor(store: Store<ArcaState, ArcaActions>) {
+  public constructor(private store: Store<ArcaState, ArcaActions>) {
     const io = this.io = Socket();
 
     io.on('connect', (): void => {
@@ -22,6 +22,17 @@ export class ArcaSocket {
         case 'Subscribe':
           break;
         case 'Unsubscribe':
+          break;
+        case 'Insert':
+        case 'Delete':
+        case 'Update':
+          store.dispatch({
+            type: 'ResponseDUI',
+            Context: response.Context,
+            Method: response.Method,
+            Success: true,
+            ID: response.ID
+          });
           break;
         case 'insert':
         case 'delete':
@@ -140,8 +151,9 @@ export class ArcaSocket {
   }
 
   public Insert(Source: string, Row: ArcaEntries["Row"]): void {
+    const ID = uuid4();
     this.io.emit('jsonrpc', {
-      ID: uuid4(),
+      ID,
       Context: {
         Source
       },
@@ -150,11 +162,23 @@ export class ArcaSocket {
         Row
       }
     });
+    this.store.dispatch({
+      type: 'RequestDUI',
+      Context: {
+        Source
+      },
+      ID,
+      Method: 'Insert',
+      Params: {
+        Row
+      }
+    });
   }
 
   public Delete(Source: string, PK: ArcaEntries["PK"]): void {
+    const ID = uuid4();
     this.io.emit('jsonrpc', {
-      ID: uuid4(),
+      ID,
       Context: {
         Source
       },
@@ -163,11 +187,23 @@ export class ArcaSocket {
         PK
       }
     });
+    this.store.dispatch({
+      type: 'RequestDUI',
+      Context: {
+        Source
+      },
+      ID,
+      Method: 'Delete',
+      Params: {
+        PK
+      }
+    });
   }
 
   public Update(Source: string, Entry: ArcaEntries): void {
+    const ID = uuid4();
     this.io.emit('jsonrpc', {
-      ID: uuid4(),
+      ID,
       Context: {
         Source
       },
@@ -175,6 +211,18 @@ export class ArcaSocket {
       Params: {
         Row: Entry.Row,
         PK: Entry.PK
+      }
+    });
+    this.store.dispatch({
+      type: 'RequestDUI',
+      Context: {
+        Source
+      },
+      ID,
+      Method: 'Update',
+      Params: {
+        PK: Entry.PK,
+        Row: Entry.Row,
       }
     });
   }
