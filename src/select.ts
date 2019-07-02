@@ -18,8 +18,8 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
           return { ...state,
             Sources: { ...state.Sources,
               AAU: {
-                Rows: Entries.Rows as AAU["Row"][],
                 ...state.Sources.AAU,
+                Rows: Entries.Rows as AAU["Row"][],
               }
             }
           };
@@ -27,8 +27,8 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
           return { ...state,
             Sources: { ...state.Sources,
               FACADParamsBIC: {
-                Rows: Entries.Rows as FACADParamsBIC["Row"][],
                 ...state.Sources.FACADParamsBIC,
+                Rows: Entries.Rows as FACADParamsBIC["Row"][],
               }
             }
           };
@@ -36,8 +36,8 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
           return { ...state,
             Sources: { ...state.Sources,
               FACADSchedules: {
-                Rows: Entries.Rows as FACADSchedules["Row"][],
                 ...state.Sources.FACADSchedules,
+                Rows: Entries.Rows as FACADSchedules["Row"][],
               }
             }
           };
@@ -45,8 +45,8 @@ export function Select(state: ArcaState = initialState, action: ArcaActions): Ar
             return { ...state,
               Sources: { ...state.Sources,
                 FACADCFT: {
-                  Rows: Entries.Rows as FACADCFT["Row"][],
                   ...state.Sources.FACADCFT,
+                  Rows: Entries.Rows as FACADCFT["Row"][],
                 }
               }
             };
