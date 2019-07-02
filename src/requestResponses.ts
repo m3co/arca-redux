@@ -3,6 +3,7 @@ import { initialState } from ".";
 
 
 export function RequestResponse(state: ArcaState = initialState, action: ArcaActions): ArcaState {
+  debugger;
   switch (action.type) {
     case 'ResponseDUI':
       let newState: ArcaState;
@@ -110,6 +111,25 @@ export function RequestResponse(state: ArcaState = initialState, action: ArcaAct
                 ...state.Sources.FACADCFT,
                 RequestResponses: {
                   ...state.Sources.FACADCFT.RequestResponses,
+                  [action.ID]: {
+                    Context: action.Context,
+                    Params: {
+                      PK: action.Params.PK,
+                      Row: action.Params.Row,
+                    },
+                  }
+                }
+              }
+            }
+          };
+        case 'FACAD-Schedules':
+          return { ...state,
+            Sources: {
+              ...state.Sources,
+              FACADSchedules: {
+                ...state.Sources.FACADSchedules,
+                RequestResponses: {
+                  ...state.Sources.FACADSchedules.RequestResponses,
                   [action.ID]: {
                     Context: action.Context,
                     Params: {
