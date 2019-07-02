@@ -143,7 +143,7 @@ ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-P
 ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']> |
 ResponseSelect<'FACAD-CFT', FACADCFT['Row']> | Notification<'FACAD-CFT', FACADCFT['Row']>;
 
-interface RequestResponses {
+export interface RequestResponses {
   [ID: string]: {
     Context: {
       Source: string
