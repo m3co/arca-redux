@@ -20,6 +20,7 @@ export function RequestResponse(state: ArcaState = initialState, action: ArcaAct
             }
           };
           delete newState.Sources.AAU.RequestResponses[action.ID];
+          break;
         case 'FACAD-BuiltInCategories':
           newState = { ...state,
             Sources: {
@@ -33,6 +34,7 @@ export function RequestResponse(state: ArcaState = initialState, action: ArcaAct
             }
           };
           delete newState.Sources.FACADBuiltInCategories.RequestResponses[action.ID];
+          break;
         case 'FACAD-ParamsBIC':
           newState = { ...state,
             Sources: {
@@ -46,6 +48,7 @@ export function RequestResponse(state: ArcaState = initialState, action: ArcaAct
             }
           };
           delete newState.Sources.FACADParamsBIC.RequestResponses[action.ID];
+          break;
         case 'FACAD-Schedules':
           newState = { ...state,
             Sources: {
@@ -59,6 +62,7 @@ export function RequestResponse(state: ArcaState = initialState, action: ArcaAct
             }
           };
           delete newState.Sources.FACADSchedules.RequestResponses[action.ID];
+          break;
         case 'FACAD-CFT':
           newState = { ...state,
             Sources: {
@@ -72,6 +76,7 @@ export function RequestResponse(state: ArcaState = initialState, action: ArcaAct
             }
           };
           delete newState.Sources.FACADCFT.RequestResponses[action.ID];
+          break;
         default:
           newState = state;
       };
