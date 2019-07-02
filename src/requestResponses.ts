@@ -3,7 +3,6 @@ import { initialState } from ".";
 
 
 export function RequestResponse(state: ArcaState = initialState, action: ArcaActions): ArcaState {
-  debugger;
   switch (action.type) {
     case 'ResponseDUI':
       let newState: ArcaState;
