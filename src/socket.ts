@@ -246,4 +246,16 @@ export class ArcaSocket {
       },
     });
   }
+
+  public Search(Source: string, _Params: any, Target: string): void {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Method: 'Search',
+      Context: {
+        Source,
+        Target
+      },
+      Params:{ ..._Params }
+    });
+  }
 }
