@@ -247,7 +247,7 @@ export class ArcaSocket {
     });
   }
 
-  public Search(Source: string, _Params: any, Target: string): void {
+  public Search(Source: string, Target: string, _SearchBy: any, _Fixed?: any): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'Search',
@@ -255,7 +255,10 @@ export class ArcaSocket {
         Source,
         Target
       },
-      Params:{ ..._Params }
+      Params:{
+        Fixed: { ..._Fixed },
+        SearchBy: { ..._SearchBy },
+      },
     });
   }
 }
