@@ -1,8 +1,9 @@
 
-import { ArcaState, ArcaActions, AAU } from './types';
+import { ArcaState, ArcaActions } from './types';
 import { Notify } from './notify';
 import { Select } from './select';
 import { Getinfo } from './getInfo';
+import { Search } from './search';
 import { RequestResponse } from './requestResponses';
 
 export { ArcaSocket } from './socket';
@@ -55,6 +56,8 @@ export function Reducer(state: ArcaState = initialState, action: ArcaActions): A
       return Select(state, action);
     case 'GetInfo':
       return Getinfo(state, action);
+    case 'Search':
+      return Search(state, action);
     default:
       return state;
   }

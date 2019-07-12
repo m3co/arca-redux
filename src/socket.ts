@@ -133,6 +133,13 @@ export class ArcaSocket {
             Result: response.Result
           });
           break;
+        case 'Search':
+          store.dispatch({
+            type: response.Method,
+            Context: response.Context,
+            Result: response.Result,
+          });
+          break;
         default:
           console.log(response, 'unprocessed');
           break;
@@ -247,18 +254,16 @@ export class ArcaSocket {
     });
   }
 
-  public Search(Source: string, Target: string, _SearchBy: any, _Fixed?: any): void {
+  public Search(Source: string, Target: string, Field: string, _Params: any): void {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'Search',
       Context: {
         Source,
-        Target
+        Target,
+        Field
       },
-      Params:{
-        Fixed: { ..._Fixed },
-        SearchBy: { ..._SearchBy },
-      },
+      Params:{ ..._Params },
     });
   }
 }

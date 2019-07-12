@@ -68,6 +68,27 @@ export interface ActionStatus extends Action {
   type: 'Connect' | 'Disconnect';
 }
 
+export interface ActionSearch extends Action {
+  type: 'Search';
+  Context: {
+    Source: string;
+    Target: string;
+    Field: string;
+  };
+  Result: ArcaEntries["Row"][];
+}
+
+export interface ResponseSearch {
+  Context: {
+    Source: string;
+    Target: string;
+    Field: string;
+  }
+  ID: string;
+  Method: 'Search';
+  Result: ArcaEntries["Row"][];
+}
+
 export interface ResponseSubscribeUnsubscribe {
   Context: {
     Target: string;
@@ -134,9 +155,10 @@ ActionSelect<'FACAD-Schedules', FACADSchedules['Row']> |
 ActionSelect<'FACAD-CFT', FACADCFT['Row']>;
 
 export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | ArcaActionsSelect |
-  ActionRequestDUI | ActionResponseDUI;
+  ActionRequestDUI | ActionResponseDUI | ActionSearch;
 
-export type ArcaResponses = ResponseSubscribeUnsubscribe | ResponseGetInfo | ResponseDUI |
+export type ArcaResponses = ResponseSearch | ResponseSubscribeUnsubscribe | 
+ResponseGetInfo | ResponseDUI |
 ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
 ResponseSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> | Notification<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
 ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
@@ -181,6 +203,11 @@ export interface ArcaState {
       Rows: FACADCFT['Row'][];
       Info: ArcaInfo | null;
       RequestResponses: RequestResponses;
+      Search?: {
+        KeynoteField?: FACADParamsBIC['Row'][];
+        ConstraintField?: FACADParamsBIC['Row'][];
+        QuantityField?: FACADParamsBIC['Row'][];
+      }
     };
   };
   active: boolean;
