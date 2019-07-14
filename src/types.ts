@@ -13,6 +13,8 @@ export interface ArcaInfo {
     Primary: boolean;
     Required: boolean;
     Type: string;
+    Select?: any;
+    Combobox?: any;
   }[];
 }
 
@@ -193,6 +195,9 @@ export interface ArcaState {
       Rows: FACADParamsBIC['Row'][];
       Info: ArcaInfo | null;
       RequestResponses: RequestResponses;
+      Search?: {
+        BuiltInCategory?: FACADBuiltInCategories['Row']
+      }
     };
     FACADSchedules: {
       Rows: FACADSchedules['Row'][];
@@ -204,6 +209,7 @@ export interface ArcaState {
       Info: ArcaInfo | null;
       RequestResponses: RequestResponses;
       Search?: {
+        Key?: AAU['Row'];
         KeynoteField?: FACADParamsBIC['Row'][];
         ConstraintField?: FACADParamsBIC['Row'][];
         QuantityField?: FACADParamsBIC['Row'][];

@@ -8,7 +8,6 @@
     "sourceMap": true,
     "inlineSources": true,
     "strict": true,
-    "noImplicitAny": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
     "esModuleInterop": true
