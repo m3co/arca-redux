@@ -226,7 +226,7 @@ export interface AAU {
     Expand: boolean;
     Description: string;
     Unit: string;
-    Price: number;
+    Estimated: number;
     P: number;
   };
   PK: {
