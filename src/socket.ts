@@ -1,250 +1,28 @@
 
 import Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
-import { ArcaState, ArcaActions, ArcaResponses, ArcaEntries,
-  AAU, FACADParamsBIC, FACADSchedules, FACADCFT } from './types';
-import { Store } from 'redux'
+import { Store } from 'redux';
 
-export class ArcaSocket {
-  private io: SocketIOClient.Socket;
+import { Field, Model, Row, State } from './types';
+import { handleResponse } from './socket-handleResponse';
 
-  public constructor(private store: Store<ArcaState, ArcaActions>) {
-    const io = this.io = Socket();
+export class ARCASocket {
+  public readonly store: Store<State>;
+  private readonly io: SocketIOClient.Socket;
 
-    io.on('connect', (): void => {
-      store.dispatch({
+  public constructor(store: Store, io = Socket()) {
+    this.store = store;
+    this.io = io;
+    this.io.on('connect', (): void => {
+      this.store.dispatch({
         type: 'Connect'
       });
     });
 
-    io.on('jsonrpc', (response: ArcaResponses): void => {
-      switch (response.Method) {
-        case 'Subscribe':
-          break;
-        case 'Unsubscribe':
-          break;
-        case 'Insert':
-        case 'Delete':
-        case 'Update':
-          store.dispatch({
-            type: 'ResponseDUI',
-            Context: response.Context,
-            Method: response.Method,
-            Success: true,
-            ID: response.ID
-          });
-          break;
-        case 'insert':
-        case 'delete':
-        case 'update':
-          switch (response.Context.Target) {
-            case 'AAU':
-              store.dispatch({
-                type: 'Notify',
-                Context: {
-                  Target: response.Context.Target
-                },
-                Method: response.Method,
-                Row: response.Row as AAU["Row"]
-              });
-              break;
-            case 'FACAD-ParamsBIC':
-              store.dispatch({
-                type: 'Notify',
-                Context: {
-                  Target: response.Context.Target
-                },
-                Method: response.Method,
-                Row: response.Row as FACADParamsBIC["Row"]
-              });
-              break;
-            case 'FACAD-Schedules':
-              store.dispatch({
-                type: 'Notify',
-                Context: {
-                  Target: response.Context.Target
-                },
-                Method: response.Method,
-                Row: response.Row as FACADSchedules["Row"]
-              });
-              break;
-            case 'FACAD-CFT':
-              store.dispatch({
-                type: 'Notify',
-                Context: {
-                  Target: response.Context.Target
-                },
-                Method: response.Method,
-                Row: response.Row as FACADCFT["Row"]
-              });
-              break;
-            default:
-              break;
-          }
-          break;
-        case 'Select':
-          switch (response.Context.Source) {
-            case 'AAU':
-              store.dispatch({
-                type: 'Select',
-                Context: {
-                  Source: response.Context.Source
-                },
-                Result: response.Result as AAU["Row"][]
-              });
-              break;
-            case 'FACAD-ParamsBIC':
-              store.dispatch({
-                type: 'Select',
-                Context: {
-                  Source: response.Context.Source
-                },
-                Result: response.Result as FACADParamsBIC["Row"][]
-              });
-              break;
-            case 'FACAD-Schedules':
-              store.dispatch({
-                type: 'Select',
-                Context: {
-                  Source: response.Context.Source
-                },
-                Result: response.Result as FACADSchedules["Row"][]
-              });
-              break;
-            case 'FACAD-CFT':
-              store.dispatch({
-                type: 'Select',
-                Context: {
-                  Source: response.Context.Source
-                },
-                Result: response.Result as FACADCFT["Row"][]
-              });
-              break;
-            default:
-              break;
-          }
-          break;
-        case 'GetInfo':
-          store.dispatch({
-            type: response.Method,
-            Context: {
-              Source: response.Context.Source
-            },
-            Result: response.Result
-          });
-          break;
-        case 'Search':
-          store.dispatch({
-            type: response.Method,
-            Context: response.Context,
-            Result: response.Result,
-          });
-          break;
-        default:
-          console.log(response, 'unprocessed');
-          break;
-      }
-    });
+    this.io.on('jsonrpc', handleResponse(store));
   }
 
-  public Select(Source: string): void {
-    this.io.emit('jsonrpc', {
-      ID: uuid4(),
-      Context: {
-        Source
-      },
-      Method: 'Select'
-    });
-  }
-
-  public Insert(Source: string, Row: ArcaEntries["Row"]): void {
-    const ID = uuid4();
-    this.io.emit('jsonrpc', {
-      ID,
-      Context: {
-        Source
-      },
-      Method: 'Insert',
-      Params: {
-        Row
-      }
-    });
-    this.store.dispatch({
-      type: 'RequestDUI',
-      Context: {
-        Source
-      },
-      ID,
-      Method: 'Insert',
-      Params: {
-        Row
-      }
-    });
-  }
-
-  public Delete(Source: string, PK: ArcaEntries["PK"]): void {
-    const ID = uuid4();
-    this.io.emit('jsonrpc', {
-      ID,
-      Context: {
-        Source
-      },
-      Method: 'Delete',
-      Params: {
-        PK
-      }
-    });
-    this.store.dispatch({
-      type: 'RequestDUI',
-      Context: {
-        Source
-      },
-      ID,
-      Method: 'Delete',
-      Params: {
-        PK
-      }
-    });
-  }
-
-  public Update(Source: string, Entry: ArcaEntries): void {
-    const ID = uuid4();
-    this.io.emit('jsonrpc', {
-      ID,
-      Context: {
-        Source
-      },
-      Method: 'Update',
-      Params: {
-        Row: Entry.Row,
-        PK: Entry.PK
-      }
-    });
-    this.store.dispatch({
-      type: 'RequestDUI',
-      Context: {
-        Source
-      },
-      ID,
-      Method: 'Update',
-      Params: {
-        PK: Entry.PK,
-        Row: Entry.Row,
-      }
-    });
-  }
-
-  public Subscribe(Target: string): void {
-    this.io.emit('jsonrpc', {
-      ID: uuid4(),
-      Method: 'Subscribe',
-      Params: {
-        Target
-      },
-    });
-  }
-
-  public GetInfo(Source: string): void {
+  public GetInfo = (Source: keyof State["Source"]): void => {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'GetInfo',
@@ -254,16 +32,104 @@ export class ArcaSocket {
     });
   }
 
-  public Search(Source: string, Target: string, Field: string, _Params: any): void {
+  public Select = (Source: keyof State["Source"]): void => {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
-      Method: 'Search',
+      Method: 'Select',
       Context: {
-        Source,
-        Target,
-        Field
+        Source
       },
-      Params:{ ..._Params },
     });
+  }
+
+  public Subscribe = (Target: keyof State["Source"]): void => {
+    this.io.emit('jsonrpc', {
+      ID: uuid4(),
+      Method: 'Subscribe',
+      Params: {
+        Target
+      },
+    });
+  }
+
+  public Delete = (Source: keyof State["Source"], row: Row, ID?: string): void => {
+    const state = this.store.getState();
+    const { Info } = state.Source[Source];
+    if (Info) {
+      const columnsPK = Info.Fields
+        .filter((field: Field): boolean => field.Primary)
+        .map((field: Field): keyof Model["PK"] => field.Name as keyof Model["PK"]);
+      const PK = columnsPK.reduce((acc: Model["PK"], column) => {
+        acc[column] = row[column];
+        return acc;
+      }, {} as Model["PK"]);
+      const request = {
+        ID: ID || uuid4(),
+        Context: {
+          Source
+        },
+        Method: 'Delete',
+        Params: {
+          PK
+        }
+      };
+      this.store.dispatch({
+        Source,
+        type: 'Delete',
+        ID: request.ID,
+      });
+      this.io.emit('jsonrpc', request);
+    }
+  }
+
+  public Update = (Source: keyof State["Source"], row: Row, ID?: string): void => {
+    const state = this.store.getState();
+    const { Info } = state.Source[Source];
+    if (Info) {
+      const columnsPK = Info.Fields
+        .filter((field: Field): boolean => field.Primary)
+        .map((field: Field): keyof Model["PK"] => field.Name as keyof Model["PK"]);
+      const PK = columnsPK.reduce((acc: Model["PK"], column) => {
+        acc[column] = row[column];
+        return acc;
+      }, {} as Model["PK"]);
+      const request = {
+        ID: ID || uuid4(),
+        Context: {
+          Source
+        },
+        Method: 'Update',
+        Params: {
+          Row: row,
+          PK: PK,
+        }
+      };
+      this.store.dispatch({
+        Source,
+        type: 'Update',
+        ID: request.ID,
+      });
+      this.io.emit('jsonrpc', request);
+    }
+  }
+
+  public Insert = (Source: keyof State["Source"], row: Row, ID?: string): string => {
+    const request = {
+      ID: ID || uuid4(),
+      Context: {
+        Source
+      },
+      Method: 'Insert',
+      Params: {
+        Row: row
+      }
+    }
+    this.io.emit('jsonrpc', request);
+    this.store.dispatch({
+      Source,
+      type: 'Insert',
+      ID: request.ID,
+    });
+    return request.ID;
   }
 }

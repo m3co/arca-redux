@@ -8,8 +8,14 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
+  settings: {
+    react: {
+        version: require('./package.json').dependencies.react,
+    },
+  },
   rules: {
-    indent: "off",
+    // note you must disable the base rule as it can report incorrect errors
+    "indent": "off",
     "@typescript-eslint/indent": ["error", 2]
   }
 }

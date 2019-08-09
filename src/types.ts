@@ -1,296 +1,73 @@
 
-import { Action } from 'redux';
+import {
+  FACADBuiltInCategories,
+  FACADParamsBIC,
+  FACADSchedules,
+  FACADCFT
+} from './types-models';
 
-export interface ArcaInfo {
-  Actions: {
-    Insert: boolean;
-    Update: boolean;
-    Delete: boolean;
-  };
-  Fields: {
-    Editable: boolean;
-    Name: string;
-    Primary: boolean;
-    Required: boolean;
-    Type: string;
-    Select?: any;
-    Combobox?: any;
-  }[];
-}
+export * from './types-models';
 
-export interface ActionSelect<Source, Row> extends Action {
-  type: 'Select';
-  Context: {
-    Source: Source;
-  };
-  Result: Row[];
-}
-
-export interface ActionNotify<Target, Row> extends Action {
-  type: 'Notify';
-  Context: {
-    Target: Target;
-  };
-  Method: 'delete' | 'update' | 'insert';
-  Row: Row;
-}
-
-export interface ActionResponseDUI extends Action {
-  type: 'ResponseDUI';
-  Context: {
-    Source: string;
-  };
-  ID: string;
-  Method: 'Delete' | 'Update' | 'Insert';
-  Success: true;
-}
-
-export interface ActionRequestDUI extends Action {
-  type: 'RequestDUI';
-  Context: {
-    Source: string;
-  };
-  ID: string;
-  Method: 'Delete' | 'Update' | 'Insert';
-  Params: {
-    Row?: ArcaEntries["Row"];
-    PK?: ArcaEntries["PK"];
-  };
-}
-
-export interface ActionGetInfo extends Action {
-  type: 'GetInfo';
-  Context: {
-    Source: string;
-  };
-  Result: ArcaInfo;
-}
-
-export interface ActionStatus extends Action {
-  type: 'Connect' | 'Disconnect';
-}
-
-export interface ActionSearch extends Action {
-  type: 'Search';
-  Context: {
-    Source: string;
-    Target: string;
-    Field: string;
-  };
-  Result: ArcaEntries["Row"][];
-}
-
-export interface ResponseSearch {
-  Context: {
-    Source: string;
-    Target: string;
-    Field: string;
-  }
-  ID: string;
-  Method: 'Search';
-  Result: ArcaEntries["Row"][];
-}
-
-export interface ResponseSubscribeUnsubscribe {
-  Context: {
-    Target: string;
-  } | {
-    Source: string;
-  };
-  ID: string;
-  Method: 'Subscribe' | 'Unsubscribe';
-  Result: 'Success';
-}
-
-export interface ResponseGetInfo {
-  Context: {
-    Source: string;
-  };
-  ID: string;
-  Method: 'GetInfo';
-  Result: ArcaInfo;
-}
-
-export interface ResponseDUI {
-  Context: {
-    Source: string;
-  };
-  ID: string;
-  Method: 'Delete' | 'Update' | 'Insert';
-  Result: {
-    Success: boolean;
-  };
-}
-
-export interface ResponseSelect<Source, Row> {
-  Context: {
-    Source: Source;
-  };
-  ID: string;
-  Method: 'Select';
-  Result: Row[];
-}
-
-export interface Notification<Target, Row> {
-  Context: {
-    Db: string;
-    Notification: true;
-    Source: string;
-    Target: Target;
-  };
-  Method: 'delete' | 'update' | 'insert';
-  Row: Row;
-}
-
-export type ArcaActionsNotify =
-  ActionNotify<'AAU', AAU['Row']> |
-  ActionNotify<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
-  ActionNotify<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-  ActionNotify<'FACAD-Schedules', FACADSchedules['Row']> |
-  ActionNotify<'FACAD-CFT', FACADCFT['Row']>;
-
-export type ArcaActionsSelect =
-ActionSelect<'AAU', AAU['Row']> |
-ActionSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
-ActionSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-ActionSelect<'FACAD-Schedules', FACADSchedules['Row']> |
-ActionSelect<'FACAD-CFT', FACADCFT['Row']>;
-
-export type ArcaActions = ActionStatus | ActionGetInfo | ArcaActionsNotify | ArcaActionsSelect |
-  ActionRequestDUI | ActionResponseDUI | ActionSearch;
-
-export type ArcaResponses = ResponseSearch | ResponseSubscribeUnsubscribe | 
-ResponseGetInfo | ResponseDUI |
-ResponseSelect<'AAU', AAU['Row']> | Notification<'AAU', AAU['Row']> |
-ResponseSelect<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> | Notification<'FACAD-BuiltInCategories', FACADBuiltInCategories['Row']> |
-ResponseSelect<'FACAD-ParamsBIC', FACADParamsBIC['Row']> | Notification<'FACAD-ParamsBIC', FACADParamsBIC['Row']> |
-ResponseSelect<'FACAD-Schedules', FACADSchedules['Row']> | Notification<'FACAD-Schedules', FACADSchedules['Row']> |
-ResponseSelect<'FACAD-CFT', FACADCFT['Row']> | Notification<'FACAD-CFT', FACADCFT['Row']>;
-
-export interface RequestResponses {
-  [ID: string]: {
-    Context: {
-      Source: string
-    },
-    Params: {
-      PK?: ArcaEntries["PK"],
-      Row?: ArcaEntries["Row"],
-    }
-  }
+export interface Field {
+  Select?: {} | null;
+  Combobox?: {} | null;
+  Editable: boolean;
+  Name: string;
+  Primary: boolean;
+  Required: boolean;
+  Type: string;
 };
 
-export interface ArcaState {
-  Sources: {
-    AAU: {
-      Rows: AAU['Row'][];
-      Info: ArcaInfo | null;
-      RequestResponses: RequestResponses;
-    };
-    FACADBuiltInCategories: {
-      Rows: FACADBuiltInCategories['Row'][];
-      Info: ArcaInfo | null;
-      RequestResponses: RequestResponses;
-    };
-    FACADParamsBIC: {
-      Rows: FACADParamsBIC['Row'][];
-      Info: ArcaInfo | null;
-      RequestResponses: RequestResponses;
-      Search?: {
-        BuiltInCategory?: FACADBuiltInCategories['Row']
-      }
-    };
-    FACADSchedules: {
-      Rows: FACADSchedules['Row'][];
-      Info: ArcaInfo | null;
-      RequestResponses: RequestResponses;
-    };
-    FACADCFT: {
-      Rows: FACADCFT['Row'][];
-      Info: ArcaInfo | null;
-      RequestResponses: RequestResponses;
-      Search?: {
-        Key?: AAU['Row'];
-        KeynoteField?: FACADParamsBIC['Row'][];
-        ConstraintField?: FACADParamsBIC['Row'][];
-        QuantityField?: FACADParamsBIC['Row'][];
-      }
-    };
+export interface Info {
+  Actions: {
+    Delete: boolean;
+    Insert: boolean;
+    Update: boolean;
   };
-  active: boolean;
-}
+  Fields: Field[];
+};
 
-export interface AAU {
-  Row: {
-    Key: string;
-    Parent: string;
-    Expand: boolean;
-    Description: string;
-    Unit: string;
-    Estimated: number;
-    P: number;
-  };
-  PK: {
-    Key: string;
-  };
-}
+export type Row =
+  FACADSchedules["Row"] |
+  FACADParamsBIC["Row"] |
+  FACADCFT["Row"] |
+  FACADBuiltInCategories["Row"];
 
-export type ReportType = 'Schedule' | 'MaterialTakeoff' | 'KeynoteLegend' | 'KeySchedule' | 'RevisionSchedule' | 'NoteBlock';
-
-export interface FACADBuiltInCategories {
-  Row: {
-    BuiltInCategory: string;
-  };
-  PK: {
-    BuiltInCategory: string;
-  };
-}
-
-export interface FACADParamsBIC {
-  Row: {
-    ReportType: ReportType;
-    BuiltInCategory: string;
-    Field: string;
-  };
-  PK: {
-    ReportType: ReportType;
-    BuiltInCategory: string;
-    Field: string;
-  };
-}
-
-export interface FACADSchedules {
-  Row: {
-    ID: number;
-    Name: string;
-    BuiltInCategory: string;
-    PathName: string;
-  };
-  PK: {
-    ID: number;
-  };
-}
-
-export interface FACADCFT {
-  Row: {
-    ID: number
-    Project: number
-    Category: string
-    FamilyType: string
-    Key: string
-    KeynoteField: string
-    ConstraintField: string
-    QuantityField: string
-    BuiltInCategory: string
-    ReportType: string
-  }
-  PK: {
-    ID: number;
-  };
-}
-
-export type ArcaEntries =
-  AAU |
-  FACADBuiltInCategories |
-  FACADParamsBIC |
+export type Model =
   FACADSchedules |
-  FACADCFT;
+  FACADParamsBIC |
+  FACADCFT |
+  FACADBuiltInCategories;
+
+export interface State {
+  Connected: boolean;
+  Source: {
+    'FACAD-Schedules': {
+      Rows: FACADSchedules["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'FACAD-ParamsBIC': {
+      Rows: FACADParamsBIC["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'FACAD-CFT': {
+      Rows: FACADCFT["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'FACAD-BuiltInCategories': {
+      Rows: FACADBuiltInCategories["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+  };
+};
+
+export { Action } from './types-actions';
+export { Response } from './types-responses';

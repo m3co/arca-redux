@@ -1,0 +1,2881 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Retreive Select of FACAD-BuiltInCategories 1`] = `
+Array [
+  Object {
+    "BuiltInCategory": "INVALID",
+  },
+  Object {
+    "BuiltInCategory": "OST_AdaptivePoints",
+  },
+  Object {
+    "BuiltInCategory": "OST_AdaptivePoints_HiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_AdaptivePoints_Lines",
+  },
+  Object {
+    "BuiltInCategory": "OST_AdaptivePoints_Planes",
+  },
+  Object {
+    "BuiltInCategory": "OST_AdaptivePoints_Points",
+  },
+  Object {
+    "BuiltInCategory": "OST_AlwaysExcludedInAllViews",
+  },
+  Object {
+    "BuiltInCategory": "OST_Analemma",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalysisDisplayStyle",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalysisResults",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticalNodes",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticalNodes_Lines",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticalNodes_Planes",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticalNodes_Points",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticalRigidLinks",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticSpaces",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnalyticSurfaces",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnnotationCrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_AnnotationCropSpecial",
+  },
+  Object {
+    "BuiltInCategory": "OST_AppearanceAsset",
+  },
+  Object {
+    "BuiltInCategory": "OST_ArcWallRectOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaColorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaInteriorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaInteriorFillVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaLoadTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaPolylines",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReference",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReferenceVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaRein",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReinBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReinSketchOverride",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReinSpanSymbol",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReinTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReinXVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReport_Arc_Minus",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReport_Arc_Plus",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReport_Boundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaReport_Triangle",
+  },
+  Object {
+    "BuiltInCategory": "OST_Areas",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaSchemeLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaSchemes",
+  },
+  Object {
+    "BuiltInCategory": "OST_AreaTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Assemblies",
+  },
+  Object {
+    "BuiltInCategory": "OST_AssemblyOrigin",
+  },
+  Object {
+    "BuiltInCategory": "OST_AssemblyOrigin_Lines",
+  },
+  Object {
+    "BuiltInCategory": "OST_AssemblyOrigin_Planes",
+  },
+  Object {
+    "BuiltInCategory": "OST_AssemblyOrigin_Points",
+  },
+  Object {
+    "BuiltInCategory": "OST_AssemblyTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Automatic",
+  },
+  Object {
+    "BuiltInCategory": "OST_AxisOfRotation",
+  },
+  Object {
+    "BuiltInCategory": "OST_AxisX",
+  },
+  Object {
+    "BuiltInCategory": "OST_AxisY",
+  },
+  Object {
+    "BuiltInCategory": "OST_AxisZ",
+  },
+  Object {
+    "BuiltInCategory": "OST_BasePointAxisX",
+  },
+  Object {
+    "BuiltInCategory": "OST_BasePointAxisY",
+  },
+  Object {
+    "BuiltInCategory": "OST_BasePointAxisZ",
+  },
+  Object {
+    "BuiltInCategory": "OST_BeamAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_BeamAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_BeamEndSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_BeamLocalCoordSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_BeamStartSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_BeamSystemTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Blocks",
+  },
+  Object {
+    "BuiltInCategory": "OST_BoundaryConditions",
+  },
+  Object {
+    "BuiltInCategory": "OST_BraceAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_BraceAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_BraceEndSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_BraceLocalCoordSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_BraceStartSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_BranchPanelScheduleTemplates",
+  },
+  Object {
+    "BuiltInCategory": "OST_BrokenSectionLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_BuildingPad",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTray",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayFitting",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayFittingCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayFittingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayRiseDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayRun",
+  },
+  Object {
+    "BuiltInCategory": "OST_CableTrayTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Cage",
+  },
+  Object {
+    "BuiltInCategory": "OST_CalloutBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_CalloutHeads",
+  },
+  Object {
+    "BuiltInCategory": "OST_CalloutLeaderLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_Callouts",
+  },
+  Object {
+    "BuiltInCategory": "OST_Camera_Lines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Cameras",
+  },
+  Object {
+    "BuiltInCategory": "OST_Casework",
+  },
+  Object {
+    "BuiltInCategory": "OST_CaseworkHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CaseworkTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Catalogs",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_Ceilings",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsCutPattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsDefault",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsFinish1",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsFinish2",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsMembrane",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsStructure",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsSubstrate",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingsSurfacePattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_CeilingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_CenterLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CloudLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColorFillLegends",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColorFillSchema",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnAnalyticalGeometry",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnAnalyticalRigidLinks",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnEndSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnLocalCoordSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_Columns",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ColumnStartSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_CommunicationDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_CommunicationDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_CompassInner",
+  },
+  Object {
+    "BuiltInCategory": "OST_CompassOuter",
+  },
+  Object {
+    "BuiltInCategory": "OST_CompassPrimaryMonth",
+  },
+  Object {
+    "BuiltInCategory": "OST_CompassSecondaryMonth",
+  },
+  Object {
+    "BuiltInCategory": "OST_CompassSection",
+  },
+  Object {
+    "BuiltInCategory": "OST_CompassSectionFilled",
+  },
+  Object {
+    "BuiltInCategory": "OST_ComponentRepeater",
+  },
+  Object {
+    "BuiltInCategory": "OST_ComponentRepeaterSlot",
+  },
+  Object {
+    "BuiltInCategory": "OST_Conduit",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitFitting",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitFittingCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitFittingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitRiseDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitRun",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitStandards",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConduitTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConnectorElem",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConnectorElemXAxis",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConnectorElemYAxis",
+  },
+  Object {
+    "BuiltInCategory": "OST_ConnectorElemZAxis",
+  },
+  Object {
+    "BuiltInCategory": "OST_Constraints",
+  },
+  Object {
+    "BuiltInCategory": "OST_ContourLabels",
+  },
+  Object {
+    "BuiltInCategory": "OST_ControlAxisX",
+  },
+  Object {
+    "BuiltInCategory": "OST_ControlAxisY",
+  },
+  Object {
+    "BuiltInCategory": "OST_ControlAxisZ",
+  },
+  Object {
+    "BuiltInCategory": "OST_ControlLocal",
+  },
+  Object {
+    "BuiltInCategory": "OST_CoordinateSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_Cornices",
+  },
+  Object {
+    "BuiltInCategory": "OST_CoverType",
+  },
+  Object {
+    "BuiltInCategory": "OST_CropBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_CropBoundarySpecial",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainGrids",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainGridsCurtaSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainGridsRoof",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainGridsSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainGridsWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_Curtain_Systems",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainWallMullions",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainWallMullionsCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainWallMullionsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainWallPanels",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainWallPanelsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtainWallPanelTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtaSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtaSystemFaceManager",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtaSystemHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurtaSystemTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Curves",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurvesMediumLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurvesThinLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CurvesWideLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_CutOutlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DataDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_DataDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DataPanelScheduleTemplates",
+  },
+  Object {
+    "BuiltInCategory": "OST_DecalElement",
+  },
+  Object {
+    "BuiltInCategory": "OST_DecalType",
+  },
+  Object {
+    "BuiltInCategory": "OST_DemolishedLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DesignOptions",
+  },
+  Object {
+    "BuiltInCategory": "OST_DesignOptionSets",
+  },
+  Object {
+    "BuiltInCategory": "OST_DetailArray",
+  },
+  Object {
+    "BuiltInCategory": "OST_DetailComponents",
+  },
+  Object {
+    "BuiltInCategory": "OST_DetailComponentsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DetailComponentTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Dimensions",
+  },
+  Object {
+    "BuiltInCategory": "OST_DimLockControlLeader",
+  },
+  Object {
+    "BuiltInCategory": "OST_DirectionEdgeLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DisplacementElements",
+  },
+  Object {
+    "BuiltInCategory": "OST_DisplacementPath",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedPath",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurfaceBelt",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_DiscardedDivisionLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_Gridlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_Nodes",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_PatternFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_PatternLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_PreDividedSurface",
+  },
+  Object {
+    "BuiltInCategory": "OST_DividedSurface_TransparentFace",
+  },
+  Object {
+    "BuiltInCategory": "OST_DivisionProfile",
+  },
+  Object {
+    "BuiltInCategory": "OST_DivisionRules",
+  },
+  Object {
+    "BuiltInCategory": "OST_Divisions",
+  },
+  Object {
+    "BuiltInCategory": "OST_Doors",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsFrameMullionCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsFrameMullionProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsGlassCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsGlassProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsOpeningCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsOpeningProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsPanelCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorsPanelProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_DoorTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DormerOpeningIncomplete",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_ArrowHeadStyleId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_CenterlinePatternCatId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_CenterlineTickMarkStyleId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_DimStyleHeavyEndCategoryId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_DimStyleHeavyEndCatId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_DimStyleTickCategoryId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_InteriorTickMarkStyleId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_LeaderTickMarkStyleId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_LineAndTextAttrCategoryId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DSR_LineAndTextAttrFontId",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctAccessory",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctAccessoryTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctColorFillLegends",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctColorFills",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurves",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurvesCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurvesContour",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurvesDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurvesInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurvesLining",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctCurvesRiseDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctFitting",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctFittingCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctFittingInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctFittingLining",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctFittingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctInsulations",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctInsulationsTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctLinings",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctLiningsTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctSystem_Reference",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctSystem_Reference_Visibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctTerminal",
+  },
+  Object {
+    "BuiltInCategory": "OST_DuctTerminalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_EAConstructions",
+  },
+  Object {
+    "BuiltInCategory": "OST_EdgeSlab",
+  },
+  Object {
+    "BuiltInCategory": "OST_EditCutProfile",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElecDistributionSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalCircuit",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalCircuitTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalDemandFactor",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalDemandFactorDefinitions",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalEquipment",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalEquipmentHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalEquipmentTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalFixtures",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalFixturesHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalFixtureTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalInternalCircuits",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalLoadClassifications",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElectricalVoltage",
+  },
+  Object {
+    "BuiltInCategory": "OST_Elev",
+  },
+  Object {
+    "BuiltInCategory": "OST_ElevationMarks",
+  },
+  Object {
+    "BuiltInCategory": "OST_Entourage",
+  },
+  Object {
+    "BuiltInCategory": "OST_EntourageHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_EPS_Demolished",
+  },
+  Object {
+    "BuiltInCategory": "OST_EPS_Existing",
+  },
+  Object {
+    "BuiltInCategory": "OST_EPS_Future",
+  },
+  Object {
+    "BuiltInCategory": "OST_EPS_New",
+  },
+  Object {
+    "BuiltInCategory": "OST_EPS_Temporary",
+  },
+  Object {
+    "BuiltInCategory": "OST_Extrusions",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricAreaBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricAreas",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricAreaSketchEnvelopeLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricAreaSketchSheetsLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricAreaTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationParts",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartsCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartsInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartsTmpGraphicDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartsTmpGraphicDropDrag",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartsTmpGraphicRise",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartsTmpGraphicRiseDrag",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationPartTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricationServiceElements",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricReinforcement",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricReinforcementBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricReinforcementTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricReinforcementWire",
+  },
+  Object {
+    "BuiltInCategory": "OST_FabricReinSpanSymbol",
+  },
+  Object {
+    "BuiltInCategory": "OST_FaceSplitter",
+  },
+  Object {
+    "BuiltInCategory": "OST_Fascia",
+  },
+  Object {
+    "BuiltInCategory": "OST_FilledRegion",
+  },
+  Object {
+    "BuiltInCategory": "OST_FillPatterns",
+  },
+  Object {
+    "BuiltInCategory": "OST_FireAlarmDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_FireAlarmDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Fixtures",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexDuctCurves",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexDuctCurvesCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexDuctCurvesContour",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexDuctCurvesInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexDuctCurvesPattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexDuctTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexPipeCurves",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexPipeCurvesCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexPipeCurvesContour",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexPipeCurvesInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexPipeCurvesPattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_FlexPipeTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorLocalCoordSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_Floors",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsAnalyticalGeometry",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsCutPattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsDefault",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsFinish1",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsFinish2",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsInteriorEdges",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsMembrane",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsStructure",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsSubstrate",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorsSurfacePattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_FloorTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Fluids",
+  },
+  Object {
+    "BuiltInCategory": "OST_FndSlabLocalCoordSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_FootingAnalyticalGeometry",
+  },
+  Object {
+    "BuiltInCategory": "OST_FootingSpanDirectionSymbol",
+  },
+  Object {
+    "BuiltInCategory": "OST_FoundationSlabAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_FoundationSlabAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FramingAnalyticalGeometry",
+  },
+  Object {
+    "BuiltInCategory": "OST_Furniture",
+  },
+  Object {
+    "BuiltInCategory": "OST_FurnitureHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_FurnitureSystems",
+  },
+  Object {
+    "BuiltInCategory": "OST_FurnitureSystemsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_FurnitureSystemTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_FurnitureTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_Ceiling",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_ExteriorWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_GbXMLFaces",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_FixedSkylight",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_FixedWindow",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_InteriorFloor",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_InteriorWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_NonSlidingDoor",
+  },
+  Object {
+    "BuiltInCategory": "OST_GbXML_Opening",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_OpeningAir",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_OperableSkylight",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_OperableWindow",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_RaisedFloor",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_Roof",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_Shade",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_SlabOnGrade",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_SlidingDoor",
+  },
+  Object {
+    "BuiltInCategory": "OST_GbXML_SType_Exterior",
+  },
+  Object {
+    "BuiltInCategory": "OST_GbXML_SType_Interior",
+  },
+  Object {
+    "BuiltInCategory": "OST_GbXML_SType_Shade",
+  },
+  Object {
+    "BuiltInCategory": "OST_GbXML_SType_Underground",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_SurfaceAir",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_UndergroundCeiling",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_UndergroundSlab",
+  },
+  Object {
+    "BuiltInCategory": "OST_gbXML_UndergroundWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_GenericAnnotation",
+  },
+  Object {
+    "BuiltInCategory": "OST_GenericLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_GenericModel",
+  },
+  Object {
+    "BuiltInCategory": "OST_GenericModelHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_GenericModelTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Girder",
+  },
+  Object {
+    "BuiltInCategory": "OST_GraphicalWarning_OpenConnector",
+  },
+  Object {
+    "BuiltInCategory": "OST_GridChains",
+  },
+  Object {
+    "BuiltInCategory": "OST_GridHeads",
+  },
+  Object {
+    "BuiltInCategory": "OST_Grids",
+  },
+  Object {
+    "BuiltInCategory": "OST_GuideGrid",
+  },
+  Object {
+    "BuiltInCategory": "OST_Gutter",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenFloorLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenStructuralColumnLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenStructuralConnectionLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenStructuralFoundationLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenStructuralFramingLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HiddenWallLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_HorizontalBracing",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFin",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFinCeiling",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFinFloor",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFinHF",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFinRoof",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFinTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostFinWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_HostTemplate",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Load_Building_Types",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Load_Schedules",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Load_Space_Types",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones_Boundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones_ColorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones_InteriorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones_InteriorFill_Visibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones_Reference",
+  },
+  Object {
+    "BuiltInCategory": "OST_HVAC_Zones_Reference_Visibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_ImportObjectStyles",
+  },
+  Object {
+    "BuiltInCategory": "OST_InstanceDrivenLineStyle",
+  },
+  Object {
+    "BuiltInCategory": "OST_InsulationLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalAreaLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalAreaLoadTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalLineLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalLineLoadTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalPointLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_InternalPointLoadTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_InvisibleLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOS",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSAligningLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSAlignmentGraphics",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSArrays",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSAttachedDetailGroups",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSBackedUpElements",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSBBoxScreenSize",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSConstructionLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSCrashGraphics",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSCuttingGeometry",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSDatumPlane",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSDetailGroups",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSDragBox",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSDragBoxInverted",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSFabricReinSpanSymbolCtrl",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSFlipControl",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSFreeSnapLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOS_GeoLocations",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOS_GeoSite",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSGhost",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSGroups",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSMeasureLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSMeasureLineScreenSize",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSModelGroups",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSNavWheelPivotBall",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSNotSilhouette",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRebarSystemSpanSymbolCtrl",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRegeneratedElements",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRegenerationFailure",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRoomCalculationPoint",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRoomComputationHeight",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRoomPerimeterLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRoomTagToRoomLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSRoomUpperLowerLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSketchGrid",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSlabShapeEditorAutoCrease",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSlabShapeEditorBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSlabShapeEditorExplitCrease",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSlabShapeEditorPointBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSlabShapeEditorPointInterior",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSuspendedSketch",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSSuspendedSketch_obsolete",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSThinPixel",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSThinPixel_Dash",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSThinPixel_DashDot",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSThinPixel_Dot",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSTilePatternGrid",
+  },
+  Object {
+    "BuiltInCategory": "OST_IOSWallCoreBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_IsolatedFoundationAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_IsolatedFoundationAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Joist",
+  },
+  Object {
+    "BuiltInCategory": "OST_KeynoteTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_KickerBracing",
+  },
+  Object {
+    "BuiltInCategory": "OST_LayoutNodes",
+  },
+  Object {
+    "BuiltInCategory": "OST_LayoutPathBase_Pipings",
+  },
+  Object {
+    "BuiltInCategory": "OST_LayoutPath_Bases",
+  },
+  Object {
+    "BuiltInCategory": "OST_LegendComponents",
+  },
+  Object {
+    "BuiltInCategory": "OST_LevelHeads",
+  },
+  Object {
+    "BuiltInCategory": "OST_Levels",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightingDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightingDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightingFixtures",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightingFixturesHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightingFixtureSource",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightingFixtureTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_LightLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_Lights",
+  },
+  Object {
+    "BuiltInCategory": "OST_LineLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_LineLoadTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Lines",
+  },
+  Object {
+    "BuiltInCategory": "OST_LinesBeyond",
+  },
+  Object {
+    "BuiltInCategory": "OST_LinesHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_LinkAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_LinksAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCases",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesAccidental",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesDead",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesLive",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesRoofLive",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesSeismic",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesSnow",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesTemperature",
+  },
+  Object {
+    "BuiltInCategory": "OST_LoadCasesWind",
+  },
+  Object {
+    "BuiltInCategory": "OST_Loads",
+  },
+  Object {
+    "BuiltInCategory": "OST_MaskingRegion",
+  },
+  Object {
+    "BuiltInCategory": "OST_Mass",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassAreaFaceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassCutter",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassExteriorWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassExteriorWallUnderground",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassFaceSplitter",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassFloor",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassFloor_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassFloorsAll",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassForm",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassGlazing",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassGlazingAll",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Massing",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassingCutOutlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassingProjectionOutlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassInteriorWall",
+  },
+  Object {
+    "BuiltInCategory": "OST_Mass_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassRoof",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassShade",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassSkylights",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassSlab",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassSurface_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassTags_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassWallsAll",
+  },
+  Object {
+    "BuiltInCategory": "OST_MassZone",
+  },
+  Object {
+    "BuiltInCategory": "OST_MatchAll",
+  },
+  Object {
+    "BuiltInCategory": "OST_MatchAnnotation",
+  },
+  Object {
+    "BuiltInCategory": "OST_MatchDetail",
+  },
+  Object {
+    "BuiltInCategory": "OST_Matchline",
+  },
+  Object {
+    "BuiltInCategory": "OST_MatchModel",
+  },
+  Object {
+    "BuiltInCategory": "OST_MatchProfile",
+  },
+  Object {
+    "BuiltInCategory": "OST_MatchSiteComponent",
+  },
+  Object {
+    "BuiltInCategory": "OST_Materials",
+  },
+  Object {
+    "BuiltInCategory": "OST_MaterialTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_MechanicalEquipment",
+  },
+  Object {
+    "BuiltInCategory": "OST_MechanicalEquipmentHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_MechanicalEquipmentTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceColorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceInteriorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceInteriorFillVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceReference",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceReferenceVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaces",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceSeparationLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_MEPSpaceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ModelArray",
+  },
+  Object {
+    "BuiltInCategory": "OST_ModelText",
+  },
+  Object {
+    "BuiltInCategory": "OST_MultiCategoryTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_MultiReferenceAnnotations",
+  },
+  Object {
+    "BuiltInCategory": "OST_MultiSurface",
+  },
+  Object {
+    "BuiltInCategory": "OST_NodeAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_NumberingSchemas",
+  },
+  Object {
+    "BuiltInCategory": "OST_NurseCallDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_NurseCallDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_OBSOLETE_ElemArrayHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_OverheadLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_PanelScheduleGraphics",
+  },
+  Object {
+    "BuiltInCategory": "OST_ParamElemElectricalLoadClassification",
+  },
+  Object {
+    "BuiltInCategory": "OST_Parking",
+  },
+  Object {
+    "BuiltInCategory": "OST_ParkingHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ParkingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PartHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Parts",
+  },
+  Object {
+    "BuiltInCategory": "OST_PartTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PathRein",
+  },
+  Object {
+    "BuiltInCategory": "OST_PathReinBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_PathReinSpanSymbol",
+  },
+  Object {
+    "BuiltInCategory": "OST_PathReinTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Phases",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeAccessory",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeAccessoryTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeColorFillLegends",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeColorFills",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeConnections",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeCurves",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeCurvesCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeCurvesContour",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeCurvesDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeCurvesInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeCurvesRiseDrop",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeFitting",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeFittingCenterLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeFittingInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeFittingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeInsulations",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeInsulationsTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeMaterials",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeSchedules",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeSegments",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipeTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipingSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipingSystem_Reference",
+  },
+  Object {
+    "BuiltInCategory": "OST_PipingSystem_Reference_Visibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlaceHolderDucts",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlaceHolderPipes",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlanRegion",
+  },
+  Object {
+    "BuiltInCategory": "OST_Planting",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlantingHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlantingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlumbingFixtures",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlumbingFixturesHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_PlumbingFixtureTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PointClouds",
+  },
+  Object {
+    "BuiltInCategory": "OST_PointLoads",
+  },
+  Object {
+    "BuiltInCategory": "OST_PointLoadTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_PreviewLegendComponents",
+  },
+  Object {
+    "BuiltInCategory": "OST_ProfileFamilies",
+  },
+  Object {
+    "BuiltInCategory": "OST_ProjectBasePoint",
+  },
+  Object {
+    "BuiltInCategory": "OST_ProjectInformation",
+  },
+  Object {
+    "BuiltInCategory": "OST_Property",
+  },
+  Object {
+    "BuiltInCategory": "OST_PropertySet",
+  },
+  Object {
+    "BuiltInCategory": "OST_Purlin",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingBalusterRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingBalusterRailCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingHandRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingHandRailAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingRailPathExtensionLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingRailPathLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Railings",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSupport",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemBaluster",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemBalusterHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemHandRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemHandRailBracket",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemHandRailBracketHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemHandRailHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemHardware",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemPanel",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemPanelBracketHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemPanelHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemPost",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemPostHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemRailHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemSegmentHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTermination",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTerminationHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTopRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsNosingLinesAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTopRailHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTransition",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingSystemTransitionHiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingTermination",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingTopRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_RailingTopRailAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_Ramps",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsDownArrow",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsDownText",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsIncomplete",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsStringer",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsStringerAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsUpArrow",
+  },
+  Object {
+    "BuiltInCategory": "OST_RampsUpText",
+  },
+  Object {
+    "BuiltInCategory": "OST_RasterImages",
+  },
+  Object {
+    "BuiltInCategory": "OST_Rebar",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarCover",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarSetToggle",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarShape",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarSketchLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RebarTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferenceLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferencePoints",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferencePoints_HiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferencePoints_Lines",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferencePoints_Planes",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferencePoints_Points",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferenceViewer",
+  },
+  Object {
+    "BuiltInCategory": "OST_ReferenceViewerSymbol",
+  },
+  Object {
+    "BuiltInCategory": "OST_RemovedGridSeg",
+  },
+  Object {
+    "BuiltInCategory": "OST_RemovedGridSeg_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_RenderRegions",
+  },
+  Object {
+    "BuiltInCategory": "OST_RepeatingDetailLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Reveals",
+  },
+  Object {
+    "BuiltInCategory": "OST_RevisionClouds",
+  },
+  Object {
+    "BuiltInCategory": "OST_RevisionCloudTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Revisions",
+  },
+  Object {
+    "BuiltInCategory": "OST_RigidLinksAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_Roads",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoadsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_Roofs",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsCutPattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsDefault",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsFinish1",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsFinish2",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsInteriorEdges",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsMembrane",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofSoffit",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsStructure",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsSubstrate",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofsSurfacePattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoofTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomColorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomInteriorFill",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomInteriorFillVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomPolylines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomReference",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomReferenceVisibility",
+  },
+  Object {
+    "BuiltInCategory": "OST_Rooms",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomSeparationLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoomTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_RouteCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_RouteCurveBranch",
+  },
+  Object {
+    "BuiltInCategory": "OST_RouteCurveMain",
+  },
+  Object {
+    "BuiltInCategory": "OST_RoutingPreferences",
+  },
+  Object {
+    "BuiltInCategory": "OST_RvtLinks",
+  },
+  Object {
+    "BuiltInCategory": "OST_ScheduleGraphics",
+  },
+  Object {
+    "BuiltInCategory": "OST_ScheduleViewParamGroup",
+  },
+  Object {
+    "BuiltInCategory": "OST_SecondaryTopographyContours",
+  },
+  Object {
+    "BuiltInCategory": "OST_SectionBox",
+  },
+  Object {
+    "BuiltInCategory": "OST_SectionHeadMediumLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SectionHeads",
+  },
+  Object {
+    "BuiltInCategory": "OST_SectionHeadThinLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SectionHeadWideLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SectionLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_Sections",
+  },
+  Object {
+    "BuiltInCategory": "OST_SecurityDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_SecurityDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Sewer",
+  },
+  Object {
+    "BuiltInCategory": "OST_ShaftOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_ShaftOpeningHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SharedBasePoint",
+  },
+  Object {
+    "BuiltInCategory": "OST_Sheets",
+  },
+  Object {
+    "BuiltInCategory": "OST_Site",
+  },
+  Object {
+    "BuiltInCategory": "OST_SiteHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SitePoint",
+  },
+  Object {
+    "BuiltInCategory": "OST_SitePointBoundary",
+  },
+  Object {
+    "BuiltInCategory": "OST_SiteProperty",
+  },
+  Object {
+    "BuiltInCategory": "OST_SitePropertyLineSegment",
+  },
+  Object {
+    "BuiltInCategory": "OST_SitePropertyLineSegmentTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_SitePropertyTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_SiteRegion",
+  },
+  Object {
+    "BuiltInCategory": "OST_SiteSurface",
+  },
+  Object {
+    "BuiltInCategory": "OST_SiteTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_SketchLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpanDirectionSymbol",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpecialityEquipment",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpecialityEquipmentHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpecialityEquipmentTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_SplitterProfile",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpotCoordinates",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpotCoordinateSymbols",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpotElevations",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpotElevSymbols",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpotSlopes",
+  },
+  Object {
+    "BuiltInCategory": "OST_SpotSlopesSymbols",
+  },
+  Object {
+    "BuiltInCategory": "OST_Sprinklers",
+  },
+  Object {
+    "BuiltInCategory": "OST_SprinklerTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StackedWalls",
+  },
+  Object {
+    "BuiltInCategory": "OST_StackedWalls_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_Stair2012_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairLanding2012HiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairRun2012HiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_Stairs",
+  },
+  Object {
+    "BuiltInCategory": "OST_Stairs2012HiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsAboveCut_ToBeDeprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsCutMarks",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsCutMarksAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsDownArrows",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsDownText",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsIncomplete_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsLandings",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsLandingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsNosingLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsOutlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsOutlinesAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsPaths",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsPathsAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRailing",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRailingAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRailingBaluster",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRailingHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRailingRail",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRailingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRiserLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRiserLinesAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRuns",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsRunTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSketchBoundaryLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSketchLandingCenterLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSketchPathLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSketchRiserLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSketchRunLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsStringerCarriage",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSupports",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSupportsAboveCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsSupportTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairStringer2012_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairStringer2012HiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsTriserNumbers",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsTrisers",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsTriserTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsUpArrows",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairsUpText",
+  },
+  Object {
+    "BuiltInCategory": "OST_StairTread2012HiddenLines_Deprecated",
+  },
+  Object {
+    "BuiltInCategory": "OST_StickSymbols_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructConnectionHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructConnections",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructConnectionSymbols",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructConnectionTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructLocationLineControl",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralAnnotations",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralBracePlanReps",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralColumnLocationLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralColumns",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralColumnStickSymbols",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralColumnTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralConnectionHandler",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralConnectionHandlerTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFoundation",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFoundationTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFraming",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFramingLocationLine",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFramingOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFramingOther",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFramingSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFramingSystemHiddenLines_Obsolete",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralFramingTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralStiffener",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralStiffenerHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralStiffenerTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralTruss",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralTrussHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructuralTrussStickSymbols",
+  },
+  Object {
+    "BuiltInCategory": "OST_StructWeldLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Sun",
+  },
+  Object {
+    "BuiltInCategory": "OST_SunPath1",
+  },
+  Object {
+    "BuiltInCategory": "OST_SunPath2",
+  },
+  Object {
+    "BuiltInCategory": "OST_SunriseText",
+  },
+  Object {
+    "BuiltInCategory": "OST_SunsetText",
+  },
+  Object {
+    "BuiltInCategory": "OST_SunStudy",
+  },
+  Object {
+    "BuiltInCategory": "OST_SunSurface",
+  },
+  Object {
+    "BuiltInCategory": "OST_SWallRectOpening",
+  },
+  Object {
+    "BuiltInCategory": "OST_SwitchboardScheduleTemplates",
+  },
+  Object {
+    "BuiltInCategory": "OST_SwitchSystem",
+  },
+  Object {
+    "BuiltInCategory": "OST_Tags",
+  },
+  Object {
+    "BuiltInCategory": "OST_TelephoneDevices",
+  },
+  Object {
+    "BuiltInCategory": "OST_TelephoneDeviceTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_TextNotes",
+  },
+  Object {
+    "BuiltInCategory": "OST_TilePatterns",
+  },
+  Object {
+    "BuiltInCategory": "OST_TitleBlockMediumLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_TitleBlocks",
+  },
+  Object {
+    "BuiltInCategory": "OST_TitleBlockThinLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_TitleBlockWideLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_Topography",
+  },
+  Object {
+    "BuiltInCategory": "OST_TopographyContours",
+  },
+  Object {
+    "BuiltInCategory": "OST_TopographyHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_TopographySurface",
+  },
+  Object {
+    "BuiltInCategory": "OST_Truss",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussBottomChordCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussChord",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussDiagWebCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussDummy",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussTopChordCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussVertWebCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_TrussWeb",
+  },
+  Object {
+    "BuiltInCategory": "OST_VerticalBracing",
+  },
+  Object {
+    "BuiltInCategory": "OST_Viewers",
+  },
+  Object {
+    "BuiltInCategory": "OST_ViewportLabel",
+  },
+  Object {
+    "BuiltInCategory": "OST_Viewports",
+  },
+  Object {
+    "BuiltInCategory": "OST_Views",
+  },
+  Object {
+    "BuiltInCategory": "OST_VolumeOfInterest",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallFoundationAnalytical",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallFoundationAnalyticalTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallLocalCoordSys",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallRefPlanes",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallRefPlanes_Obsolete_IdInWrongRange",
+  },
+  Object {
+    "BuiltInCategory": "OST_Walls",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsAnalyticalGeometry",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsCutOutlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsCutPattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsDefault",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsFinish1",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsFinish2",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsInsulation",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsMembrane",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsProjectionOutlines",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsStructure",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsSubstrate",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallsSurfacePattern",
+  },
+  Object {
+    "BuiltInCategory": "OST_WallTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_WeakDims",
+  },
+  Object {
+    "BuiltInCategory": "OST_Windows",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsFrameMullionCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsFrameMullionProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsGlassCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsGlassProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsHiddenLines",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsOpeningCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsOpeningProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsSillHeadCut",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowsSillHeadProjection",
+  },
+  Object {
+    "BuiltInCategory": "OST_WindowTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_Wire",
+  },
+  Object {
+    "BuiltInCategory": "OST_WireHomeRunArrows",
+  },
+  Object {
+    "BuiltInCategory": "OST_WireInsulations",
+  },
+  Object {
+    "BuiltInCategory": "OST_WireMaterials",
+  },
+  Object {
+    "BuiltInCategory": "OST_WireTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_WireTemperatureRatings",
+  },
+  Object {
+    "BuiltInCategory": "OST_WireTickMarks",
+  },
+  Object {
+    "BuiltInCategory": "OST_XRayConstrainedProfileEdge",
+  },
+  Object {
+    "BuiltInCategory": "OST_XRayImplicitPathCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_XRayPathCurve",
+  },
+  Object {
+    "BuiltInCategory": "OST_XRayPathPoint",
+  },
+  Object {
+    "BuiltInCategory": "OST_XRayProfileEdge",
+  },
+  Object {
+    "BuiltInCategory": "OST_XRaySideEdge",
+  },
+  Object {
+    "BuiltInCategory": "OST_ZoneSchemes",
+  },
+  Object {
+    "BuiltInCategory": "OST_ZoneTags",
+  },
+  Object {
+    "BuiltInCategory": "OST_ZoningEnvelope",
+  },
+]
+`;
+
+exports[`Retreive Select of FACAD-CFT 1`] = `
+Array [
+  Object {
+    "BuiltInCategory": "INVALID",
+    "Category": "323",
+    "ConstraintField": "Assembly Description",
+    "FamilyType": "2323",
+    "ID": 31,
+    "Key": "-.1",
+    "KeynoteField": "Assembly Description",
+    "Project": 1,
+    "QuantityField": "A",
+    "ReportType": "Schedule",
+  },
+  Object {
+    "BuiltInCategory": "INVALID",
+    "Category": "asda",
+    "ConstraintField": "Assembly Description",
+    "FamilyType": "adsads",
+    "ID": 33,
+    "Key": "1",
+    "KeynoteField": "Assembly Description",
+    "Project": null,
+    "QuantityField": "Assembly Description",
+    "ReportType": "Schedule",
+  },
+]
+`;
+
+exports[`Retreive Select of FACAD-Schedules 1`] = `
+Array [
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 19,
+    "Name": "1ssssxdd",
+    "PathName": "12121sdgcw",
+  },
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 22,
+    "Name": "csdcs",
+    "PathName": "sdsd",
+  },
+]
+`;

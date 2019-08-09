@@ -1,9 +1,13 @@
 module.exports = {
   "roots": [
-    "<rootDir>/src"
+      "<rootDir>/src"
   ],
   "transform": {
-    "^.+\\.ts$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
   },
+  // Setup Enzyme
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "setupFilesAfterEnv": ["<rootDir>/setupEnzyme.js"],
+  "collectCoverage": true,
 }
 

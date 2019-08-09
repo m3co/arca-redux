@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Perform Insert at FACAD-Schedules over a Row 1`] = `
+Object {
+  "Requests": Array [],
+  "Rows": Array [
+    Object {
+      "BuiltInCategory": "INVALID",
+      "ID": 19,
+      "Name": "1ssssxdd",
+      "PathName": "12121sdgcw",
+    },
+    Object {
+      "BuiltInCategory": "INVALID",
+      "ID": 22,
+      "Name": "csdcs",
+      "PathName": "sdsd",
+    },
+  ],
+  "Subscribed": true,
+}
+`;
+
+exports[`Perform Insert at FACAD-Schedules over a Row 2`] = `
+Object {
+  "Requests": Array [
+    "3eff0c6b-e248-41bc-bc8f-d5233f881e1c",
+  ],
+  "Rows": Array [
+    Object {
+      "BuiltInCategory": "INVALID",
+      "ID": 19,
+      "Name": "1ssssxdd",
+      "PathName": "12121sdgcw",
+    },
+    Object {
+      "BuiltInCategory": "INVALID",
+      "ID": 22,
+      "Name": "csdcs",
+      "PathName": "sdsd",
+    },
+  ],
+  "Subscribed": true,
+}
+`;
+
+exports[`Perform Insert at FACAD-Schedules over a Row 3`] = `
+Array [
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 19,
+    "Name": "1ssssxdd",
+    "PathName": "12121sdgcw",
+  },
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 22,
+    "Name": "csdcs",
+    "PathName": "sdsd",
+  },
+]
+`;
+
+exports[`Perform Insert at FACAD-Schedules over a Row 4`] = `
+Array [
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 23,
+    "Name": "Lets doit",
+    "PathName": "",
+  },
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 19,
+    "Name": "1ssssxdd",
+    "PathName": "12121sdgcw",
+  },
+  Object {
+    "BuiltInCategory": "INVALID",
+    "ID": 22,
+    "Name": "csdcs",
+    "PathName": "sdsd",
+  },
+]
+`;
