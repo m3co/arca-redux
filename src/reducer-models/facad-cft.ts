@@ -11,8 +11,9 @@ export function Update(state: State, row: Model["Row"]): State {
       ...state.Source,
       ["FACAD-CFT"]: {
         ...state.Source["FACAD-CFT"],
-        Rows: state.Source["FACAD-CFT"].Rows.map((row) =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
+        Rows: state.Source["FACAD-CFT"].Rows
+          .map((row): FACADCFT["Row"] =>
+            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
       }
     }
   };

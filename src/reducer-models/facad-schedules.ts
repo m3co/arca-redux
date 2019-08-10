@@ -11,8 +11,9 @@ export function Update(state: State, row: Model["Row"]): State {
       ...state.Source,
       ["FACAD-Schedules"]: {
         ...state.Source["FACAD-Schedules"],
-        Rows: state.Source["FACAD-Schedules"].Rows.map((row) =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
+        Rows: state.Source["FACAD-Schedules"].Rows
+          .map((row): FACADSchedules["Row"] =>
+            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
       }
     }
   };

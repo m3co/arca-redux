@@ -8,9 +8,18 @@ import {
 
 export * from './types-models';
 
+export interface Combobox {
+  Display: keyof Row;
+  Params: {
+    [Key: string]: keyof Row;
+  };
+  Source: keyof State["Source"];
+  Value: keyof Row;
+}
+
 export interface Field {
-  Select?: {} | null;
-  Combobox?: {} | null;
+  Select?: (string | number)[] | null;
+  Combobox?: Combobox | null;
   Editable: boolean;
   Name: string;
   Primary: boolean;

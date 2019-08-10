@@ -1,12 +1,13 @@
 {
   "name": "arca-redux",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "El puente entre arca-server y web mediante Socket.io",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "lint": "find . | grep -v \"^\\./node_modules\" | grep \"\\.tsx$\\|\\.ts$\\|\\.js$\\|\\.json$\" | entr sh -c \"eslint src/**/*.tsx --fix --color; echo OK;\"",
+    "start": "tsc -b -w",
+    "lint": "find . | grep -v \"^\\./node_modules\\|^\\./\\.git\\|^\\./coverage\\|^\\./build\\|^\\./public\" | grep \"\\.tsx$\\|\\.ts$\\|\\.js$\\|\\.json$\" | entr sh -c \"eslint src/**/*.ts --fix --color; echo OK;\"",
     "test": "jest --watchAll --detectOpenHandles"
   },
   "author": "Andres Rios <rianby64@gmail.com>",
