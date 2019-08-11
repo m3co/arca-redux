@@ -2,7 +2,7 @@
 import Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
 
-import { State, Row } from './types';
+import { State, Fields } from './types';
 
 export interface Params {[Key: string]: string | number | null}
 
@@ -10,7 +10,7 @@ interface Response {
   ID: string;
   Method: "Search";
   Context: {
-    Field: keyof Row;
+    Field: keyof Fields;
     Source: keyof State["Source"];
   };
   Result: Params[];
@@ -44,7 +44,7 @@ export class ARCASearchSocket {
   }
 
   public Search = (Source: keyof State["Source"],
-    Field: keyof Row, Params: Params): Promise<Response> => {
+    Field: keyof Fields, Params: Params): Promise<Response> => {
     return new Promise((
       resolve: (value: Response) => void,
       reject: (reason: string) => void): void => {

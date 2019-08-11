@@ -10,12 +10,12 @@ import {
 export * from './types-models';
 
 export interface Combobox {
-  Display: keyof Row;
+  Display: keyof Fields;
   Params: {
-    [Key: string]: keyof Row;
+    [Key: string]: keyof Fields;
   };
   Source: keyof State["Source"];
-  Value: keyof Row;
+  Value: keyof Fields;
 }
 
 export interface Field {
