@@ -38,10 +38,10 @@ export interface Info {
 };
 
 export type Row =
-  TasksGanttAAU["Row"] |
-  FACADSchedules["Row"] |
-  FACADParamsBIC["Row"] |
-  FACADCFT["Row"] |
+  TasksGanttAAU["Row"] &
+  FACADSchedules["Row"] &
+  FACADParamsBIC["Row"] &
+  FACADCFT["Row"] &
   FACADBuiltInCategories["Row"];
 
 export type Model =

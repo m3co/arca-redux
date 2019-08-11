@@ -1,6 +1,7 @@
 
 import {
   State,
+  TasksGanttAAU,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADSchedules,
@@ -8,7 +9,6 @@ import {
 } from './types';
 
 import { Info } from './types';
-import { TasksGanttAAU } from './types-models';
 
 interface ActionConnect {
   type: 'Connect';
