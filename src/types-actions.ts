@@ -8,6 +8,7 @@ import {
 } from './types';
 
 import { Info } from './types';
+import { TasksGanttAAU } from './types-models';
 
 interface ActionConnect {
   type: 'Connect';
@@ -47,10 +48,13 @@ interface ActionNotificate<Source, Row> {
 
 export type Action = ActionConnect | ActionGetInfo | ActionSubscribe | ActionRequest |
 
+ActionSelect<TasksGanttAAU["Row"]> |
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
 ActionSelect<FACADSchedules["Row"]> |
 ActionSelect<FACADCFT["Row"]> |
+
+ActionNotificate<'Tasks-Gantt-AAU', TasksGanttAAU["Row"]> |
 
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |

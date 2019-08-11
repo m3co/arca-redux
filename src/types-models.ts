@@ -1,4 +1,19 @@
 
+// Tasks-Gantt-AAU
+export interface TasksGanttAAU {
+  Row: {
+    Key: string;
+    Constraint: string;
+    Start: Date;
+    End: Date;
+  };
+  PK: {
+    Key: string;
+    Constraint: string;
+  };
+};
+
+// FACAD-Schedules
 export interface FACADSchedules {
   Row: {
     ID: number;
@@ -10,6 +25,8 @@ export interface FACADSchedules {
     ID: number;
   };
 };
+
+// FACAD-ParamsBIC
 export interface FACADParamsBIC {
   Row: {
     ReportType: string;
@@ -22,6 +39,8 @@ export interface FACADParamsBIC {
     Field: string;
   };
 };
+
+// FACAD-CFT
 export interface FACADCFT {
   Row: {
     ID: number;
@@ -39,6 +58,8 @@ export interface FACADCFT {
     ID: number;
   };
 };
+
+// FACAD-BuiltInCategories
 export interface FACADBuiltInCategories {
   Row: {
     BuiltInCategory: string;

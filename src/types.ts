@@ -1,5 +1,6 @@
 
 import {
+  TasksGanttAAU,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADSchedules,
@@ -37,12 +38,14 @@ export interface Info {
 };
 
 export type Row =
+  TasksGanttAAU["Row"] |
   FACADSchedules["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
   FACADBuiltInCategories["Row"];
 
 export type Model =
+  TasksGanttAAU |
   FACADSchedules |
   FACADParamsBIC |
   FACADCFT |
@@ -71,6 +74,12 @@ export interface State {
     };
     'FACAD-BuiltInCategories': {
       Rows: FACADBuiltInCategories["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'Tasks-Gantt-AAU': {
+      Rows: TasksGanttAAU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

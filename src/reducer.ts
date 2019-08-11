@@ -21,6 +21,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'Tasks-Gantt-AAU': {
+      Rows: [],
+      Requests: [],
+    },
   },
 };
 
