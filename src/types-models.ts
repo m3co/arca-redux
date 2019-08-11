@@ -4,8 +4,8 @@ export interface TasksGanttAAU {
   Row: {
     Key: string;
     Constraint: string;
-    Start: Date;
-    End: Date;
+    Start: string;
+    End: string;
   };
   PK: {
     Key: string;
