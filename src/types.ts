@@ -37,11 +37,18 @@ export interface Info {
   Fields: Field[];
 };
 
-export type Row =
+export type Fields =
   TasksGanttAAU["Row"] &
   FACADSchedules["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
+  FACADBuiltInCategories["Row"];
+
+export type Row =
+  TasksGanttAAU["Row"] |
+  FACADSchedules["Row"] |
+  FACADParamsBIC["Row"] |
+  FACADCFT["Row"] |
   FACADBuiltInCategories["Row"];
 
 export type Model =
