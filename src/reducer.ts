@@ -21,6 +21,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'AAU': {
+      Rows: [],
+      Requests: [],
+    },
     'AAU-QTO': {
       Rows: [],
       Requests: [],

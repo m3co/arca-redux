@@ -1,4 +1,21 @@
 
+// AAU
+export interface AAU {
+  Row: {
+    Key: string;
+    Parent: string | null;
+    Expand: boolean;
+    Description: string | null;
+    Unit: string | null;
+    P: number | null;
+    Estimated: number;
+  };
+  PK: {
+    Key: string;
+    Constraint: string;
+  };
+};
+
 // AAU-QTO
 export interface AAUQTO {
   Row: {

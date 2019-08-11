@@ -1,5 +1,6 @@
 
 import {
+  AAU,
   AAUQTO,
   AAUTasksGantt,
   FACADBuiltInCategories,
@@ -39,6 +40,7 @@ export interface Info {
 };
 
 export type Fields =
+  AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
   FACADSchedules["Row"] &
@@ -47,6 +49,7 @@ export type Fields =
   FACADBuiltInCategories["Row"];
 
 export type Row =
+  AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
   FACADSchedules["Row"] |
@@ -55,6 +58,7 @@ export type Row =
   FACADBuiltInCategories["Row"];
 
 export type Model =
+  AAU |
   AAUQTO |
   AAUTasksGantt |
   FACADSchedules |
@@ -85,6 +89,12 @@ export interface State {
     };
     'FACAD-BuiltInCategories': {
       Rows: FACADBuiltInCategories["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'AAU': {
+      Rows: AAU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
