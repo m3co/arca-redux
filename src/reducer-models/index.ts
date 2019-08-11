@@ -1,6 +1,6 @@
 import * as FACADSchedules from './facad-schedules';
 import * as FACADCFT from './facad-cft';
-import * as TasksGanttAAU from './facad-cft';
+import * as AAUTasksGantt from './facad-cft';
 
 import { State, Model } from '../types';
 
@@ -30,8 +30,8 @@ export const reducers = {
     Update: UpdateDummy,
     Delete: DeleteDummy,
   },
-  'Tasks-Gantt-AAU': {
-    Update: TasksGanttAAU.Update,
-    Delete: TasksGanttAAU.Delete,
+  'AAU-Tasks-Gantt': {
+    Update: AAUTasksGantt.Update,
+    Delete: AAUTasksGantt.Delete,
   },
 }

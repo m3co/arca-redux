@@ -21,7 +21,7 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
-    'Tasks-Gantt-AAU': {
+    'AAU-Tasks-Gantt': {
       Rows: [],
       Requests: [],
     },

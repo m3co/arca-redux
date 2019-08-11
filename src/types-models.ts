@@ -1,6 +1,6 @@
 
-// Tasks-Gantt-AAU
-export interface TasksGanttAAU {
+// AAU-Tasks-Gantt
+export interface AAUTasksGantt {
   Row: {
     Key: string;
     Constraint: string;
