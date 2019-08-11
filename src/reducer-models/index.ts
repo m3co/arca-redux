@@ -1,6 +1,7 @@
 import * as FACADSchedules from './facad-schedules';
 import * as FACADCFT from './facad-cft';
-import * as AAUTasksGantt from './facad-cft';
+import * as AAUQTO from './aau-qto';
+import * as AAUTasksGantt from './aau-tasks-gantt';
 
 import { State, Model } from '../types';
 
@@ -29,6 +30,10 @@ export const reducers = {
   'FACAD-ParamsBIC': {
     Update: UpdateDummy,
     Delete: DeleteDummy,
+  },
+  'AAU-QTO': {
+    Update: AAUQTO.Update,
+    Delete: AAUQTO.Delete,
   },
   'AAU-Tasks-Gantt': {
     Update: AAUTasksGantt.Update,

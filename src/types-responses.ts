@@ -1,6 +1,7 @@
 
 import {
   State,
+  AAUQTO,
   AAUTasksGantt,
   FACADBuiltInCategories,
   FACADSchedules,
@@ -58,14 +59,18 @@ interface Notificate<Row> {
 
 export type Response = ResponseGetInfo | ResponseSubscribe |
 
+ResponseSelect<AAUQTO["Row"]> |
 ResponseSelect<AAUTasksGantt["Row"]> |
+
 ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADSchedules["Row"]> |
 ResponseSelect<FACADCFT["Row"]> |
 
 ResponseRequest |
 
+Notificate<AAUQTO["Row"]> |
 Notificate<AAUTasksGantt["Row"]> |
+
 Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADSchedules["Row"]> |
 Notificate<FACADCFT["Row"]>;

@@ -1,6 +1,7 @@
 
 import {
   State,
+  AAUQTO,
   AAUTasksGantt,
   FACADBuiltInCategories,
   FACADParamsBIC,
@@ -48,12 +49,15 @@ interface ActionNotificate<Source, Row> {
 
 export type Action = ActionConnect | ActionGetInfo | ActionSubscribe | ActionRequest |
 
+ActionSelect<AAUQTO["Row"]> |
 ActionSelect<AAUTasksGantt["Row"]> |
+
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
 ActionSelect<FACADSchedules["Row"]> |
 ActionSelect<FACADCFT["Row"]> |
 
+ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
 ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
 
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |

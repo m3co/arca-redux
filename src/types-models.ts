@@ -1,4 +1,18 @@
 
+// AAU-QTO
+export interface AAUQTO {
+  Row: {
+    Key: string;
+    Constraint: string;
+    Q: number;
+    CAD: boolean;
+  };
+  PK: {
+    Key: string;
+    Constraint: string;
+  };
+};
+
 // AAU-Tasks-Gantt
 export interface AAUTasksGantt {
   Row: {
