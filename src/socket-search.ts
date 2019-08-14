@@ -17,7 +17,7 @@ interface Response {
   Error: {} | null;
 };
 
-export class ARCASearchSocket {
+class ARCASearchSocket {
   private readonly io: SocketIOClient.Socket;
   private ids: {[ID: string]: {
     resolve: (value: Response) => void;
@@ -38,7 +38,7 @@ export class ARCASearchSocket {
     }
   }
 
-  public constructor(io = Socket()) {
+  public constructor(io: SocketIOClient.Socket) {
     this.io = io;
     this.io.on('jsonrpc', this.handleResponse);
   }
@@ -62,3 +62,8 @@ export class ARCASearchSocket {
     })
   }
 }
+
+export const createSearchSocket = (io = Socket()): ARCASearchSocket["Search"] =>
+  new ARCASearchSocket(io).Search;
+
+export type SearchMethod = ARCASearchSocket["Search"];
