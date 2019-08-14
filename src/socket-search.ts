@@ -44,12 +44,12 @@ export class ARCASearchSocket {
   }
 
   public Search = (Source: keyof State["Source"],
-    Field: keyof Fields, Params: Params): Promise<Response> => {
+    Field: keyof Fields, Params: Params, ID?: string): Promise<Response> => {
     return new Promise((
       resolve: (value: Response) => void,
       reject: (reason: string) => void): void => {
       const request = {
-        ID: uuid4(),
+        ID: ID || uuid4(),
         Method: 'Search',
         Context: {
           Source,

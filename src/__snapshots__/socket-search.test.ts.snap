@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Perfoem Search of FACAD-BuiltInCategories 1`] = `
+Object {
+  "Context": Object {
+    "Field": "BuiltInCategory",
+    "Source": "FACAD-BuiltInCategories",
+  },
+  "Error": null,
+  "ID": "5832c751-a6a9-4cd2-9235-157d90cb95d3",
+  "Method": "Search",
+  "Result": Array [
+    Object {
+      "BuiltInCategory": "OST_InternalLineLoads",
+    },
+    Object {
+      "BuiltInCategory": "OST_InternalLineLoadTags",
+    },
+    Object {
+      "BuiltInCategory": "OST_LineLoads",
+    },
+    Object {
+      "BuiltInCategory": "OST_LineLoadTags",
+    },
+  ],
+}
+`;
