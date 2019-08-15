@@ -34,7 +34,7 @@ class ARCASearchSocket {
       }
       delete this.ids[response.ID];
     } else {
-      console.error('response', response, 'not found');
+      console.log('response', response, 'not found');
     }
   }
 
