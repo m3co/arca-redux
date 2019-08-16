@@ -2,7 +2,7 @@
 // AAU
 export interface AAU {
   Row: {
-    Key: string;
+    Key: string | null;
     Parent: string | null;
     Expand: boolean;
     Description: string | null;
@@ -81,9 +81,9 @@ export interface FACADCFT {
     Key: string;
     BuiltInCategory: string;
     ReportType: string;
-    KeynoteField: string;
-    ConstraintField: string;
-    QuantityField: string;
+    KeynoteField: string | null;
+    ConstraintField: string | null;
+    QuantityField: string | null;
   };
   PK: {
     ID: number;
