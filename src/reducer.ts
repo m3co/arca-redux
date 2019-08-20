@@ -13,6 +13,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'FACAD-preCFT': {
+      Rows: [],
+      Requests: [],
+    },
     'FACAD-ParamsBIC': {
       Rows: [],
       Requests: [],

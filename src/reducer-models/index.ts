@@ -5,6 +5,7 @@ import * as AAUTasksGantt from './aau-tasks-gantt';
 
 import * as FACADSchedules from './facad-schedules';
 import * as FACADCFT from './facad-cft';
+import * as FACADpreCFT from './facad-precft';
 
 import { State, Model } from '../types';
 
@@ -25,6 +26,10 @@ export const reducers = {
   'FACAD-CFT': {
     Update: FACADCFT.Update,
     Delete: FACADCFT.Delete,
+  },
+  'FACAD-preCFT': {
+    Update: FACADpreCFT.Update,
+    Delete: FACADpreCFT.Delete,
   },
   'FACAD-BuiltInCategories': {
     Update: UpdateDummy,

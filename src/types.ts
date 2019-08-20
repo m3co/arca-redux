@@ -6,7 +6,8 @@ import {
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADSchedules,
-  FACADCFT
+  FACADCFT,
+  FACADpreCFT,
 } from './types-models';
 
 export * from './types-models';
@@ -46,6 +47,7 @@ export type Fields =
   FACADSchedules["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
+  FACADpreCFT["Row"] &
   FACADBuiltInCategories["Row"];
 
 export type Row =
@@ -55,6 +57,7 @@ export type Row =
   FACADSchedules["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
+  FACADpreCFT["Row"] |
   FACADBuiltInCategories["Row"];
 
 export type Model =
@@ -64,6 +67,7 @@ export type Model =
   FACADSchedules |
   FACADParamsBIC |
   FACADCFT |
+  FACADpreCFT |
   FACADBuiltInCategories;
 
 export interface State {
@@ -83,6 +87,12 @@ export interface State {
     };
     'FACAD-CFT': {
       Rows: FACADCFT["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'FACAD-preCFT': {
+      Rows: FACADpreCFT["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

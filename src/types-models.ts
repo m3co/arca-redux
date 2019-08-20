@@ -90,6 +90,19 @@ export interface FACADCFT {
   };
 };
 
+// FACAD-preCFT
+export interface FACADpreCFT {
+  Row: {
+    ID: number;
+    Category: string;
+    FamilyType: string;
+    PathName: string;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // FACAD-BuiltInCategories
 export interface FACADBuiltInCategories {
   Row: {
