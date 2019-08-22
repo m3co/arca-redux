@@ -1,6 +1,6 @@
 {
   "name": "arca-redux",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "El puente entre arca-server y web mediante Socket.io",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/enzyme": "^3.10.3",
-    "@types/jest": "^24.0.17",
+    "@types/jest": "^24.0.18",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "enzyme": "^3.10.0",
@@ -36,6 +36,6 @@
     "react-dom": "^16.9.0",
     "redux": "^4.0.4",
     "socket.io-client": "^2.2.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
   }
 }

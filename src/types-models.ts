@@ -95,7 +95,8 @@ export interface FACADpreCFT {
   Row: {
     ID: number;
     Category: string;
-    FamilyType: string;
+    Family: string;
+    Name: string;
     PathName: string;
   };
   PK: {
