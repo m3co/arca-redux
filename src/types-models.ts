@@ -77,7 +77,8 @@ export interface FACADCFT {
     ID: number;
     Project: number | null;
     Category: string;
-    FamilyType: string;
+    Family: string;
+    Name: string;
     Key: string;
     BuiltInCategory: string;
     ReportType: string;
