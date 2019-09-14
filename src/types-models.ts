@@ -44,13 +44,17 @@ export interface AAUTasksGantt {
   };
 };
 
-// FACAD-Schedules
-export interface FACADSchedules {
+// FACAD-Reports
+export interface FACADReports {
   Row: {
     ID: number;
     BuiltInCategory: string;
+    ReportType: string;
     Name: string;
     PathName: string;
+    Field1: string;
+    Field2: string;
+    Field3: string;
   };
   PK: {
     ID: number;

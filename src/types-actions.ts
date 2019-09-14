@@ -6,8 +6,9 @@ import {
   AAUTasksGantt,
   FACADBuiltInCategories,
   FACADParamsBIC,
-  FACADSchedules,
-  FACADCFT
+  FACADReports,
+  FACADCFT,
+  FACADpreCFT
 } from './types';
 
 import { Info } from './types';
@@ -56,8 +57,9 @@ ActionSelect<AAUTasksGantt["Row"]> |
 
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
-ActionSelect<FACADSchedules["Row"]> |
+ActionSelect<FACADReports["Row"]> |
 ActionSelect<FACADCFT["Row"]> |
+ActionSelect<FACADpreCFT["Row"]> |
 
 ActionNotificate<'AAU', AAU["Row"]> |
 ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
@@ -65,5 +67,6 @@ ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
 
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
-ActionNotificate<'FACAD-Schedules', FACADSchedules["Row"]> |
-ActionNotificate<'FACAD-CFT', FACADCFT["Row"]>;
+ActionNotificate<'FACAD-Reports', FACADReports["Row"]> |
+ActionNotificate<'FACAD-CFT', FACADCFT["Row"]> |
+ActionNotificate<'FACAD-preCFT', FACADpreCFT["Row"]>;

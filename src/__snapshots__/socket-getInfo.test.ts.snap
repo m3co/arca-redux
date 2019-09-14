@@ -164,7 +164,7 @@ Object {
 }
 `;
 
-exports[`Retreive GetInfo of FACAD-Schedules 1`] = `
+exports[`Retreive GetInfo of FACAD-Reports 1`] = `
 Object {
   "Actions": Object {
     "Delete": true,

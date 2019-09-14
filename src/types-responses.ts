@@ -5,8 +5,9 @@ import {
   AAUQTO,
   AAUTasksGantt,
   FACADBuiltInCategories,
-  FACADSchedules,
-  FACADCFT
+  FACADReports,
+  FACADCFT,
+  FACADpreCFT
 } from './types';
 
 import { Info } from './types';
@@ -65,7 +66,7 @@ ResponseSelect<AAUQTO["Row"]> |
 ResponseSelect<AAUTasksGantt["Row"]> |
 
 ResponseSelect<FACADBuiltInCategories["Row"]> |
-ResponseSelect<FACADSchedules["Row"]> |
+ResponseSelect<FACADReports["Row"]> |
 ResponseSelect<FACADCFT["Row"]> |
 
 Notificate<AAU["Row"]> |
@@ -73,5 +74,6 @@ Notificate<AAUQTO["Row"]> |
 Notificate<AAUTasksGantt["Row"]> |
 
 Notificate<FACADBuiltInCategories["Row"]> |
-Notificate<FACADSchedules["Row"]> |
-Notificate<FACADCFT["Row"]>;
+Notificate<FACADReports["Row"]> |
+Notificate<FACADCFT["Row"]> |
+Notificate<FACADpreCFT["Row"]>;

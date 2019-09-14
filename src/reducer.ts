@@ -5,7 +5,7 @@ import { reducers } from './reducer-models';
 export const initialState: State = {
   Connected: false,
   Source: {
-    'FACAD-Schedules': {
+    'FACAD-Reports': {
       Rows: [],
       Requests: [],
     },

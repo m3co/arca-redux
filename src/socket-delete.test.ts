@@ -5,7 +5,7 @@ import { reducer } from './reducer';
 import { createStore } from 'redux';
 
 const URL = 'http://localhost:8086';
-const source = 'FACAD-Schedules';
+const source = 'FACAD-Reports';
 
 test(`Perform Delete at ${source} over a Row`, (done): void => {
   const io = Socket(URL);

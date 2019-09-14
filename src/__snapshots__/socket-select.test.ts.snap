@@ -2863,7 +2863,7 @@ Array [
 ]
 `;
 
-exports[`Retreive Select of FACAD-Schedules 1`] = `
+exports[`Retreive Select of FACAD-Reports 1`] = `
 Array [
   Object {
     "BuiltInCategory": "INVALID",

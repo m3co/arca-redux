@@ -7,11 +7,11 @@ import { createStore } from 'redux';
 const URL = 'http://localhost:8086';
 
 const sources: (
-  'FACAD-Schedules' |
+  'FACAD-Reports' |
   'FACAD-CFT' |
   'FACAD-BuiltInCategories'
 )[] = [
-  'FACAD-Schedules',
+  'FACAD-Reports',
   'FACAD-CFT',
   'FACAD-BuiltInCategories'
 ];

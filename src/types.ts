@@ -5,7 +5,7 @@ import {
   AAUTasksGantt,
   FACADBuiltInCategories,
   FACADParamsBIC,
-  FACADSchedules,
+  FACADReports,
   FACADCFT,
   FACADpreCFT,
 } from './types-models';
@@ -44,7 +44,7 @@ export type Fields =
   AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
-  FACADSchedules["Row"] &
+  FACADReports["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
   FACADpreCFT["Row"] &
@@ -54,7 +54,7 @@ export type Row =
   AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
-  FACADSchedules["Row"] |
+  FACADReports["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
   FACADpreCFT["Row"] |
@@ -64,7 +64,7 @@ export type Model =
   AAU |
   AAUQTO |
   AAUTasksGantt |
-  FACADSchedules |
+  FACADReports |
   FACADParamsBIC |
   FACADCFT |
   FACADpreCFT |
@@ -73,8 +73,8 @@ export type Model =
 export interface State {
   Connected: boolean;
   Source: {
-    'FACAD-Schedules': {
-      Rows: FACADSchedules["Row"][];
+    'FACAD-Reports': {
+      Rows: FACADReports["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

@@ -21,11 +21,11 @@ test('Connect to the server', (done): void => {
 });
 
 const sources: (
-  'FACAD-Schedules' |
+  'FACAD-Reports' |
   'FACAD-CFT' |
   'FACAD-BuiltInCategories'
 )[] = [
-  'FACAD-Schedules',
+  'FACAD-Reports',
   'FACAD-CFT',
   'FACAD-BuiltInCategories'
 ];
@@ -51,18 +51,18 @@ sources.forEach((source): void => {
   });
 });
 
-test(`Retreive Subscribe of FACAD-Schedules`, (done): void => {
+test(`Retreive Subscribe of FACAD-Reports`, (done): void => {
   const io = Socket(URL);
   const store = createStore(reducer);
   const socket = new ARCASocket(store, io);
 
-  socket.Subscribe('FACAD-Schedules');
+  socket.Subscribe('FACAD-Reports');
   let i = 0;
   store.subscribe((): void => {
     i++;
     const state = store.getState();
-    if (state.Source['FACAD-Schedules'].Subscribed) {
-      expect(state.Source['FACAD-Schedules'].Subscribed).toBe(true);
+    if (state.Source['FACAD-Reports'].Subscribed) {
+      expect(state.Source['FACAD-Reports'].Subscribed).toBe(true);
       done();
     } else if (i > 1) {
       fail();

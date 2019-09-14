@@ -3,7 +3,7 @@ import * as AAU from './aau';
 import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
 
-import * as FACADSchedules from './facad-schedules';
+import * as FACADReports from './facad-reports';
 import * as FACADCFT from './facad-cft';
 import * as FACADpreCFT from './facad-precft';
 
@@ -19,9 +19,9 @@ function DeleteDummy(state: State, row: Model["Row"]): State {
 }
 
 export const reducers = {
-  'FACAD-Schedules': {
-    Update: FACADSchedules.Update,
-    Delete: FACADSchedules.Delete,
+  'FACAD-Reports': {
+    Update: FACADReports.Update,
+    Delete: FACADReports.Delete,
   },
   'FACAD-CFT': {
     Update: FACADCFT.Update,
