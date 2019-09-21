@@ -82,7 +82,7 @@ export interface FACADCFT {
     Project: number | null;
     Category: string;
     Family: string;
-    Name: string;
+    Type: string;
     Key: string;
     BuiltInCategory: string;
     ReportType: string;
@@ -101,7 +101,7 @@ export interface FACADpreCFT {
     ID: number;
     Category: string;
     Family: string;
-    Name: string;
+    Type: string;
     PathName: string;
   };
   PK: {
