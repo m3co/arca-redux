@@ -6,6 +6,7 @@ import {
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
+  FACADReportFilters,
   FACADCFT,
   FACADpreCFT,
 } from './types-models';
@@ -48,6 +49,7 @@ export type Fields =
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
   FACADpreCFT["Row"] &
+  FACADReportFilters["Row"] &
   FACADBuiltInCategories["Row"];
 
 export type Row =
@@ -58,6 +60,7 @@ export type Row =
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
   FACADpreCFT["Row"] |
+  FACADReportFilters["Row"] |
   FACADBuiltInCategories["Row"];
 
 export type Model =
@@ -68,11 +71,18 @@ export type Model =
   FACADParamsBIC |
   FACADCFT |
   FACADpreCFT |
+  FACADReportFilters |
   FACADBuiltInCategories;
 
 export interface State {
   Connected: boolean;
   Source: {
+    'FACAD-ReportFilters': {
+      Rows: FACADReportFilters["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
     'FACAD-Reports': {
       Rows: FACADReports["Row"][];
       Requests: string[];

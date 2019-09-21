@@ -9,6 +9,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'FACAD-ReportFilters': {
+      Rows: [],
+      Requests: [],
+    },
     'FACAD-CFT': {
       Rows: [],
       Requests: [],

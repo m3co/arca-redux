@@ -6,6 +6,7 @@ import {
   AAUTasksGantt,
   FACADBuiltInCategories,
   FACADReports,
+  FACADReportFilters,
   FACADCFT,
   FACADpreCFT
 } from './types';
@@ -67,6 +68,7 @@ ResponseSelect<AAUTasksGantt["Row"]> |
 
 ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADReports["Row"]> |
+ResponseSelect<FACADReportFilters["Row"]> |
 ResponseSelect<FACADCFT["Row"]> |
 
 Notificate<AAU["Row"]> |

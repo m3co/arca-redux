@@ -4,6 +4,7 @@ import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
 
 import * as FACADReports from './facad-reports';
+import * as FACADReportFilters from './facad-report-filters';
 import * as FACADCFT from './facad-cft';
 import * as FACADpreCFT from './facad-precft';
 
@@ -22,6 +23,10 @@ export const reducers = {
   'FACAD-Reports': {
     Update: FACADReports.Update,
     Delete: FACADReports.Delete,
+  },
+  'FACAD-ReportFilters': {
+    Update: FACADReportFilters.Update,
+    Delete: FACADReportFilters.Delete,
   },
   'FACAD-CFT': {
     Update: FACADCFT.Update,

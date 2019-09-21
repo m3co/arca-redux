@@ -118,3 +118,18 @@ export interface FACADBuiltInCategories {
     BuiltInCategory: string;
   };
 };
+
+// FACAD-ReportFilters
+export interface FACADReportFilters {
+  Row: {
+    ID: number;
+    ReportID: string;
+    Field: string;
+    Comparator: string;
+    Value: string;
+    ValueType: string;
+  };
+  PK: {
+    ID: number;
+  };
+};
