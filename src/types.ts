@@ -1,5 +1,6 @@
 
 import {
+  Projects,
   AAU,
   AAUQTO,
   AAUTasksGantt,
@@ -42,6 +43,7 @@ export interface Info {
 };
 
 export type Fields =
+  Projects["Row"] &
   AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
@@ -53,6 +55,7 @@ export type Fields =
   FACADBuiltInCategories["Row"];
 
 export type Row =
+  Projects["Row"] |
   AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
@@ -64,6 +67,7 @@ export type Row =
   FACADBuiltInCategories["Row"];
 
 export type Model =
+  Projects |
   AAU |
   AAUQTO |
   AAUTasksGantt |
@@ -77,6 +81,12 @@ export type Model =
 export interface State {
   Connected: boolean;
   Source: {
+    'Projects': {
+      Rows: Projects["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
     'FACAD-ReportFilters': {
       Rows: FACADReportFilters["Row"][];
       Requests: string[];

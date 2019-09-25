@@ -1,4 +1,5 @@
 
+import * as Projects from './projects';
 import * as AAU from './aau';
 import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
@@ -20,6 +21,10 @@ function DeleteDummy(state: State, row: Model["Row"]): State {
 }
 
 export const reducers = {
+  'Projects': {
+    Update: Projects.Update,
+    Delete: Projects.Delete,
+  },
   'FACAD-Reports': {
     Update: FACADReports.Update,
     Delete: FACADReports.Delete,

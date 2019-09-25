@@ -5,6 +5,10 @@ import { reducers } from './reducer-models';
 export const initialState: State = {
   Connected: false,
   Source: {
+    'Projects': {
+      Rows: [],
+      Requests: [],
+    },
     'FACAD-Reports': {
       Rows: [],
       Requests: [],

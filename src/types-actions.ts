@@ -1,12 +1,14 @@
 
 import {
   State,
+  Projects,
   AAU,
   AAUQTO,
   AAUTasksGantt,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
+  FACADReportFilters,
   FACADCFT,
   FACADpreCFT
 } from './types';
@@ -51,6 +53,7 @@ interface ActionNotificate<Source, Row> {
 
 export type Action = ActionConnect | ActionGetInfo | ActionSubscribe | ActionRequest |
 
+ActionSelect<Projects["Row"]> |
 ActionSelect<AAU["Row"]> |
 ActionSelect<AAUQTO["Row"]> |
 ActionSelect<AAUTasksGantt["Row"]> |
@@ -58,9 +61,11 @@ ActionSelect<AAUTasksGantt["Row"]> |
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
 ActionSelect<FACADReports["Row"]> |
+ActionSelect<FACADReportFilters["Row"]> |
 ActionSelect<FACADCFT["Row"]> |
 ActionSelect<FACADpreCFT["Row"]> |
 
+ActionNotificate<'Projects', Projects["Row"]> |
 ActionNotificate<'AAU', AAU["Row"]> |
 ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
 ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
@@ -68,5 +73,6 @@ ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
 ActionNotificate<'FACAD-Reports', FACADReports["Row"]> |
+ActionNotificate<'FACAD-ReportFilters', FACADReportFilters["Row"]> |
 ActionNotificate<'FACAD-CFT', FACADCFT["Row"]> |
 ActionNotificate<'FACAD-preCFT', FACADpreCFT["Row"]>;

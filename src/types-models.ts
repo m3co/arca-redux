@@ -1,4 +1,17 @@
 
+// Projects
+export interface Projects {
+  Row: {
+    ID: number;
+    Name: string;
+    Description: string | null;
+    Start: Date;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // AAU
 export interface AAU {
   Row: {
@@ -35,8 +48,8 @@ export interface AAUTasksGantt {
   Row: {
     Key: string;
     Constraint: string;
-    Start: string;
-    End: string;
+    Start: Date;
+    End: Date;
   };
   PK: {
     Key: string;

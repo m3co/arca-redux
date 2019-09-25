@@ -12,6 +12,7 @@ import {
 } from './types';
 
 import { Info } from './types';
+import { Projects } from './types-models';
 
 interface ResponseGetInfo {
   Method: 'GetInfo';
@@ -62,6 +63,7 @@ interface Notificate<Row> {
 
 export type Response = ResponseGetInfo | ResponseSubscribe |  ResponseRequest |
 
+ResponseSelect<Projects["Row"]> |
 ResponseSelect<AAU["Row"]> |
 ResponseSelect<AAUQTO["Row"]> |
 ResponseSelect<AAUTasksGantt["Row"]> |
@@ -71,11 +73,13 @@ ResponseSelect<FACADReports["Row"]> |
 ResponseSelect<FACADReportFilters["Row"]> |
 ResponseSelect<FACADCFT["Row"]> |
 
+Notificate<Projects["Row"]> |
 Notificate<AAU["Row"]> |
 Notificate<AAUQTO["Row"]> |
 Notificate<AAUTasksGantt["Row"]> |
 
 Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADReports["Row"]> |
+Notificate<FACADReportFilters["Row"]> |
 Notificate<FACADCFT["Row"]> |
 Notificate<FACADpreCFT["Row"]>;
