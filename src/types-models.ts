@@ -5,7 +5,7 @@ export interface Projects {
     ID: number;
     Name: string;
     Description: string | null;
-    Start: string;
+    Start: Date | null;
   };
   PK: {
     ID: number;
@@ -48,8 +48,8 @@ export interface AAUTasksGantt {
   Row: {
     Key: string;
     Constraint: string;
-    Start: string;
-    End: string;
+    Start: Date | null;
+    End: Date | null;
   };
   PK: {
     Key: string;
