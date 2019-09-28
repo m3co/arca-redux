@@ -2,6 +2,7 @@
 import {
   State,
   Projects,
+  Concretize,
   AAU,
   AAUQTO,
   AAUTasksGantt,
@@ -57,6 +58,7 @@ ActionSelect<Projects["Row"]> |
 ActionSelect<AAU["Row"]> |
 ActionSelect<AAUQTO["Row"]> |
 ActionSelect<AAUTasksGantt["Row"]> |
+ActionSelect<Concretize["Row"]> |
 
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
@@ -69,6 +71,7 @@ ActionNotificate<'Projects', Projects["Row"]> |
 ActionNotificate<'AAU', AAU["Row"]> |
 ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
 ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
+ActionNotificate<'Concretize', Concretize["Row"]> |
 
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |

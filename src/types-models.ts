@@ -28,6 +28,25 @@ export interface AAU {
   };
 };
 
+// Concretize
+export interface Concretize {
+  Row: {
+    Project: number | null;
+    Concreted: boolean;
+    Key: string | null;
+    Parent: string | null;
+    Expand: boolean;
+    Description: string | null;
+    Unit: string | null;
+    P: number | null;
+    Estimated: number;
+  };
+  PK: {
+    Key: string;
+    Constraint: string;
+  };
+};
+
 // AAU-QTO
 export interface AAUQTO {
   Row: {

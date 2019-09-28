@@ -1,6 +1,8 @@
 
 import {
   State,
+  Projects,
+  Concretize,
   AAU,
   AAUQTO,
   AAUTasksGantt,
@@ -12,7 +14,6 @@ import {
 } from './types';
 
 import { Info } from './types';
-import { Projects } from './types-models';
 
 interface ResponseGetInfo {
   Method: 'GetInfo';
@@ -67,6 +68,7 @@ ResponseSelect<Projects["Row"]> |
 ResponseSelect<AAU["Row"]> |
 ResponseSelect<AAUQTO["Row"]> |
 ResponseSelect<AAUTasksGantt["Row"]> |
+ResponseSelect<Concretize["Row"]> |
 
 ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADReports["Row"]> |
@@ -77,6 +79,7 @@ Notificate<Projects["Row"]> |
 Notificate<AAU["Row"]> |
 Notificate<AAUQTO["Row"]> |
 Notificate<AAUTasksGantt["Row"]> |
+Notificate<Concretize["Row"]> |
 
 Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADReports["Row"]> |

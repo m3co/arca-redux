@@ -4,6 +4,7 @@ import {
   AAU,
   AAUQTO,
   AAUTasksGantt,
+  Concretize,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
@@ -47,6 +48,7 @@ export type Fields =
   AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
+  Concretize["Row"] &
   FACADReports["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
@@ -59,6 +61,7 @@ export type Row =
   AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
+  Concretize["Row"] |
   FACADReports["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
@@ -71,6 +74,7 @@ export type Model =
   AAU |
   AAUQTO |
   AAUTasksGantt |
+  Concretize |
   FACADReports |
   FACADParamsBIC |
   FACADCFT |
@@ -137,6 +141,12 @@ export interface State {
     };
     'AAU-Tasks-Gantt': {
       Rows: AAUTasksGantt["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'Concretize': {
+      Rows: Concretize["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

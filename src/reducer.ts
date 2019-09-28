@@ -45,6 +45,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'Concretize': {
+      Rows: [],
+      Requests: [],
+    },
   },
 };
 

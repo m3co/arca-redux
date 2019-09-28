@@ -3,6 +3,7 @@ import * as Projects from './projects';
 import * as AAU from './aau';
 import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
+import * as Concretize from './concretize';
 
 import * as FACADReports from './facad-reports';
 import * as FACADReportFilters from './facad-report-filters';
@@ -60,5 +61,9 @@ export const reducers = {
   'AAU-Tasks-Gantt': {
     Update: AAUTasksGantt.Update,
     Delete: AAUTasksGantt.Delete,
+  },
+  'Concretize': {
+    Update: Concretize.Update,
+    Delete: Concretize.Delete,
   },
 }
