@@ -25,7 +25,6 @@ export interface AAU {
   };
   PK: {
     Key: string;
-    Constraint: string;
   };
 };
 
