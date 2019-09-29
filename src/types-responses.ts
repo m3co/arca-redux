@@ -47,7 +47,8 @@ interface ResponseRequest {
     Source: keyof State["Source"];
   };
   Result: {
-    Success: true;
+    Success: true; // Tal parece aqui hay que corregir, pues YA perdio sentido
+    // es muy probable que aqui vaya Row: <Row>
   };
   Error: null;
 };
