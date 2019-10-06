@@ -21,6 +21,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'FACAD-CFTFilters': {
+      Rows: [],
+      Requests: [],
+    },
     'FACAD-preCFT': {
       Rows: [],
       Requests: [],

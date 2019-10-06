@@ -126,6 +126,21 @@ export interface FACADCFT {
   };
 };
 
+// FACAD-CFTFilters
+export interface FACADCFTFilters {
+  Row: {
+    ID: number;
+    CFTID: number;
+    Field: string;
+    Comparator: string;
+    Value: string;
+    ValueType: string;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // FACAD-preCFT
 export interface FACADpreCFT {
   Row: {
@@ -154,7 +169,7 @@ export interface FACADBuiltInCategories {
 export interface FACADReportFilters {
   Row: {
     ID: number;
-    ReportID: string;
+    ReportID: number;
     Field: string;
     Comparator: string;
     Value: string;

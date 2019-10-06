@@ -8,6 +8,7 @@ import * as Concretize from './concretize';
 import * as FACADReports from './facad-reports';
 import * as FACADReportFilters from './facad-report-filters';
 import * as FACADCFT from './facad-cft';
+import * as FACADCFTFilters from './facad-cft-filters';
 import * as FACADpreCFT from './facad-precft';
 
 import { State, Model } from '../types';
@@ -37,6 +38,10 @@ export const reducers = {
   'FACAD-CFT': {
     Update: FACADCFT.Update,
     Delete: FACADCFT.Delete,
+  },
+  'FACAD-CFTFilters': {
+    Update: FACADCFTFilters.Update,
+    Delete: FACADCFTFilters.Delete,
   },
   'FACAD-preCFT': {
     Update: FACADpreCFT.Update,

@@ -10,7 +10,8 @@ import {
   FACADReports,
   FACADReportFilters,
   FACADCFT,
-  FACADpreCFT
+  FACADpreCFT,
+  FACADCFTFilters,
 } from './types';
 
 import { Info } from './types';
@@ -75,6 +76,7 @@ ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADReports["Row"]> |
 ResponseSelect<FACADReportFilters["Row"]> |
 ResponseSelect<FACADCFT["Row"]> |
+ResponseSelect<FACADCFTFilters["Row"]> |
 
 Notificate<Projects["Row"]> |
 Notificate<AAU["Row"]> |
@@ -86,4 +88,5 @@ Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADReports["Row"]> |
 Notificate<FACADReportFilters["Row"]> |
 Notificate<FACADCFT["Row"]> |
+Notificate<FACADCFTFilters["Row"]> |
 Notificate<FACADpreCFT["Row"]>;

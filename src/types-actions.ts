@@ -11,6 +11,7 @@ import {
   FACADReports,
   FACADReportFilters,
   FACADCFT,
+  FACADCFTFilters,
   FACADpreCFT
 } from './types';
 
@@ -65,6 +66,7 @@ ActionSelect<FACADBuiltInCategories["Row"]> |
 ActionSelect<FACADReports["Row"]> |
 ActionSelect<FACADReportFilters["Row"]> |
 ActionSelect<FACADCFT["Row"]> |
+ActionSelect<FACADCFTFilters["Row"]> |
 ActionSelect<FACADpreCFT["Row"]> |
 
 ActionNotificate<'Projects', Projects["Row"]> |
@@ -78,4 +80,5 @@ ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
 ActionNotificate<'FACAD-Reports', FACADReports["Row"]> |
 ActionNotificate<'FACAD-ReportFilters', FACADReportFilters["Row"]> |
 ActionNotificate<'FACAD-CFT', FACADCFT["Row"]> |
+ActionNotificate<'FACAD-CFTFilters', FACADCFTFilters["Row"]> |
 ActionNotificate<'FACAD-preCFT', FACADpreCFT["Row"]>;
