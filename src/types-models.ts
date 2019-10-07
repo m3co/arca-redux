@@ -111,7 +111,6 @@ export interface FACADCFT {
   Row: {
     ID: number;
     Project: number | null;
-    Category: string;
     Family: string;
     Type: string;
     Key: string;
@@ -145,7 +144,6 @@ export interface FACADCFTFilters {
 export interface FACADpreCFT {
   Row: {
     ID: number;
-    Category: string;
     Family: string;
     Type: string;
     PathName: string;
