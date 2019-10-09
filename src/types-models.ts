@@ -43,7 +43,7 @@ export interface Concretize {
   };
   PK: {
     Key: string;
-    Constraint: string;
+    Project: number | null;
   };
 };
 
