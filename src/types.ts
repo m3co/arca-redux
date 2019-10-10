@@ -12,6 +12,8 @@ import {
   FACADCFT,
   FACADCFTFilters,
   FACADpreCFT,
+  BudgetAAUvsGeneral,
+  BudgetAAU,
 } from './types-models';
 
 export * from './types-models';
@@ -56,7 +58,9 @@ export type Fields =
   FACADCFTFilters["Row"] &
   FACADpreCFT["Row"] &
   FACADReportFilters["Row"] &
-  FACADBuiltInCategories["Row"];
+  FACADBuiltInCategories["Row"] &
+  BudgetAAUvsGeneral["Row"] &
+  BudgetAAU["Row"];
 
 export type Row =
   Projects["Row"] |
@@ -70,7 +74,8 @@ export type Row =
   FACADCFTFilters["Row"] |
   FACADpreCFT["Row"] |
   FACADReportFilters["Row"] |
-  FACADBuiltInCategories["Row"];
+  BudgetAAUvsGeneral["Row"] |
+  BudgetAAU["Row"];
 
 export type Model =
   Projects |
@@ -84,7 +89,9 @@ export type Model =
   FACADCFTFilters |
   FACADpreCFT |
   FACADReportFilters |
-  FACADBuiltInCategories;
+  FACADBuiltInCategories |
+  BudgetAAUvsGeneral |
+  BudgetAAU;
 
 export interface State {
   Connected: boolean;
@@ -157,6 +164,18 @@ export interface State {
     };
     'Concretize': {
       Rows: Concretize["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'Budget-AAU-vs-General': {
+      Rows: BudgetAAUvsGeneral["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'Budget-AAU': {
+      Rows: BudgetAAU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

@@ -12,6 +12,8 @@ import {
   FACADCFT,
   FACADpreCFT,
   FACADCFTFilters,
+  BudgetAAUvsGeneral,
+  BudgetAAU,
 } from './types';
 
 import { Info } from './types';
@@ -78,6 +80,9 @@ ResponseSelect<FACADReportFilters["Row"]> |
 ResponseSelect<FACADCFT["Row"]> |
 ResponseSelect<FACADCFTFilters["Row"]> |
 
+ResponseSelect<BudgetAAU["Row"]> |
+ResponseSelect<BudgetAAUvsGeneral["Row"]> |
+
 Notificate<Projects["Row"]> |
 Notificate<AAU["Row"]> |
 Notificate<AAUQTO["Row"]> |
@@ -89,4 +94,7 @@ Notificate<FACADReports["Row"]> |
 Notificate<FACADReportFilters["Row"]> |
 Notificate<FACADCFT["Row"]> |
 Notificate<FACADCFTFilters["Row"]> |
-Notificate<FACADpreCFT["Row"]>;
+Notificate<FACADpreCFT["Row"]> |
+
+Notificate<BudgetAAU["Row"]> |
+Notificate<BudgetAAUvsGeneral["Row"]>;

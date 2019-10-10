@@ -11,6 +11,9 @@ import * as FACADCFT from './facad-cft';
 import * as FACADCFTFilters from './facad-cft-filters';
 import * as FACADpreCFT from './facad-precft';
 
+import * as BudgetAAU from './budget-aau';
+import * as BudgetAAUvsGeneral from './budget-aau-vs-general';
+
 import { State, Model } from '../types';
 
 function UpdateDummy(state: State, row: Model["Row"]): State {
@@ -70,5 +73,13 @@ export const reducers = {
   'Concretize': {
     Update: Concretize.Update,
     Delete: Concretize.Delete,
+  },
+  'Budget-AAU': {
+    Update: BudgetAAU.Update,
+    Delete: BudgetAAU.Delete,
+  },
+  'Budget-AAU-vs-General': {
+    Update: BudgetAAUvsGeneral.Update,
+    Delete: BudgetAAUvsGeneral.Delete,
   },
 }

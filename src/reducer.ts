@@ -53,6 +53,14 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'Budget-AAU': {
+      Rows: [],
+      Requests: [],
+    },
+    'Budget-AAU-vs-General': {
+      Rows: [],
+      Requests: [],
+    },
   },
 };
 

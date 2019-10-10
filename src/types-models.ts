@@ -12,6 +12,44 @@ export interface Projects {
   };
 };
 
+// Budget-AAU
+export interface BudgetAAU {
+  Row: {
+    Project: number;
+    Key: string | null;
+    Description: string | null;
+    Q: number | null;
+    Unit: string | null;
+    Estimated: number;
+    TotalEstimated: number;
+    SummEstimated: number;
+    RateEstimated: number;
+    P: number | null;
+  };
+  PK: {
+    Key: string;
+  };
+};
+
+// Budget-AAU-vs-General
+export interface BudgetAAUvsGeneral {
+  Row: {
+    Project: number;
+    Key: string | null;
+    Description: string | null;
+    Q: number | null;
+    Unit: string | null;
+    Estimated: number;
+    TotalEstimated: number;
+    SummEstimated: number;
+    RateEstimated: number;
+    P: number | null;
+  };
+  PK: {
+    Key: string;
+  };
+};
+
 // AAU
 export interface AAU {
   Row: {
