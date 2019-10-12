@@ -14,6 +14,7 @@ import {
   FACADpreCFT,
   BudgetAAUvsGeneral,
   BudgetAAU,
+  TasksMonthCashFlowAAU,
 } from './types-models';
 
 export * from './types-models';
@@ -60,7 +61,8 @@ export type Fields =
   FACADReportFilters["Row"] &
   FACADBuiltInCategories["Row"] &
   BudgetAAUvsGeneral["Row"] &
-  BudgetAAU["Row"];
+  BudgetAAU["Row"] &
+  TasksMonthCashFlowAAU["Row"];
 
 export type Row =
   Projects["Row"] |
@@ -75,7 +77,8 @@ export type Row =
   FACADpreCFT["Row"] |
   FACADReportFilters["Row"] |
   BudgetAAUvsGeneral["Row"] |
-  BudgetAAU["Row"];
+  BudgetAAU["Row"] |
+  TasksMonthCashFlowAAU["Row"];
 
 export type Model =
   Projects |
@@ -91,7 +94,8 @@ export type Model =
   FACADReportFilters |
   FACADBuiltInCategories |
   BudgetAAUvsGeneral |
-  BudgetAAU;
+  BudgetAAU |
+  TasksMonthCashFlowAAU;
 
 export interface State {
   Connected: boolean;
@@ -180,6 +184,12 @@ export interface State {
       Subscribed?: boolean;
       Info?: Info;
     };
+    'Tasks-Month-CashFlow-AAU': {
+      Rows: TasksMonthCashFlowAAU["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    }
   };
 };
 

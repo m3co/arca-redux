@@ -50,6 +50,25 @@ export interface BudgetAAUvsGeneral {
   };
 };
 
+// Tasks-Month-CashFlow-AAU
+export interface TasksMonthCashFlowAAU {
+  Row: {
+    Project: number | null;
+    Key: string;
+    TaskStart: Date | null;
+    Start: Date | null;
+    End: Date | null;
+    TaskEnd: Date | null;
+    Days: number | null;
+    TotalDays: number | null;
+    Cost: number | null;
+    TotalCost: number | null;
+  };
+  PK: {
+    Key: string;
+  };
+};
+
 // AAU
 export interface AAU {
   Row: {

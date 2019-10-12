@@ -13,6 +13,7 @@ import * as FACADpreCFT from './facad-precft';
 
 import * as BudgetAAU from './budget-aau';
 import * as BudgetAAUvsGeneral from './budget-aau-vs-general';
+import * as TasksMonthCashFlowAAU from './tasks-month-cashflow-aau';
 
 import { State, Model } from '../types';
 
@@ -82,4 +83,8 @@ export const reducers = {
     Update: BudgetAAUvsGeneral.Update,
     Delete: BudgetAAUvsGeneral.Delete,
   },
+  'Tasks-Month-CashFlow-AAU': {
+    Update: TasksMonthCashFlowAAU.Update,
+    Delete: TasksMonthCashFlowAAU.Delete,
+  }
 }

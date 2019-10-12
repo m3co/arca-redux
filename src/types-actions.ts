@@ -15,6 +15,7 @@ import {
   FACADpreCFT,
   BudgetAAUvsGeneral,
   BudgetAAU,
+  TasksMonthCashFlowAAU,
 } from './types';
 
 import { Info } from './types';
@@ -73,6 +74,7 @@ ActionSelect<FACADpreCFT["Row"]> |
 
 ActionSelect<BudgetAAUvsGeneral["Row"]> |
 ActionSelect<BudgetAAU["Row"]> |
+ActionSelect<TasksMonthCashFlowAAU["Row"]> |
 
 ActionNotificate<'Projects', Projects["Row"]> |
 ActionNotificate<'AAU', AAU["Row"]> |
@@ -89,4 +91,5 @@ ActionNotificate<'FACAD-CFTFilters', FACADCFTFilters["Row"]> |
 ActionNotificate<'FACAD-preCFT', FACADpreCFT["Row"]> |
 
 ActionNotificate<'Budget-AAU-vs-General', BudgetAAUvsGeneral["Row"]> |
-ActionNotificate<'Budget-AAU', BudgetAAU["Row"]>;
+ActionNotificate<'Budget-AAU', BudgetAAU["Row"]> |
+ActionNotificate<'Tasks-Month-CashFlow-AAU', TasksMonthCashFlowAAU["Row"]>;
