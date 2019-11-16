@@ -123,6 +123,8 @@ export interface AAUTasksGantt {
   Row: {
     Key: string;
     Constraint: string;
+    Description: string;
+    Unit: string;
     Start: Date | null;
     End: Date | null;
   };
