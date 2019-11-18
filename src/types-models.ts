@@ -122,9 +122,9 @@ export interface AAUQTO {
 export interface AAUTasksGantt {
   Row: {
     Key: string;
-    Constraint: string;
+    Constraint: string | null;
     Description: string;
-    Unit: string;
+    Unit: string | null;
     Start: Date | null;
     End: Date | null;
   };
