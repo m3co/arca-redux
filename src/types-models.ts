@@ -27,7 +27,7 @@ export interface BudgetAAU {
     P: number | null;
   };
   PK: {
-    Key: string;
+    Key: string | null;
   };
 };
 
@@ -46,7 +46,7 @@ export interface BudgetAAUvsGeneral {
     P: number | null;
   };
   PK: {
-    Key: string;
+    Key: string | null;
   };
 };
 
@@ -81,7 +81,7 @@ export interface AAU {
     Estimated: number;
   };
   PK: {
-    Key: string;
+    Key: string | null;
   };
 };
 
@@ -99,7 +99,7 @@ export interface Concretize {
     Estimated: number;
   };
   PK: {
-    Key: string;
+    Key: string | null;
     Project: number | null;
   };
 };
@@ -130,7 +130,7 @@ export interface AAUTasksGantt {
   };
   PK: {
     Key: string;
-    Constraint: string;
+    Constraint: string | null;
   };
 };
 
