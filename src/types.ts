@@ -76,6 +76,7 @@ export type Row =
   FACADCFTFilters["Row"] |
   FACADpreCFT["Row"] |
   FACADReportFilters["Row"] |
+  FACADBuiltInCategories["Row"] |
   BudgetAAUvsGeneral["Row"] |
   BudgetAAU["Row"] |
   TasksMonthCashFlowAAU["Row"];
