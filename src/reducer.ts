@@ -57,6 +57,26 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'APU': {
+      Rows: [],
+      Requests: [],
+    },
+    'APU-Import-Supplies': {
+      Rows: [],
+      Requests: [],
+    },
+    'APU-MetaSupplies': {
+      Rows: [],
+      Requests: [],
+    },
+    'APU-P-Supplies': {
+      Rows: [],
+      Requests: [],
+    },
+    'APU-QTO': {
+      Rows: [],
+      Requests: [],
+    },
     'Budget-AAU': {
       Rows: [],
       Requests: [],

@@ -5,6 +5,11 @@ import {
   AAU,
   AAUQTO,
   AAUTasksGantt,
+  APU,
+  APUImportSupplies,
+  APUMetaSupplies,
+  APUPSupplies,
+  APUQTO,
   Concretize,
   FACADBuiltInCategories,
   FACADParamsBIC,
@@ -55,6 +60,11 @@ export type Fields =
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
   Concretize["Row"] &
+  APU["Row"] &
+  APUImportSupplies["Row"] &
+  APUMetaSupplies["Row"] &
+  APUPSupplies["Row"] &
+  APUQTO["Row"] &
   FACADReports["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
@@ -73,6 +83,11 @@ export type Row =
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
   Concretize["Row"] |
+  APU["Row"] |
+  APUImportSupplies["Row"] |
+  APUMetaSupplies["Row"] |
+  APUPSupplies["Row"] |
+  APUQTO["Row"] |
   FACADReports["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
@@ -91,6 +106,11 @@ export type Model =
   AAUQTO |
   AAUTasksGantt |
   Concretize |
+  APU |
+  APUImportSupplies |
+  APUMetaSupplies |
+  APUPSupplies |
+  APUQTO |
   FACADReports |
   FACADParamsBIC |
   FACADCFT |
@@ -179,6 +199,36 @@ export interface State {
     };
     'Concretize': {
       Rows: Concretize["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU': {
+      Rows: APU["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-Import-Supplies': {
+      Rows: APUImportSupplies["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-MetaSupplies': {
+      Rows: APUMetaSupplies["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-P-Supplies': {
+      Rows: APUPSupplies["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-QTO': {
+      Rows: APUQTO["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

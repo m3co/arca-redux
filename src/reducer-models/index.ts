@@ -6,6 +6,12 @@ import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
 import * as Concretize from './concretize';
 
+import * as APU from './apu';
+import * as APUQTO from './apu-qto';
+import * as APUImportSupplies from './apu-import-supplies';
+import * as APUPSupplies from './apu-p-supplies';
+import * as APUMetasupplies from './apu-metasupplies';
+
 import * as FACADReports from './facad-reports';
 import * as FACADReportFilters from './facad-report-filters';
 import * as FACADCFT from './facad-cft';
@@ -79,6 +85,26 @@ export const reducers = {
   'Concretize': {
     Update: Concretize.Update,
     Delete: Concretize.Delete,
+  },
+  'APU': {
+    Update: APU.Update,
+    Delete: APU.Delete,
+  },
+  'APU-QTO': {
+    Update: APUQTO.Update,
+    Delete: APUQTO.Delete,
+  },
+  'APU-Import-Supplies': {
+    Update: APUImportSupplies.Update,
+    Delete: APUImportSupplies.Delete,
+  },
+  'APU-P-Supplies': {
+    Update: APUPSupplies.Update,
+    Delete: APUPSupplies.Delete,
+  },
+  'APU-MetaSupplies': {
+    Update: APUMetasupplies.Update,
+    Delete: APUMetasupplies.Delete,
   },
   'Budget-AAU': {
     Update: BudgetAAU.Update,

@@ -146,6 +146,85 @@ export interface AAUTasksGantt {
   };
 };
 
+// APU
+export interface APU {
+  Row: {
+    ID:           number;
+    Key:          string;
+    Constraint:   string;
+    ContractorID: number;
+    Description:  string;
+    Unit:         string | null;
+    P:            number;
+    Price:        number | null;
+    Estimated:    number;
+    Frozen:       boolean;
+    Status:       string;
+    ExpiredAt:    string | null;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
+// APU-QTO
+export interface APUQTO {
+  Row: {
+    ID:        number;
+    Withdrawn: boolean;
+    Q:         number;
+  };
+  PK: {
+    ID: number;
+    Withdrawn: boolean;
+  };
+};
+
+// APU-Import-Supplies
+export interface APUImportSupplies {
+  Row: {
+    APUID:       number;
+    SupplyID:    number;
+    P:           number;
+    Description: string;
+    Unit:        string;
+    Type:        string;
+    Estimated:   number;
+  };
+  PK: {
+    APUID:    number;
+    SupplyID: number;
+  };
+};
+
+// APU-MetaSupplies
+export interface APUMetaSupplies {
+  Row: {
+    ID:           number;
+    ContractorID: number;
+    Description:  string;
+    Unit:         string;
+    Type:         string;
+    Estimated:    number;
+  };
+  PK: {
+    ID: number;
+  }
+};
+
+// APU-P-Supplies
+export interface APUPSupplies {
+  Row: {
+    SupplyID: number;
+    APUID:    number;
+    P:        number;
+  };
+  PK: {
+    APUID:    number;
+    SupplyID: number;
+  };
+}
+
 // FACAD-Reports
 export interface FACADReports {
   Row: {
