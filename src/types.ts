@@ -1,6 +1,7 @@
 
 import {
   Projects,
+  Contractors,
   AAU,
   AAUQTO,
   AAUTasksGantt,
@@ -49,6 +50,7 @@ export interface Info {
 
 export type Fields =
   Projects["Row"] &
+  Contractors["Row"] &
   AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
@@ -66,6 +68,7 @@ export type Fields =
 
 export type Row =
   Projects["Row"] |
+  Contractors["Row"] |
   AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
@@ -83,6 +86,7 @@ export type Row =
 
 export type Model =
   Projects |
+  Contractors |
   AAU |
   AAUQTO |
   AAUTasksGantt |
@@ -103,6 +107,12 @@ export interface State {
   Source: {
     'Projects': {
       Rows: Projects["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'Contractors': {
+      Rows: Contractors["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

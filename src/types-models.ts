@@ -12,6 +12,18 @@ export interface Projects {
   };
 };
 
+// Contractors
+export interface Contractors {
+  Row: {
+    ID: number;
+    Name: string;
+    Information: string | null;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // Budget-AAU
 export interface BudgetAAU {
   Row: {

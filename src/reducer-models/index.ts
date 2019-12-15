@@ -1,5 +1,6 @@
 
 import * as Projects from './projects';
+import * as Contractors from './contractors';
 import * as AAU from './aau';
 import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
@@ -30,6 +31,10 @@ export const reducers = {
   'Projects': {
     Update: Projects.Update,
     Delete: Projects.Delete,
+  },
+  'Contractors': {
+    Update: Contractors.Update,
+    Delete: Contractors.Delete,
   },
   'FACAD-Reports': {
     Update: FACADReports.Update,

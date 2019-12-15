@@ -9,6 +9,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'Contractors': {
+      Rows: [],
+      Requests: [],
+    },
     'FACAD-Reports': {
       Rows: [],
       Requests: [],
