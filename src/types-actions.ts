@@ -6,6 +6,11 @@ import {
   AAU,
   AAUQTO,
   AAUTasksGantt,
+  APU,
+  APUImportSupplies,
+  APUMetaSupplies,
+  APUPSupplies,
+  APUQTO,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
@@ -64,6 +69,12 @@ ActionSelect<AAUQTO["Row"]> |
 ActionSelect<AAUTasksGantt["Row"]> |
 ActionSelect<Concretize["Row"]> |
 
+ActionSelect<APU["Row"]> |
+ActionSelect<APUImportSupplies["Row"]> |
+ActionSelect<APUMetaSupplies["Row"]> |
+ActionSelect<APUPSupplies["Row"]> |
+ActionSelect<APUQTO["Row"]> |
+
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
 ActionSelect<FACADReports["Row"]> |
@@ -81,6 +92,12 @@ ActionNotificate<'AAU', AAU["Row"]> |
 ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
 ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
 ActionNotificate<'Concretize', Concretize["Row"]> |
+
+ActionNotificate<'APU', APU["Row"]> |
+ActionNotificate<'APU-Import-Supplies', APUImportSupplies["Row"]> |
+ActionNotificate<'APU-MetaSupplies', APUMetaSupplies["Row"]> |
+ActionNotificate<'APU-P-Supplies', APUPSupplies["Row"]> |
+ActionNotificate<'APU-QTO', APUQTO["Row"]> |
 
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
