@@ -34,6 +34,10 @@ test(`Perform Update at ${source} over a Row`, (done): void => {
         ID: 19,
         Name: 'modified name',
         PathName: '12121sdgcw',
+        Field1: '',
+        Field2: '',
+        Field3: '',
+        ReportType: '',
       }, '3eff0c6b-e248-41bc-bc8f-d5233f881e1c');
     } else if (state.Connected &&
       Source.Info &&

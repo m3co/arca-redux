@@ -31,8 +31,13 @@ test(`Perform Delete at ${source} over a Row`, (done): void => {
       inserting = true;
       socket.Delete(source, {
         ID: 22,
+        Name: '',
         BuiltInCategory: 'INVALID',
         PathName: 'whatever',
+        Field1: '',
+        Field2: '',
+        Field3: '',
+        ReportType: '',
       }, '26e0bb20-814d-46d1-954e-baef35e630b5');
     } else if (state.Connected &&
       Source.Info &&

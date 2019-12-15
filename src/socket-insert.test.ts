@@ -31,6 +31,10 @@ test(`Perform Insert at ${source} over a Row`, (done): void => {
         ID: 0,
         Name: 'Lets doit',
         PathName: '',
+        Field1: '',
+        Field2: '',
+        Field3: '',
+        ReportType: '',
       }, '3eff0c6b-e248-41bc-bc8f-d5233f881e1c');
     } else if (state.Connected &&
       state.Source[source].Rows.length &&
