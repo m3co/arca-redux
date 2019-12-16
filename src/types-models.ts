@@ -225,6 +225,30 @@ export interface APUPSupplies {
   };
 }
 
+// APU-Assign
+export interface APUAssign {
+  Row: {
+    Project:      number | null;
+    Key:          string;
+    Constraint:   string;
+    Description:  string;
+    Unit:         string | null;
+    Status:       string | null;
+    Frozen:       boolean;
+    Estimated:    number | null;
+    P:            number;
+    Q:            number;
+    ID:           number | null;
+    ContractorID: number | null;
+    Qres:         number;
+  };
+  PK: {
+    ID:         number | null;
+    Key:        string;
+    Constraint: string;
+  };
+}
+
 // FACAD-Reports
 export interface FACADReports {
   Row: {

@@ -77,6 +77,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'APU-Assign': {
+      Rows: [],
+      Requests: [],
+    },
     'Budget-AAU': {
       Rows: [],
       Requests: [],

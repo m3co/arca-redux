@@ -6,6 +6,12 @@ import {
   AAU,
   AAUQTO,
   AAUTasksGantt,
+  APU,
+  APUImportSupplies,
+  APUMetaSupplies,
+  APUPSupplies,
+  APUQTO,
+  APUAssign,
   FACADBuiltInCategories,
   FACADReports,
   FACADReportFilters,
@@ -75,6 +81,13 @@ ResponseSelect<AAUQTO["Row"]> |
 ResponseSelect<AAUTasksGantt["Row"]> |
 ResponseSelect<Concretize["Row"]> |
 
+ResponseSelect<APU["Row"]> |
+ResponseSelect<APUImportSupplies["Row"]> |
+ResponseSelect<APUMetaSupplies["Row"]> |
+ResponseSelect<APUPSupplies["Row"]> |
+ResponseSelect<APUQTO["Row"]> |
+ResponseSelect<APUAssign["Row"]> |
+
 ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADReports["Row"]> |
 ResponseSelect<FACADReportFilters["Row"]> |
@@ -90,6 +103,13 @@ Notificate<AAU["Row"]> |
 Notificate<AAUQTO["Row"]> |
 Notificate<AAUTasksGantt["Row"]> |
 Notificate<Concretize["Row"]> |
+
+Notificate<APU["Row"]> |
+Notificate<APUImportSupplies["Row"]> |
+Notificate<APUMetaSupplies["Row"]> |
+Notificate<APUPSupplies["Row"]> |
+Notificate<APUQTO["Row"]> |
+Notificate<APUAssign["Row"]> |
 
 Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADReports["Row"]> |

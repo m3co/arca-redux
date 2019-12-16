@@ -11,6 +11,7 @@ import * as APUQTO from './apu-qto';
 import * as APUImportSupplies from './apu-import-supplies';
 import * as APUPSupplies from './apu-p-supplies';
 import * as APUMetasupplies from './apu-metasupplies';
+import * as APUAssign from './apu-assign';
 
 import * as FACADReports from './facad-reports';
 import * as FACADReportFilters from './facad-report-filters';
@@ -105,6 +106,10 @@ export const reducers = {
   'APU-MetaSupplies': {
     Update: APUMetasupplies.Update,
     Delete: APUMetasupplies.Delete,
+  },
+  'APU-Assign': {
+    Update: APUAssign.Update,
+    Delete: APUAssign.Delete,
   },
   'Budget-AAU': {
     Update: BudgetAAU.Update,

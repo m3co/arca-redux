@@ -10,6 +10,7 @@ import {
   APUMetaSupplies,
   APUPSupplies,
   APUQTO,
+  APUAssign,
   Concretize,
   FACADBuiltInCategories,
   FACADParamsBIC,
@@ -65,6 +66,7 @@ export type Fields =
   APUMetaSupplies["Row"] &
   APUPSupplies["Row"] &
   APUQTO["Row"] &
+  APUAssign["Row"] &
   FACADReports["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFT["Row"] &
@@ -88,6 +90,7 @@ export type Row =
   APUMetaSupplies["Row"] |
   APUPSupplies["Row"] |
   APUQTO["Row"] |
+  APUAssign["Row"] |
   FACADReports["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFT["Row"] |
@@ -111,6 +114,7 @@ export type Model =
   APUMetaSupplies |
   APUPSupplies |
   APUQTO |
+  APUAssign |
   FACADReports |
   FACADParamsBIC |
   FACADCFT |
@@ -229,6 +233,12 @@ export interface State {
     };
     'APU-QTO': {
       Rows: APUQTO["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-Assign': {
+      Rows: APUAssign["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

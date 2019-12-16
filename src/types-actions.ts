@@ -11,6 +11,7 @@ import {
   APUMetaSupplies,
   APUPSupplies,
   APUQTO,
+  APUAssign,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
@@ -74,6 +75,7 @@ ActionSelect<APUImportSupplies["Row"]> |
 ActionSelect<APUMetaSupplies["Row"]> |
 ActionSelect<APUPSupplies["Row"]> |
 ActionSelect<APUQTO["Row"]> |
+ActionSelect<APUAssign["Row"]> |
 
 ActionSelect<FACADParamsBIC["Row"]> |
 ActionSelect<FACADBuiltInCategories["Row"]> |
@@ -98,6 +100,7 @@ ActionNotificate<'APU-Import-Supplies', APUImportSupplies["Row"]> |
 ActionNotificate<'APU-MetaSupplies', APUMetaSupplies["Row"]> |
 ActionNotificate<'APU-P-Supplies', APUPSupplies["Row"]> |
 ActionNotificate<'APU-QTO', APUQTO["Row"]> |
+ActionNotificate<'APU-Assign', APUAssign["Row"]> |
 
 ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
