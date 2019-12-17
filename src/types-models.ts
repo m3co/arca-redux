@@ -281,7 +281,7 @@ export interface FACADParamsBIC {
 };
 
 // FACAD-CFT
-export interface FACADCFT {
+export interface FACADCFTAAU {
   Row: {
     ID: number;
     Project: number | null;
@@ -300,7 +300,7 @@ export interface FACADCFT {
 };
 
 // FACAD-CFTFilters
-export interface FACADCFTFilters {
+export interface FACADCFTFiltersAAU {
   Row: {
     ID: number;
     CFTID: number;
@@ -315,7 +315,7 @@ export interface FACADCFTFilters {
 };
 
 // FACAD-preCFT
-export interface FACADpreCFT {
+export interface FACADpreCFTAAU {
   Row: {
     ID: number;
     Family: string;

@@ -1,8 +1,8 @@
 
-import { State, Model, FACADCFTFilters } from '../types';
+import { State, Model, FACADCFTFiltersAAU } from '../types';
 
 export function Update(state: State, row: Model["Row"]): State {
-  const Row = row as FACADCFTFilters["Row"];
+  const Row = row as FACADCFTFiltersAAU["Row"];
   const PK = { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
@@ -12,7 +12,7 @@ export function Update(state: State, row: Model["Row"]): State {
       ["FACAD-CFT-Filters-AAU"]: {
         ...state.Source["FACAD-CFT-Filters-AAU"],
         Rows: state.Source["FACAD-CFT-Filters-AAU"].Rows
-          .map((row): FACADCFTFilters["Row"] =>
+          .map((row): FACADCFTFiltersAAU["Row"] =>
             (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
       }
     }
@@ -20,7 +20,7 @@ export function Update(state: State, row: Model["Row"]): State {
 }
 
 export function Delete(state: State, row: Model["Row"]): State {
-  const Row = row as FACADCFTFilters["Row"];
+  const Row = row as FACADCFTFiltersAAU["Row"];
   const PK = { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {

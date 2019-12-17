@@ -16,9 +16,9 @@ import {
   FACADParamsBIC,
   FACADReports,
   FACADReportFilters,
-  FACADCFT,
-  FACADCFTFilters,
-  FACADpreCFT,
+  FACADCFTAAU,
+  FACADCFTFiltersAAU,
+  FACADpreCFTAAU,
   BudgetAAUvsGeneral,
   BudgetAAU,
   TasksMonthCashFlowAAU,
@@ -69,9 +69,9 @@ export type Fields =
   APUAssign["Row"] &
   FACADReports["Row"] &
   FACADParamsBIC["Row"] &
-  FACADCFT["Row"] &
-  FACADCFTFilters["Row"] &
-  FACADpreCFT["Row"] &
+  FACADCFTAAU["Row"] &
+  FACADCFTFiltersAAU["Row"] &
+  FACADpreCFTAAU["Row"] &
   FACADReportFilters["Row"] &
   FACADBuiltInCategories["Row"] &
   BudgetAAUvsGeneral["Row"] &
@@ -93,9 +93,9 @@ export type Row =
   APUAssign["Row"] |
   FACADReports["Row"] |
   FACADParamsBIC["Row"] |
-  FACADCFT["Row"] |
-  FACADCFTFilters["Row"] |
-  FACADpreCFT["Row"] |
+  FACADCFTAAU["Row"] |
+  FACADCFTFiltersAAU["Row"] |
+  FACADpreCFTAAU["Row"] |
   FACADReportFilters["Row"] |
   FACADBuiltInCategories["Row"] |
   BudgetAAUvsGeneral["Row"] |
@@ -117,9 +117,9 @@ export type Model =
   APUAssign |
   FACADReports |
   FACADParamsBIC |
-  FACADCFT |
-  FACADCFTFilters |
-  FACADpreCFT |
+  FACADCFTAAU |
+  FACADCFTFiltersAAU |
+  FACADpreCFTAAU |
   FACADReportFilters |
   FACADBuiltInCategories |
   BudgetAAUvsGeneral |
@@ -160,19 +160,19 @@ export interface State {
       Info?: Info;
     };
     'FACAD-CFT-AAU': {
-      Rows: FACADCFT["Row"][];
+      Rows: FACADCFTAAU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-CFT-Filters-AAU': {
-      Rows: FACADCFTFilters["Row"][];
+      Rows: FACADCFTFiltersAAU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-preCFT-AAU': {
-      Rows: FACADpreCFT["Row"][];
+      Rows: FACADpreCFTAAU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

@@ -1,8 +1,8 @@
 
-import { State, Model, FACADCFT } from '../types';
+import { State, Model, FACADCFTAAU } from '../types';
 
 export function Update(state: State, row: Model["Row"]): State {
-  const Row = row as FACADCFT["Row"];
+  const Row = row as FACADCFTAAU["Row"];
   const PK = { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
@@ -12,7 +12,7 @@ export function Update(state: State, row: Model["Row"]): State {
       ["FACAD-CFT-AAU"]: {
         ...state.Source["FACAD-CFT-AAU"],
         Rows: state.Source["FACAD-CFT-AAU"].Rows
-          .map((row): FACADCFT["Row"] =>
+          .map((row): FACADCFTAAU["Row"] =>
             (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
       }
     }
@@ -20,7 +20,7 @@ export function Update(state: State, row: Model["Row"]): State {
 }
 
 export function Delete(state: State, row: Model["Row"]): State {
-  const Row = row as FACADCFT["Row"];
+  const Row = row as FACADCFTAAU["Row"];
   const PK = { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {

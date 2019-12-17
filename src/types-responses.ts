@@ -15,9 +15,9 @@ import {
   FACADBuiltInCategories,
   FACADReports,
   FACADReportFilters,
-  FACADCFT,
-  FACADpreCFT,
-  FACADCFTFilters,
+  FACADCFTAAU,
+  FACADpreCFTAAU,
+  FACADCFTFiltersAAU,
   BudgetAAUvsGeneral,
   BudgetAAU,
   TasksMonthCashFlowAAU,
@@ -91,8 +91,8 @@ ResponseSelect<APUAssign["Row"]> |
 ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADReports["Row"]> |
 ResponseSelect<FACADReportFilters["Row"]> |
-ResponseSelect<FACADCFT["Row"]> |
-ResponseSelect<FACADCFTFilters["Row"]> |
+ResponseSelect<FACADCFTAAU["Row"]> |
+ResponseSelect<FACADCFTFiltersAAU["Row"]> |
 
 ResponseSelect<BudgetAAU["Row"]> |
 ResponseSelect<BudgetAAUvsGeneral["Row"]> |
@@ -114,9 +114,9 @@ Notificate<APUAssign["Row"]> |
 Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADReports["Row"]> |
 Notificate<FACADReportFilters["Row"]> |
-Notificate<FACADCFT["Row"]> |
-Notificate<FACADCFTFilters["Row"]> |
-Notificate<FACADpreCFT["Row"]> |
+Notificate<FACADCFTAAU["Row"]> |
+Notificate<FACADCFTFiltersAAU["Row"]> |
+Notificate<FACADpreCFTAAU["Row"]> |
 
 Notificate<BudgetAAU["Row"]> |
 Notificate<BudgetAAUvsGeneral["Row"]> |
