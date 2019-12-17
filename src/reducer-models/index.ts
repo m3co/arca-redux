@@ -15,9 +15,9 @@ import * as APUAssign from './apu-assign';
 
 import * as FACADReports from './facad-reports';
 import * as FACADReportFilters from './facad-report-filters';
-import * as FACADCFT from './facad-cft';
-import * as FACADCFTFilters from './facad-cft-filters';
-import * as FACADpreCFT from './facad-precft';
+import * as FACADCFT from './facad-cft-aau';
+import * as FACADCFTFilters from './facad-cft-filters-aau';
+import * as FACADpreCFT from './facad-precft-aau';
 
 import * as BudgetAAU from './budget-aau';
 import * as BudgetAAUvsGeneral from './budget-aau-vs-general';
@@ -51,15 +51,15 @@ export const reducers = {
     Update: FACADReportFilters.Update,
     Delete: FACADReportFilters.Delete,
   },
-  'FACAD-CFT': {
+  'FACAD-CFT-AAU': {
     Update: FACADCFT.Update,
     Delete: FACADCFT.Delete,
   },
-  'FACAD-CFTFilters': {
+  'FACAD-CFT-Filters-AAU': {
     Update: FACADCFTFilters.Update,
     Delete: FACADCFTFilters.Delete,
   },
-  'FACAD-preCFT': {
+  'FACAD-preCFT-AAU': {
     Update: FACADpreCFT.Update,
     Delete: FACADpreCFT.Delete,
   },

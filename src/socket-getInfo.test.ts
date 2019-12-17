@@ -22,11 +22,11 @@ test('Connect to the server', (done): void => {
 
 const sources: (
   'FACAD-Reports' |
-  'FACAD-CFT' |
+  'FACAD-CFT-AAU' |
   'FACAD-BuiltInCategories'
 )[] = [
   'FACAD-Reports',
-  'FACAD-CFT',
+  'FACAD-CFT-AAU',
   'FACAD-BuiltInCategories'
 ];
 

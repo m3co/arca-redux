@@ -21,15 +21,15 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
-    'FACAD-CFT': {
+    'FACAD-CFT-AAU': {
       Rows: [],
       Requests: [],
     },
-    'FACAD-CFTFilters': {
+    'FACAD-CFT-Filters-AAU': {
       Rows: [],
       Requests: [],
     },
-    'FACAD-preCFT': {
+    'FACAD-preCFT-AAU': {
       Rows: [],
       Requests: [],
     },

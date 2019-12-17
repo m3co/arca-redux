@@ -106,9 +106,9 @@ ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
 ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
 ActionNotificate<'FACAD-Reports', FACADReports["Row"]> |
 ActionNotificate<'FACAD-ReportFilters', FACADReportFilters["Row"]> |
-ActionNotificate<'FACAD-CFT', FACADCFT["Row"]> |
-ActionNotificate<'FACAD-CFTFilters', FACADCFTFilters["Row"]> |
-ActionNotificate<'FACAD-preCFT', FACADpreCFT["Row"]> |
+ActionNotificate<'FACAD-CFT-AAU', FACADCFT["Row"]> |
+ActionNotificate<'FACAD-CFT-Filters-AAU', FACADCFTFilters["Row"]> |
+ActionNotificate<'FACAD-preCFT-AAU', FACADpreCFT["Row"]> |
 
 ActionNotificate<'Budget-AAU-vs-General', BudgetAAUvsGeneral["Row"]> |
 ActionNotificate<'Budget-AAU', BudgetAAU["Row"]> |

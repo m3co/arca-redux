@@ -159,19 +159,19 @@ export interface State {
       Subscribed?: boolean;
       Info?: Info;
     };
-    'FACAD-CFT': {
+    'FACAD-CFT-AAU': {
       Rows: FACADCFT["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
-    'FACAD-CFTFilters': {
+    'FACAD-CFT-Filters-AAU': {
       Rows: FACADCFTFilters["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
-    'FACAD-preCFT': {
+    'FACAD-preCFT-AAU': {
       Rows: FACADpreCFT["Row"][];
       Requests: string[];
       Subscribed?: boolean;

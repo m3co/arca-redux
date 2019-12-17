@@ -21,7 +21,7 @@ Object {
 }
 `;
 
-exports[`Retreive GetInfo of FACAD-CFT 1`] = `
+exports[`Retreive GetInfo of FACAD-CFT-AAU 1`] = `
 Object {
   "Actions": Object {
     "Delete": true,

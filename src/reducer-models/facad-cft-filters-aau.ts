@@ -9,9 +9,9 @@ export function Update(state: State, row: Model["Row"]): State {
     ...state,
     Source: {
       ...state.Source,
-      ["FACAD-CFTFilters"]: {
-        ...state.Source["FACAD-CFTFilters"],
-        Rows: state.Source["FACAD-CFTFilters"].Rows
+      ["FACAD-CFT-Filters-AAU"]: {
+        ...state.Source["FACAD-CFT-Filters-AAU"],
+        Rows: state.Source["FACAD-CFT-Filters-AAU"].Rows
           .map((row): FACADCFTFilters["Row"] =>
             (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
       }
@@ -27,9 +27,9 @@ export function Delete(state: State, row: Model["Row"]): State {
     ...state,
     Source: {
       ...state.Source,
-      ["FACAD-CFTFilters"]: {
-        ...state.Source["FACAD-CFTFilters"],
-        Rows: state.Source["FACAD-CFTFilters"].Rows.filter((row): boolean =>
+      ["FACAD-CFT-Filters-AAU"]: {
+        ...state.Source["FACAD-CFT-Filters-AAU"],
+        Rows: state.Source["FACAD-CFT-Filters-AAU"].Rows.filter((row): boolean =>
           (keys.every((key): boolean => PK[key] === row[key])) ? false : true)
       }
     }
