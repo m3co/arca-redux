@@ -19,6 +19,7 @@ import {
   FACADCFTAAU,
   FACADCFTFiltersAAU,
   FACADpreCFTAAU,
+  FACADpreCFTAAUKey,
   BudgetAAUvsGeneral,
   BudgetAAU,
   TasksMonthCashFlowAAU,
@@ -84,6 +85,7 @@ ActionSelect<FACADReportFilters["Row"]> |
 ActionSelect<FACADCFTAAU["Row"]> |
 ActionSelect<FACADCFTFiltersAAU["Row"]> |
 ActionSelect<FACADpreCFTAAU["Row"]> |
+ActionSelect<FACADpreCFTAAUKey["Row"]> |
 
 ActionSelect<BudgetAAUvsGeneral["Row"]> |
 ActionSelect<BudgetAAU["Row"]> |
@@ -109,6 +111,7 @@ ActionNotificate<'FACAD-ReportFilters', FACADReportFilters["Row"]> |
 ActionNotificate<'FACAD-CFT-AAU', FACADCFTAAU["Row"]> |
 ActionNotificate<'FACAD-CFT-Filters-AAU', FACADCFTFiltersAAU["Row"]> |
 ActionNotificate<'FACAD-preCFT-AAU', FACADpreCFTAAU["Row"]> |
+ActionNotificate<'FACAD-preCFT-AAU-Key', FACADpreCFTAAUKey["Row"]> |
 
 ActionNotificate<'Budget-AAU-vs-General', BudgetAAUvsGeneral["Row"]> |
 ActionNotificate<'Budget-AAU', BudgetAAU["Row"]> |

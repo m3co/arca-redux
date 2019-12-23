@@ -18,6 +18,7 @@ import * as FACADReportFilters from './facad-report-filters';
 import * as FACADCFT from './facad-cft-aau';
 import * as FACADCFTFilters from './facad-cft-filters-aau';
 import * as FACADpreCFT from './facad-precft-aau';
+import * as FACADpreCFTKey from './facad-cft-aau-key';
 
 import * as BudgetAAU from './budget-aau';
 import * as BudgetAAUvsGeneral from './budget-aau-vs-general';
@@ -62,6 +63,10 @@ export const reducers = {
   'FACAD-preCFT-AAU': {
     Update: FACADpreCFT.Update,
     Delete: FACADpreCFT.Delete,
+  },
+  'FACAD-preCFT-AAU-Key': {
+    Update: FACADpreCFTKey.Update,
+    Delete: DeleteDummy,
   },
   'FACAD-BuiltInCategories': {
     Update: UpdateDummy,

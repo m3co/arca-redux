@@ -33,6 +33,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'FACAD-preCFT-AAU-Key': {
+      Rows: [],
+      Requests: [],
+    },
     'FACAD-ParamsBIC': {
       Rows: [],
       Requests: [],

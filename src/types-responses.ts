@@ -17,6 +17,7 @@ import {
   FACADReportFilters,
   FACADCFTAAU,
   FACADpreCFTAAU,
+  FACADpreCFTAAUKey,
   FACADCFTFiltersAAU,
   BudgetAAUvsGeneral,
   BudgetAAU,
@@ -92,6 +93,8 @@ ResponseSelect<FACADBuiltInCategories["Row"]> |
 ResponseSelect<FACADReports["Row"]> |
 ResponseSelect<FACADReportFilters["Row"]> |
 ResponseSelect<FACADCFTAAU["Row"]> |
+ResponseSelect<FACADpreCFTAAU["Row"]> |
+ResponseSelect<FACADpreCFTAAUKey["Row"]> |
 ResponseSelect<FACADCFTFiltersAAU["Row"]> |
 
 ResponseSelect<BudgetAAU["Row"]> |
@@ -115,8 +118,9 @@ Notificate<FACADBuiltInCategories["Row"]> |
 Notificate<FACADReports["Row"]> |
 Notificate<FACADReportFilters["Row"]> |
 Notificate<FACADCFTAAU["Row"]> |
-Notificate<FACADCFTFiltersAAU["Row"]> |
 Notificate<FACADpreCFTAAU["Row"]> |
+Notificate<FACADpreCFTAAUKey["Row"]> |
+Notificate<FACADCFTFiltersAAU["Row"]> |
 
 Notificate<BudgetAAU["Row"]> |
 Notificate<BudgetAAUvsGeneral["Row"]> |

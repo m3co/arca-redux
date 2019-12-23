@@ -327,6 +327,20 @@ export interface FACADpreCFTAAU {
   };
 };
 
+// FACAD-preCFT-AAU-Key
+export interface FACADpreCFTAAUKey {
+  Row: {
+    Family: string;
+    Type: string;
+    Key: string;
+  };
+  PK: {
+    Family: string;
+    Type: string;
+    Key: string;
+  };
+};
+
 // FACAD-BuiltInCategories
 export interface FACADBuiltInCategories {
   Row: {

@@ -19,6 +19,7 @@ import {
   FACADCFTAAU,
   FACADCFTFiltersAAU,
   FACADpreCFTAAU,
+  FACADpreCFTAAUKey,
   BudgetAAUvsGeneral,
   BudgetAAU,
   TasksMonthCashFlowAAU,
@@ -72,6 +73,7 @@ export type Fields =
   FACADCFTAAU["Row"] &
   FACADCFTFiltersAAU["Row"] &
   FACADpreCFTAAU["Row"] &
+  FACADpreCFTAAUKey["Row"] &
   FACADReportFilters["Row"] &
   FACADBuiltInCategories["Row"] &
   BudgetAAUvsGeneral["Row"] &
@@ -96,6 +98,7 @@ export type Row =
   FACADCFTAAU["Row"] |
   FACADCFTFiltersAAU["Row"] |
   FACADpreCFTAAU["Row"] |
+  FACADpreCFTAAUKey["Row"] |
   FACADReportFilters["Row"] |
   FACADBuiltInCategories["Row"] |
   BudgetAAUvsGeneral["Row"] |
@@ -120,6 +123,7 @@ export type Model =
   FACADCFTAAU |
   FACADCFTFiltersAAU |
   FACADpreCFTAAU |
+  FACADpreCFTAAUKey |
   FACADReportFilters |
   FACADBuiltInCategories |
   BudgetAAUvsGeneral |
@@ -173,6 +177,12 @@ export interface State {
     };
     'FACAD-preCFT-AAU': {
       Rows: FACADpreCFTAAU["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'FACAD-preCFT-AAU-Key': {
+      Rows: FACADpreCFTAAUKey["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
