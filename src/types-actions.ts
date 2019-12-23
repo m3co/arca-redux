@@ -2,7 +2,7 @@
 import {
   State,
   Projects,
-  Concretize,
+  AAUConcretize,
   AAU,
   AAUQTO,
   AAUTasksGantt,
@@ -69,7 +69,7 @@ ActionSelect<Projects["Row"]> |
 ActionSelect<AAU["Row"]> |
 ActionSelect<AAUQTO["Row"]> |
 ActionSelect<AAUTasksGantt["Row"]> |
-ActionSelect<Concretize["Row"]> |
+ActionSelect<AAUConcretize["Row"]> |
 
 ActionSelect<APU["Row"]> |
 ActionSelect<APUImportSupplies["Row"]> |
@@ -95,7 +95,7 @@ ActionNotificate<'Projects', Projects["Row"]> |
 ActionNotificate<'AAU', AAU["Row"]> |
 ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
 ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
-ActionNotificate<'Concretize', Concretize["Row"]> |
+ActionNotificate<'AAU-Concretize', AAUConcretize["Row"]> |
 
 ActionNotificate<'APU', APU["Row"]> |
 ActionNotificate<'APU-Import-Supplies', APUImportSupplies["Row"]> |

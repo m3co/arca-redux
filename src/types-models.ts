@@ -97,8 +97,8 @@ export interface AAU {
   };
 };
 
-// Concretize
-export interface Concretize {
+// AAUConcretize
+export interface AAUConcretize {
   Row: {
     Project: number | null;
     Concreted: boolean;

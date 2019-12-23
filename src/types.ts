@@ -11,7 +11,7 @@ import {
   APUPSupplies,
   APUQTO,
   APUAssign,
-  Concretize,
+  AAUConcretize,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
@@ -61,7 +61,7 @@ export type Fields =
   AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
-  Concretize["Row"] &
+  AAUConcretize["Row"] &
   APU["Row"] &
   APUImportSupplies["Row"] &
   APUMetaSupplies["Row"] &
@@ -86,7 +86,7 @@ export type Row =
   AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
-  Concretize["Row"] |
+  AAUConcretize["Row"] |
   APU["Row"] |
   APUImportSupplies["Row"] |
   APUMetaSupplies["Row"] |
@@ -111,7 +111,7 @@ export type Model =
   AAU |
   AAUQTO |
   AAUTasksGantt |
-  Concretize |
+  AAUConcretize |
   APU |
   APUImportSupplies |
   APUMetaSupplies |
@@ -211,8 +211,8 @@ export interface State {
       Subscribed?: boolean;
       Info?: Info;
     };
-    'Concretize': {
-      Rows: Concretize["Row"][];
+    'AAU-Concretize': {
+      Rows: AAUConcretize["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

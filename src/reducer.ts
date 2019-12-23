@@ -57,7 +57,7 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
-    'Concretize': {
+    'AAU-Concretize': {
       Rows: [],
       Requests: [],
     },

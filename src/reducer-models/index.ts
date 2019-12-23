@@ -88,7 +88,7 @@ export const reducers = {
     Update: AAUTasksGantt.Update,
     Delete: AAUTasksGantt.Delete,
   },
-  'Concretize': {
+  'AAU-Concretize': {
     Update: Concretize.Update,
     Delete: Concretize.Delete,
   },

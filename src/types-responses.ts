@@ -2,7 +2,7 @@
 import {
   State,
   Projects,
-  Concretize,
+  AAUConcretize,
   AAU,
   AAUQTO,
   AAUTasksGantt,
@@ -80,7 +80,7 @@ ResponseSelect<Projects["Row"]> |
 ResponseSelect<AAU["Row"]> |
 ResponseSelect<AAUQTO["Row"]> |
 ResponseSelect<AAUTasksGantt["Row"]> |
-ResponseSelect<Concretize["Row"]> |
+ResponseSelect<AAUConcretize["Row"]> |
 
 ResponseSelect<APU["Row"]> |
 ResponseSelect<APUImportSupplies["Row"]> |
@@ -105,7 +105,7 @@ Notificate<Projects["Row"]> |
 Notificate<AAU["Row"]> |
 Notificate<AAUQTO["Row"]> |
 Notificate<AAUTasksGantt["Row"]> |
-Notificate<Concretize["Row"]> |
+Notificate<AAUConcretize["Row"]> |
 
 Notificate<APU["Row"]> |
 Notificate<APUImportSupplies["Row"]> |
