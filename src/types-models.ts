@@ -119,8 +119,8 @@ export interface AAUConcretize {
 // AAU-QTO
 export interface AAUQTO {
   Row: {
-    Key?: string;
-    Constraint?: string;
+    Key: string | null;
+    Constraint: string | null;
     Q: number;
     CAD: boolean;
   };
