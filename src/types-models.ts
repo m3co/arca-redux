@@ -332,12 +332,12 @@ export interface FACADpreCFTAAUKey {
   Row: {
     Family: string;
     Type: string;
-    Key: string;
+    Key: string | null;
   };
   PK: {
     Family: string;
     Type: string;
-    Key: string;
+    Key: string | null;
   };
 };
 
