@@ -38,7 +38,7 @@ test(`Perform Delete at ${source} over a Row`, (done): void => {
         Field2: '',
         Field3: '',
         ReportType: '',
-      }, '26e0bb20-814d-46d1-954e-baef35e630b5');
+      }, { ID: '26e0bb20-814d-46d1-954e-baef35e630b5' });
     } else if (state.Connected &&
       Source.Info &&
       Source.Rows.length &&

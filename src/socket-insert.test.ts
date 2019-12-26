@@ -35,7 +35,7 @@ test(`Perform Insert at ${source} over a Row`, (done): void => {
         Field2: '',
         Field3: '',
         ReportType: '',
-      }, '3eff0c6b-e248-41bc-bc8f-d5233f881e1c');
+      }, { ID: '3eff0c6b-e248-41bc-bc8f-d5233f881e1c' });
     } else if (state.Connected &&
       state.Source[source].Rows.length &&
       state.Source[source].Subscribed &&

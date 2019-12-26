@@ -52,25 +52,25 @@ export class ARCASocket {
     });
   }
 
-  public Delete = (Source: keyof State["Source"], row: Row, ID?: string): void => {
+  public Delete = (Source: keyof State["Source"], row: Row, Extra?: { ID?: string, PK?: Model["PK"] }): void => {
     const state = this.store.getState();
     const { Info } = state.Source[Source];
     if (Info) {
       const columnsPK = Info.Fields
         .filter((field: Field): boolean => field.Primary)
         .map((field: Field): keyof Model["PK"] => field.Name as keyof Model["PK"]);
-      const PK = columnsPK.reduce((acc: Model["PK"], column) => {
+      const pk = columnsPK.reduce((acc: Model["PK"], column) => {
         acc[column] = row[column];
         return acc;
       }, {} as Model["PK"]);
       const request = {
-        ID: ID || uuid4(),
+        ID: Extra?.ID || uuid4(),
         Context: {
           Source
         },
         Method: 'Delete',
         Params: {
-          PK
+          PK: (Extra?.PK) ? Extra.PK : pk
         }
       };
       this.store.dispatch({
@@ -82,26 +82,26 @@ export class ARCASocket {
     }
   }
 
-  public Update = (Source: keyof State["Source"], row: Row, ID?: string): void => {
+  public Update = (Source: keyof State["Source"], row: Row, Extra?: { ID?: string, PK?: Model["PK"] }): void => {
     const state = this.store.getState();
     const { Info } = state.Source[Source];
     if (Info) {
       const columnsPK = Info.Fields
         .filter((field: Field): boolean => field.Primary)
         .map((field: Field): keyof Model["PK"] => field.Name as keyof Model["PK"]);
-      const PK = columnsPK.reduce((acc: Model["PK"], column) => {
+      const pk = columnsPK.reduce((acc: Model["PK"], column) => {
         acc[column] = row[column];
         return acc;
       }, {} as Model["PK"]);
       const request = {
-        ID: ID || uuid4(),
+        ID: Extra?.ID || uuid4(),
         Context: {
           Source
         },
         Method: 'Update',
         Params: {
           Row: row,
-          PK: PK,
+          PK: (Extra?.PK) ? Extra.PK : pk
         }
       };
       this.store.dispatch({
@@ -113,9 +113,9 @@ export class ARCASocket {
     }
   }
 
-  public Insert = (Source: keyof State["Source"], row: Row, ID?: string): string => {
+  public Insert = (Source: keyof State["Source"], row: Row, Extra?: { ID?: string }): string => {
     const request = {
-      ID: ID || uuid4(),
+      ID: Extra?.ID || uuid4(),
       Context: {
         Source
       },
