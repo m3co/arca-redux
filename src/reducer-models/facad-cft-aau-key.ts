@@ -1,9 +1,9 @@
 
-import { State, Model, FACADpreCFTAAUKey } from '../types';
+import { State, Row, FACADpreCFTAAUKey, PK } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as FACADpreCFTAAUKey["Row"];
-  const PK = { Type: Row.Type, Family: Row.Family, Key: Row.Key };
+  const PK = pk || {Type: Row.Type, Family: Row.Family, Key: Row.Key};
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
     ...state,

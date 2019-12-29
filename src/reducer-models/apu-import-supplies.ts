@@ -1,7 +1,7 @@
 
-import { State, Model, APUImportSupplies } from '../types';
+import { State, Row, PK, APUImportSupplies } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as APUImportSupplies["Row"];
   const PK = { SupplyID: Row.SupplyID, APUID: Row.APUID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
@@ -19,7 +19,7 @@ export function Update(state: State, row: Model["Row"]): State {
   };
 }
 
-export function Delete(state: State, row: Model["Row"]): State {
+export function Delete(state: State, row: Row): State {
   const Row = row as APUImportSupplies["Row"];
   const PK = { SupplyID: Row.SupplyID, APUID: Row.APUID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];

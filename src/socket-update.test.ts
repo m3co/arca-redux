@@ -52,11 +52,71 @@ test(`Perform Update at ${source} over a Row`, (done): void => {
       Source.Subscribed) {
       if (Source.Rows[0].ID === 19) {
         expect(Source.Rows).toMatchSnapshot();
-        i++;
+        expect(Source.Requests.length).toBe(0);
+        done();
+        return;
       }
+      i++;
     }
     if (i === 4) {
-      done();
+      fail();
+    }
+  });
+});
+
+test(`Perform Update at FACAD-preCFT-AAU-Key over a Row with different Row and PK`, (done): void => {
+  const source = 'FACAD-preCFT-AAU-Key';
+  const io = Socket(URL);
+  const store = createStore(reducer);
+  const socket = new ARCASocket(store, io);
+
+  socket.Select(source);
+  socket.Subscribe(source);
+  socket.GetInfo(source);
+
+  let updating = false;
+  let i = 0;
+  store.subscribe((): void => {
+    const state = store.getState();
+    const Source = state.Source[source];
+    if (state.Connected && !updating &&
+      Source.Info &&
+      Source.Rows.length &&
+      Source.Subscribed) {
+      expect(Source).toMatchSnapshot();
+      i++;
+
+      updating = true;
+      socket.Update(source, {
+        Family: 'Concrete',
+        Type: 'Concreto Muro de contencion',
+        Key: '1.3.1'
+      }, { ID:'61bb4f24-a89d-40d8-970a-f393dd3eb207', PK: {
+        Family: 'Concrete',
+        Type: 'Concreto Muro de contencion',
+        Key: null
+      }});
+    } else if (state.Connected &&
+      Source.Info &&
+      Source.Rows.length &&
+      Source.Subscribed &&
+      Source.Requests.length) {
+      expect(Source).toMatchSnapshot();
+      i++;
+    } else if (state.Connected &&
+      Source.Info &&
+      Source.Rows.length &&
+      Source.Subscribed) {
+      if (Source.Rows[0].Key === '1.3.1') {
+        expect(Source.Rows).toMatchSnapshot();
+        expect(Source.Requests.length).toBe(0);
+        done();
+        return
+      }
+      i++;
+    }
+    if (i === 4) {
+      fail();
     }
   });
 });

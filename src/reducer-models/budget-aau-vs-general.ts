@@ -1,9 +1,9 @@
 
-import { State, Model, BudgetAAUvsGeneral } from '../types';
+import { State, Row, PK, BudgetAAUvsGeneral } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as BudgetAAUvsGeneral["Row"];
-  const PK = { Key: Row.Key };
+  const PK = pk || { Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
     ...state,
@@ -19,7 +19,7 @@ export function Update(state: State, row: Model["Row"]): State {
   };
 }
 
-export function Delete(state: State, row: Model["Row"]): State {
+export function Delete(state: State, row: Row): State {
   const Row = row as BudgetAAUvsGeneral["Row"];
   const PK = { Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];

@@ -1,9 +1,9 @@
 
-import { State, Model, FACADCFTAAU } from '../types';
+import { State, Row, PK, FACADCFTAAU } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as FACADCFTAAU["Row"];
-  const PK = { ID: Row.ID };
+  const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
     ...state,
@@ -19,7 +19,7 @@ export function Update(state: State, row: Model["Row"]): State {
   };
 }
 
-export function Delete(state: State, row: Model["Row"]): State {
+export function Delete(state: State, row: Row, ): State {
   const Row = row as FACADCFTAAU["Row"];
   const PK = { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];

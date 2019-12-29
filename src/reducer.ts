@@ -169,7 +169,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'update':
-      return reducers[action.Source].Update(state, action.Row);
+      return reducers[action.Source].Update(state, action.Row, action.PK);
     case 'delete':
       return reducers[action.Source].Delete(state, action.Row);
     default:

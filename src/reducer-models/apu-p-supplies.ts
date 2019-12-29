@@ -1,9 +1,9 @@
 
-import { State, Model, APUPSupplies } from '../types';
+import { State, Row, PK, APUPSupplies } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as APUPSupplies["Row"];
-  const PK = { SupplyID: Row.SupplyID, APUID: Row.APUID };
+  const PK = pk || { SupplyID: Row.SupplyID, APUID: Row.APUID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
     ...state,
@@ -19,7 +19,7 @@ export function Update(state: State, row: Model["Row"]): State {
   };
 }
 
-export function Delete(state: State, row: Model["Row"]): State {
+export function Delete(state: State, row: Row): State {
   const Row = row as APUPSupplies["Row"];
   const PK = { SupplyID: Row.SupplyID, APUID: Row.APUID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];

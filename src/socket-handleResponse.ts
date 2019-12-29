@@ -37,6 +37,7 @@ export function handleResponse(store: Store): (response: Response) => void {
           type: response.Method,
           Source: response.Context.Target,
           Row: response.Row,
+          PK: response.PK
         });
         break;
       default:

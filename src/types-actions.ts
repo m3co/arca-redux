@@ -1,31 +1,10 @@
 
 import {
   State,
-  Projects,
-  AAUConcretize,
-  AAU,
-  AAUQTO,
-  AAUTasksGantt,
-  APU,
-  APUImportSupplies,
-  APUMetaSupplies,
-  APUPSupplies,
-  APUQTO,
-  APUAssign,
-  FACADBuiltInCategories,
-  FACADParamsBIC,
-  FACADReports,
-  FACADReportFilters,
-  FACADCFTAAU,
-  FACADCFTFiltersAAU,
-  FACADpreCFTAAU,
-  FACADpreCFTAAUKey,
-  BudgetAAUvsGeneral,
-  BudgetAAU,
-  TasksMonthCashFlowAAU,
+  PK,
+  Row,
+  Info,
 } from './types';
-
-import { Info } from './types';
 
 interface ActionConnect {
   type: 'Connect';
@@ -43,7 +22,7 @@ interface ActionGetInfo {
   Result: Info;
 };
 
-interface ActionSelect<Row> {
+interface ActionSelect {
   type: 'Select';
   Source: keyof State["Source"];
   Result: Row[];
@@ -56,63 +35,12 @@ interface ActionRequest {
   Success?: boolean;
 };
 
-interface ActionNotificate<Source, Row> {
+interface ActionNotificate {
   type: 'insert' | 'delete' | 'update';
   ID: string;
-  Source: Source;
+  Source: keyof State["Source"];
   Row: Row;
+  PK?: PK;
 }
 
-export type Action = ActionConnect | ActionGetInfo | ActionSubscribe | ActionRequest |
-
-ActionSelect<Projects["Row"]> |
-ActionSelect<AAU["Row"]> |
-ActionSelect<AAUQTO["Row"]> |
-ActionSelect<AAUTasksGantt["Row"]> |
-ActionSelect<AAUConcretize["Row"]> |
-
-ActionSelect<APU["Row"]> |
-ActionSelect<APUImportSupplies["Row"]> |
-ActionSelect<APUMetaSupplies["Row"]> |
-ActionSelect<APUPSupplies["Row"]> |
-ActionSelect<APUQTO["Row"]> |
-ActionSelect<APUAssign["Row"]> |
-
-ActionSelect<FACADParamsBIC["Row"]> |
-ActionSelect<FACADBuiltInCategories["Row"]> |
-ActionSelect<FACADReports["Row"]> |
-ActionSelect<FACADReportFilters["Row"]> |
-ActionSelect<FACADCFTAAU["Row"]> |
-ActionSelect<FACADCFTFiltersAAU["Row"]> |
-ActionSelect<FACADpreCFTAAU["Row"]> |
-ActionSelect<FACADpreCFTAAUKey["Row"]> |
-
-ActionSelect<BudgetAAUvsGeneral["Row"]> |
-ActionSelect<BudgetAAU["Row"]> |
-ActionSelect<TasksMonthCashFlowAAU["Row"]> |
-
-ActionNotificate<'Projects', Projects["Row"]> |
-ActionNotificate<'AAU', AAU["Row"]> |
-ActionNotificate<'AAU-QTO', AAUQTO["Row"]> |
-ActionNotificate<'AAU-Tasks-Gantt', AAUTasksGantt["Row"]> |
-ActionNotificate<'AAU-Concretize', AAUConcretize["Row"]> |
-
-ActionNotificate<'APU', APU["Row"]> |
-ActionNotificate<'APU-Import-Supplies', APUImportSupplies["Row"]> |
-ActionNotificate<'APU-MetaSupplies', APUMetaSupplies["Row"]> |
-ActionNotificate<'APU-P-Supplies', APUPSupplies["Row"]> |
-ActionNotificate<'APU-QTO', APUQTO["Row"]> |
-ActionNotificate<'APU-Assign', APUAssign["Row"]> |
-
-ActionNotificate<'FACAD-BuiltInCategories', FACADBuiltInCategories["Row"]> |
-ActionNotificate<'FACAD-ParamsBIC', FACADParamsBIC["Row"]> |
-ActionNotificate<'FACAD-Reports', FACADReports["Row"]> |
-ActionNotificate<'FACAD-ReportFilters', FACADReportFilters["Row"]> |
-ActionNotificate<'FACAD-CFT-AAU', FACADCFTAAU["Row"]> |
-ActionNotificate<'FACAD-CFT-Filters-AAU', FACADCFTFiltersAAU["Row"]> |
-ActionNotificate<'FACAD-preCFT-AAU', FACADpreCFTAAU["Row"]> |
-ActionNotificate<'FACAD-preCFT-AAU-Key', FACADpreCFTAAUKey["Row"]> |
-
-ActionNotificate<'Budget-AAU-vs-General', BudgetAAUvsGeneral["Row"]> |
-ActionNotificate<'Budget-AAU', BudgetAAU["Row"]> |
-ActionNotificate<'Tasks-Month-CashFlow-AAU', TasksMonthCashFlowAAU["Row"]>;
+export type Action = ActionConnect | ActionGetInfo | ActionSubscribe | ActionRequest | ActionSelect | ActionNotificate;

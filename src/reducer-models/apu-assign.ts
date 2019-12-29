@@ -1,9 +1,9 @@
 
-import { State, Model, APUAssign } from '../types';
+import { State, Row, PK, APUAssign } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as APUAssign["Row"];
-  const PK = { Key: Row.Key, Constraint: Row.Constraint, ID: Row.ID };
+  const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
     ...state,
@@ -19,7 +19,7 @@ export function Update(state: State, row: Model["Row"]): State {
   };
 }
 
-export function Delete(state: State, row: Model["Row"]): State {
+export function Delete(state: State, row: Row): State {
   const Row = row as APUAssign["Row"];
   const PK = { Key: Row.Key, Constraint: Row.Constraint, ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];

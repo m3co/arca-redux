@@ -105,6 +105,31 @@ export type Row =
   BudgetAAU["Row"] |
   TasksMonthCashFlowAAU["Row"];
 
+export type PK =
+  Projects["PK"] |
+  Contractors["PK"] |
+  AAU["PK"] |
+  AAUQTO["PK"] |
+  AAUTasksGantt["PK"] |
+  AAUConcretize["PK"] |
+  APU["PK"] |
+  APUImportSupplies["PK"] |
+  APUMetaSupplies["PK"] |
+  APUPSupplies["PK"] |
+  APUQTO["PK"] |
+  APUAssign["PK"] |
+  FACADReports["PK"] |
+  FACADParamsBIC["PK"] |
+  FACADCFTAAU["PK"] |
+  FACADCFTFiltersAAU["PK"] |
+  FACADpreCFTAAU["PK"] |
+  FACADpreCFTAAUKey["PK"] |
+  FACADReportFilters["PK"] |
+  FACADBuiltInCategories["PK"] |
+  BudgetAAUvsGeneral["PK"] |
+  BudgetAAU["PK"] |
+  TasksMonthCashFlowAAU["PK"];
+
 export type Model =
   Projects |
   Contractors |

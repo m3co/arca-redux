@@ -1,9 +1,9 @@
 
-import { State, Model, AAUQTO } from '../types';
+import { State, Row, PK, AAUQTO } from '../types';
 
-export function Update(state: State, row: Model["Row"]): State {
+export function Update(state: State, row: Row, pk?: PK): State {
   const Row = row as AAUQTO["Row"];
-  const PK = { Constraint: Row.Constraint, Key: Row.Key };
+  const PK = pk || { Constraint: Row.Constraint, Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
     ...state,
@@ -19,7 +19,7 @@ export function Update(state: State, row: Model["Row"]): State {
   };
 }
 
-export function Delete(state: State, row: Model["Row"]): State {
+export function Delete(state: State, row: Row): State {
   const Row = row as AAUQTO["Row"];
   const PK = { Constraint: Row.Constraint, Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];

@@ -1,27 +1,8 @@
 
 import {
   State,
-  Projects,
-  AAUConcretize,
-  AAU,
-  AAUQTO,
-  AAUTasksGantt,
-  APU,
-  APUImportSupplies,
-  APUMetaSupplies,
-  APUPSupplies,
-  APUQTO,
-  APUAssign,
-  FACADBuiltInCategories,
-  FACADReports,
-  FACADReportFilters,
-  FACADCFTAAU,
-  FACADpreCFTAAU,
-  FACADpreCFTAAUKey,
-  FACADCFTFiltersAAU,
-  BudgetAAUvsGeneral,
-  BudgetAAU,
-  TasksMonthCashFlowAAU,
+  PK,
+  Row,
 } from './types';
 
 import { Info } from './types';
@@ -43,7 +24,7 @@ interface ResponseSubscribe {
   Result: 'Success';
 }
 
-interface ResponseSelect<Row> {
+interface ResponseSelect {
   Method: 'Select';
   Context: {
     Source: keyof State["Source"];
@@ -64,7 +45,7 @@ interface ResponseRequest {
   Error: null;
 };
 
-interface Notificate<Row> {
+interface Notificate {
   Method: 'insert' | 'delete' | 'update';
   Context: {
     Source: string;
@@ -72,56 +53,7 @@ interface Notificate<Row> {
     Notification: true;
   };
   Row: Row;
+  PK?: PK
 }
 
-export type Response = ResponseGetInfo | ResponseSubscribe |  ResponseRequest |
-
-ResponseSelect<Projects["Row"]> |
-ResponseSelect<AAU["Row"]> |
-ResponseSelect<AAUQTO["Row"]> |
-ResponseSelect<AAUTasksGantt["Row"]> |
-ResponseSelect<AAUConcretize["Row"]> |
-
-ResponseSelect<APU["Row"]> |
-ResponseSelect<APUImportSupplies["Row"]> |
-ResponseSelect<APUMetaSupplies["Row"]> |
-ResponseSelect<APUPSupplies["Row"]> |
-ResponseSelect<APUQTO["Row"]> |
-ResponseSelect<APUAssign["Row"]> |
-
-ResponseSelect<FACADBuiltInCategories["Row"]> |
-ResponseSelect<FACADReports["Row"]> |
-ResponseSelect<FACADReportFilters["Row"]> |
-ResponseSelect<FACADCFTAAU["Row"]> |
-ResponseSelect<FACADpreCFTAAU["Row"]> |
-ResponseSelect<FACADpreCFTAAUKey["Row"]> |
-ResponseSelect<FACADCFTFiltersAAU["Row"]> |
-
-ResponseSelect<BudgetAAU["Row"]> |
-ResponseSelect<BudgetAAUvsGeneral["Row"]> |
-ResponseSelect<TasksMonthCashFlowAAU["Row"]> |
-
-Notificate<Projects["Row"]> |
-Notificate<AAU["Row"]> |
-Notificate<AAUQTO["Row"]> |
-Notificate<AAUTasksGantt["Row"]> |
-Notificate<AAUConcretize["Row"]> |
-
-Notificate<APU["Row"]> |
-Notificate<APUImportSupplies["Row"]> |
-Notificate<APUMetaSupplies["Row"]> |
-Notificate<APUPSupplies["Row"]> |
-Notificate<APUQTO["Row"]> |
-Notificate<APUAssign["Row"]> |
-
-Notificate<FACADBuiltInCategories["Row"]> |
-Notificate<FACADReports["Row"]> |
-Notificate<FACADReportFilters["Row"]> |
-Notificate<FACADCFTAAU["Row"]> |
-Notificate<FACADpreCFTAAU["Row"]> |
-Notificate<FACADpreCFTAAUKey["Row"]> |
-Notificate<FACADCFTFiltersAAU["Row"]> |
-
-Notificate<BudgetAAU["Row"]> |
-Notificate<BudgetAAUvsGeneral["Row"]> |
-Notificate<TasksMonthCashFlowAAU["Row"]>;
+export type Response = ResponseGetInfo | ResponseSubscribe |  ResponseRequest | ResponseSelect | Notificate;

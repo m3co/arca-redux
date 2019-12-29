@@ -24,13 +24,13 @@ import * as BudgetAAU from './budget-aau';
 import * as BudgetAAUvsGeneral from './budget-aau-vs-general';
 import * as TasksMonthCashFlowAAU from './tasks-month-cashflow-aau';
 
-import { State, Model } from '../types';
+import { State, Row, PK } from '../types';
 
-function UpdateDummy(state: State, row: Model["Row"]): State {
-  console.error('Update not implemented for row', row);
+function UpdateDummy(state: State, row: Row, pk?: PK): State {
+  console.error('Update not implemented for row', row, pk);
   return state;
 }
-function DeleteDummy(state: State, row: Model["Row"]): State {
+function DeleteDummy(state: State, row: Row): State {
   console.error('Delete not implemented for row', row);
   return state;
 }
