@@ -67,6 +67,8 @@ export interface TasksMonthCashFlowAAU {
   Row: {
     Project: number | null;
     Key: string;
+    Description: string;
+    Unit: string;
     TaskStart: Date | null;
     Start: Date | null;
     End: Date | null;

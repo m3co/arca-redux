@@ -1,6 +1,6 @@
 {
   "name": "arca-redux",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "El puente entre arca-server y web mediante Socket.io",
   "main": "build/index.js",
   "types": "build/index.d.ts",
