@@ -32,13 +32,14 @@ export class ARCASocket {
     });
   }
 
-  public Select = (Source: keyof State["Source"]): void => {
+  public Select = (Source: keyof State["Source"], Params?: { [key: string]: number | string }): void => {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'Select',
       Context: {
         Source
       },
+      Params
     });
   }
 

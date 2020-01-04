@@ -22,7 +22,7 @@ sources.forEach((source): void => {
     const store = createStore(reducer);
     const socket = new ARCASocket(store, io);
 
-    socket.Select(source);
+    socket.Select(source, { Project: 10 });
 
     let i = 0;
     store.subscribe((): void => {
