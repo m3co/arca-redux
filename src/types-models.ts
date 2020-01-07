@@ -152,9 +152,9 @@ export interface AAUTasksGantt {
 export interface APU {
   Row: {
     ID:           number;
-    Key:          string;
-    Constraint:   string;
-    ContractorID: number;
+    Key:          string | null;
+    Constraint:   string | null;
+    ContractorID: number | null;
     Description:  string;
     Unit:         string | null;
     P:            number;
