@@ -8,6 +8,7 @@ import * as Concretize from './concretize';
 
 import * as APU from './apu';
 import * as APUQTO from './apu-qto';
+import * as APUTasks from './apu-tasks';
 import * as APUImportSupplies from './apu-import-supplies';
 import * as APUPSupplies from './apu-p-supplies';
 import * as APUMetasupplies from './apu-metasupplies';
@@ -99,6 +100,10 @@ export const reducers = {
   'APU-QTO': {
     Update: APUQTO.Update,
     Delete: APUQTO.Delete,
+  },
+  'APU-Tasks': {
+    Update: APUTasks.Update,
+    Delete: APUTasks.Delete,
   },
   'APU-Import-Supplies': {
     Update: APUImportSupplies.Update,

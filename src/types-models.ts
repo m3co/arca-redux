@@ -182,6 +182,19 @@ export interface APUQTO {
   };
 };
 
+// APU-Tasks
+export interface APUTasks {
+  Row: {
+    ID:        number;
+    Q:         number;
+    Start: Date | null;
+    End: Date | null;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // APU-Import-Supplies
 export interface APUImportSupplies {
   Row: {

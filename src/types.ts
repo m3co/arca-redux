@@ -10,6 +10,7 @@ import {
   APUMetaSupplies,
   APUPSupplies,
   APUQTO,
+  APUTasks,
   APUAssign,
   AAUConcretize,
   FACADBuiltInCategories,
@@ -67,6 +68,7 @@ export type Fields =
   APUMetaSupplies["Row"] &
   APUPSupplies["Row"] &
   APUQTO["Row"] &
+  APUTasks["Row"] &
   APUAssign["Row"] &
   FACADReports["Row"] &
   FACADParamsBIC["Row"] &
@@ -92,6 +94,7 @@ export type Row =
   APUMetaSupplies["Row"] |
   APUPSupplies["Row"] |
   APUQTO["Row"] |
+  APUTasks["Row"] |
   APUAssign["Row"] |
   FACADReports["Row"] |
   FACADParamsBIC["Row"] |
@@ -117,6 +120,7 @@ export type PK =
   APUMetaSupplies["PK"] |
   APUPSupplies["PK"] |
   APUQTO["PK"] |
+  APUTasks["PK"] |
   APUAssign["PK"] |
   FACADReports["PK"] |
   FACADParamsBIC["PK"] |
@@ -142,6 +146,7 @@ export type Model =
   APUMetaSupplies |
   APUPSupplies |
   APUQTO |
+  APUTasks |
   APUAssign |
   FACADReports |
   FACADParamsBIC |
@@ -268,6 +273,12 @@ export interface State {
     };
     'APU-QTO': {
       Rows: APUQTO["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-Tasks': {
+      Rows: APUTasks["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
