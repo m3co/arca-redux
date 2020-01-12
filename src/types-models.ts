@@ -203,8 +203,8 @@ export interface APUImportSupplies {
     P:           number;
     Description: string | null;
     Unit:        string | null;
-    Type:        string | null;
-    Estimated:   number | null;
+    Type:        string;
+    Estimated:   number;
   };
   PK: {
     APUID:    number;
