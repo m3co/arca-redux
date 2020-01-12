@@ -199,16 +199,16 @@ export interface APUTasks {
 export interface APUImportSupplies {
   Row: {
     APUID:       number;
-    SupplyID:    number;
+    SupplyID:    number | null;
     P:           number;
-    Description: string;
-    Unit:        string;
-    Type:        string;
-    Estimated:   number;
+    Description: string | null;
+    Unit:        string | null;
+    Type:        string | null;
+    Estimated:   number | null;
   };
   PK: {
     APUID:    number;
-    SupplyID: number;
+    SupplyID: number | null;
   };
 };
 
