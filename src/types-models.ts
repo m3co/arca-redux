@@ -270,7 +270,7 @@ export interface AEU {
     ID:         number;
     ReportedAt: Date;
     APUID:      number;
-    Q:          number;
+    Q:          number | null;
     Start:      Date;
     End:        Date | null;
   };
