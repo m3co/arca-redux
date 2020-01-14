@@ -14,6 +14,8 @@ import * as APUPSupplies from './apu-p-supplies';
 import * as APUMetasupplies from './apu-metasupplies';
 import * as APUAssign from './apu-assign';
 
+import * as AEU from './aeu';
+
 import * as FACADReports from './facad-reports';
 import * as FACADReportFilters from './facad-report-filters';
 import * as FACADCFT from './facad-cft-aau';
@@ -120,6 +122,10 @@ export const reducers = {
   'APU-Assign': {
     Update: APUAssign.Update,
     Delete: APUAssign.Delete,
+  },
+  'AEU': {
+    Update: AEU.Update,
+    Delete: AEU.Delete,
   },
   'Budget-AAU': {
     Update: BudgetAAU.Update,

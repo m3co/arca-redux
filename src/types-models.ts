@@ -264,6 +264,21 @@ export interface APUAssign {
   };
 }
 
+// AEU
+export interface AEU {
+  Row: {
+    ID:         number;
+    ReportedAt: Date;
+    APUID:      number;
+    Q:          number;
+    Start:      Date;
+    End:        Date | null;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // FACAD-Reports
 export interface FACADReports {
   Row: {

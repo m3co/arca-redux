@@ -3,6 +3,7 @@ import {
   Projects,
   Contractors,
   AAU,
+  AAUConcretize,
   AAUQTO,
   AAUTasksGantt,
   APU,
@@ -12,7 +13,7 @@ import {
   APUQTO,
   APUTasks,
   APUAssign,
-  AAUConcretize,
+  AEU,
   FACADBuiltInCategories,
   FACADParamsBIC,
   FACADReports,
@@ -70,6 +71,7 @@ export type Fields =
   APUQTO["Row"] &
   APUTasks["Row"] &
   APUAssign["Row"] &
+  AEU["Row"] &
   FACADReports["Row"] &
   FACADParamsBIC["Row"] &
   FACADCFTAAU["Row"] &
@@ -96,6 +98,7 @@ export type Row =
   APUQTO["Row"] |
   APUTasks["Row"] |
   APUAssign["Row"] |
+  AEU["Row"] |
   FACADReports["Row"] |
   FACADParamsBIC["Row"] |
   FACADCFTAAU["Row"] |
@@ -122,6 +125,7 @@ export type PK =
   APUQTO["PK"] |
   APUTasks["PK"] |
   APUAssign["PK"] |
+  AEU["PK"] |
   FACADReports["PK"] |
   FACADParamsBIC["PK"] |
   FACADCFTAAU["PK"] |
@@ -148,6 +152,7 @@ export type Model =
   APUQTO |
   APUTasks |
   APUAssign |
+  AEU |
   FACADReports |
   FACADParamsBIC |
   FACADCFTAAU |
@@ -285,6 +290,12 @@ export interface State {
     };
     'APU-Assign': {
       Rows: APUAssign["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'AEU': {
+      Rows: AEU["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
