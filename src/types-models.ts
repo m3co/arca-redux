@@ -121,13 +121,13 @@ export interface AAUConcretize {
 // AAU-QTO
 export interface AAUQTO {
   Row: {
-    Key: string | null;
+    Key:        string | null;
     Constraint: string | null;
-    Q: number;
-    CAD: boolean;
+    Q:          number;
+    CAD:        boolean;
   };
   PK: {
-    Key: string;
+    Key:        string;
     Constraint: string;
   };
 };
@@ -135,12 +135,12 @@ export interface AAUQTO {
 // AAU-Tasks-Gantt
 export interface AAUTasksGantt {
   Row: {
-    Key: string;
-    Constraint: string | null;
+    Key:         string;
+    Constraint:  string | null;
     Description: string;
-    Unit: string | null;
-    Start: Date | null;
-    End: Date | null;
+    Unit:        string | null;
+    Start:       Date | null;
+    End:         Date | null;
   };
   PK: {
     Key: string;
@@ -177,7 +177,7 @@ export interface APUQTO {
     Q:         number;
   };
   PK: {
-    ID: number;
+    ID:        number;
     Withdrawn: boolean;
   };
 };
@@ -185,10 +185,30 @@ export interface APUQTO {
 // APU-Tasks
 export interface APUTasks {
   Row: {
-    ID:        number;
-    Q:         number;
+    ID:    number;
+    Q:     number;
     Start: Date | null;
-    End: Date | null;
+    End:   Date | null;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
+// APU-Tasks
+export interface APUTasksGantt {
+  Row: {
+    ID:           number;
+    Key:          string;
+    Constraint:   string;
+    ContractorID: number;
+    Description:  string;
+    Unit:         string;
+    Status:       string;
+    P:            number;
+    Q:            number;
+    Start:        Date | null;
+    End:          Date | null;
   };
   PK: {
     ID: number;

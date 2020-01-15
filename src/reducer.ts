@@ -85,6 +85,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'APU-Tasks-Gantt': {
+      Rows: [],
+      Requests: [],
+    },
     'APU-Assign': {
       Rows: [],
       Requests: [],

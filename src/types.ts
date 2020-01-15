@@ -12,6 +12,7 @@ import {
   APUPSupplies,
   APUQTO,
   APUTasks,
+  APUTasksGantt,
   APUAssign,
   AEU,
   FACADBuiltInCategories,
@@ -70,6 +71,7 @@ export type Fields =
   APUPSupplies["Row"] &
   APUQTO["Row"] &
   APUTasks["Row"] &
+  APUTasksGantt["Row"] &
   APUAssign["Row"] &
   AEU["Row"] &
   FACADReports["Row"] &
@@ -97,6 +99,7 @@ export type Row =
   APUPSupplies["Row"] |
   APUQTO["Row"] |
   APUTasks["Row"] |
+  APUTasksGantt["Row"] |
   APUAssign["Row"] |
   AEU["Row"] |
   FACADReports["Row"] |
@@ -124,6 +127,7 @@ export type PK =
   APUPSupplies["PK"] |
   APUQTO["PK"] |
   APUTasks["PK"] |
+  APUTasksGantt["PK"] &
   APUAssign["PK"] |
   AEU["PK"] |
   FACADReports["PK"] |
@@ -151,6 +155,7 @@ export type Model =
   APUPSupplies |
   APUQTO |
   APUTasks |
+  APUTasksGantt |
   APUAssign |
   AEU |
   FACADReports |
@@ -284,6 +289,12 @@ export interface State {
     };
     'APU-Tasks': {
       Rows: APUTasks["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-Tasks-Gantt': {
+      Rows: APUTasksGantt["Row"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
