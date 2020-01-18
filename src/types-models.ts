@@ -141,6 +141,8 @@ export interface AAUTasksGantt {
     Unit:        string | null;
     Start:       Date | null;
     End:         Date | null;
+    P:           number | null;
+    Q:           number| null;
   };
   PK: {
     Key: string;
