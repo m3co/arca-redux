@@ -132,9 +132,25 @@ export interface AAUQTO {
   };
 };
 
+// AAU-Tasks
+export interface AAUTasks {
+  Row: {
+    Key:        string;
+    Constraint: string | null;
+    T:          number;
+    Start:      Date | null;
+    End:        Date | null;
+  };
+  PK: {
+    Key:        string;
+    Constraint: string | null;
+  };
+};
+
 // AAU-Tasks-Gantt
 export interface AAUTasksGantt {
   Row: {
+    Project:     number;
     Key:         string;
     Constraint:  string | null;
     Description: string;
@@ -143,6 +159,7 @@ export interface AAUTasksGantt {
     End:         Date | null;
     P:           number | null;
     Q:           number| null;
+    T:           number| null;
   };
   PK: {
     Key: string;
@@ -188,7 +205,7 @@ export interface APUQTO {
 export interface APUTasks {
   Row: {
     ID:    number;
-    Q:     number;
+    T:     number;
     Start: Date | null;
     End:   Date | null;
   };
@@ -197,7 +214,7 @@ export interface APUTasks {
   };
 };
 
-// APU-Tasks
+// APU-Tasks-Gantt
 export interface APUTasksGantt {
   Row: {
     ID:           number;
@@ -207,8 +224,11 @@ export interface APUTasksGantt {
     Description:  string;
     Unit:         string;
     Status:       string;
+    Frozen:       boolean;
+    ExpiredAt:    Date | null;
     P:            number;
     Q:            number;
+    T:            number;
     Start:        Date | null;
     End:          Date | null;
   };
