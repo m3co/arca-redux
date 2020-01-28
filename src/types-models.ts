@@ -17,7 +17,6 @@ export interface Contractors {
   Row: {
     ID: number;
     Name: string;
-    Information: string | null;
   };
   PK: {
     ID: number;
@@ -86,9 +85,9 @@ export interface TasksMonthCashFlowAAU {
 // AAU
 export interface AAU {
   Row: {
-    Key: string | null;
-    Parent: string | null;
+    Key: string;
     Expand: boolean;
+    Parent: string | null;
     Description: string | null;
     Unit: string | null;
     P: number | null;
@@ -104,7 +103,7 @@ export interface AAUConcretize {
   Row: {
     Project: number | null;
     Concreted: boolean;
-    Key: string | null;
+    Key: string;
     Parent: string | null;
     Expand: boolean;
     Description: string | null;
@@ -113,7 +112,7 @@ export interface AAUConcretize {
     Estimated: number;
   };
   PK: {
-    Key: string | null;
+    Key: string;
     Project: number | null;
   };
 };
@@ -121,10 +120,24 @@ export interface AAUConcretize {
 // AAU-QTO
 export interface AAUQTO {
   Row: {
-    Key:        string | null;
-    Constraint: string | null;
+    Key:        string;
+    Constraint: string;
     Q:          number;
     CAD:        boolean;
+  };
+  PK: {
+    Key:        string;
+    Constraint: string;
+  };
+};
+
+// AAU-TaskDefinitions
+export interface AAUTaskDefinitions {
+  Row: {
+    Key:        string;
+    Constraint: string;
+    Start:      Date | null;
+    T:          Date | null;
   };
   PK: {
     Key:        string;
@@ -136,14 +149,13 @@ export interface AAUQTO {
 export interface AAUTasks {
   Row: {
     Key:        string;
-    Constraint: string | null;
-    T:          number;
+    Constraint: string;
     Start:      Date | null;
     End:        Date | null;
   };
   PK: {
     Key:        string;
-    Constraint: string | null;
+    Constraint: string;
   };
 };
 
@@ -171,10 +183,10 @@ export interface AAUTasksGantt {
 export interface APU {
   Row: {
     ID:           number;
-    Key:          string | null;
-    Constraint:   string | null;
-    ContractorID: number | null;
-    Description:  string;
+    Key:          string;
+    Constraint:   string;
+    ContractorID: number;
+    Description:  string | null;
     Unit:         string | null;
     P:            number;
     Price:        number | null;
@@ -205,7 +217,7 @@ export interface APUQTO {
 export interface APUTasks {
   Row: {
     ID:    number;
-    T:     number;
+    T:     number | null;
     Start: Date | null;
     End:   Date | null;
   };
@@ -285,16 +297,16 @@ export interface APUPSupplies {
 // APU-Assign
 export interface APUAssign {
   Row: {
-    Project:      number | null;
+    Project:      number;
     Key:          string;
     Constraint:   string;
-    Description:  string;
+    Description:  string | null;
     Unit:         string | null;
     Status:       string | null;
     Frozen:       boolean;
     Estimated:    number | null;
-    P:            number;
-    Q:            number;
+    P:            number | null;
+    Q:            number | null;
     ID:           number | null;
     ContractorID: number | null;
     Qres:         number;
