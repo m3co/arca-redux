@@ -2,10 +2,10 @@
 // Projects
 export interface Projects {
   Row: {
-    ID: number;
-    Name: string;
+    ID:          number;
+    Name:        string;
     Description: string | null;
-    Start: Date | null;
+    Start:       Date | null;
   };
   PK: {
     ID: number;
@@ -15,7 +15,7 @@ export interface Projects {
 // Contractors
 export interface Contractors {
   Row: {
-    ID: number;
+    ID:   number;
     Name: string;
   };
   PK: {
@@ -26,56 +26,56 @@ export interface Contractors {
 // Budget-AAU
 export interface BudgetAAU {
   Row: {
-    Project: number;
-    Key: string | null;
-    Description: string | null;
-    Q: number | null;
-    Unit: string | null;
-    Estimated: number;
+    Project:        number;
+    Key:            string;
+    Description:    string | null;
+    Unit:           string | null;
+    Q:              number;
+    Estimated:      number;
     TotalEstimated: number;
-    SummEstimated: number;
-    RateEstimated: number;
-    P: number | null;
+    SummEstimated:  number;
+    RateEstimated:  number | null;
+    P:              number | null;
   };
   PK: {
-    Key: string | null;
+    Key: string;
   };
 };
 
 // Budget-AAU-vs-General
 export interface BudgetAAUvsGeneral {
   Row: {
-    Project: number;
-    Key: string | null;
-    Description: string | null;
-    Q: number | null;
-    Unit: string | null;
-    Estimated: number;
+    Project:        number;
+    Key:            string;
+    Description:    string | null;
+    Unit:           string | null;
+    Q:              number;
+    Estimated:      number;
     TotalEstimated: number;
-    SummEstimated: number;
-    RateEstimated: number;
-    P: number | null;
+    SummEstimated:  number;
+    RateEstimated:  number | null;
+    P:              number | null;
   };
   PK: {
-    Key: string | null;
+    Key: string;
   };
 };
 
 // Tasks-Month-CashFlow-AAU
 export interface TasksMonthCashFlowAAU {
   Row: {
-    Project: number | null;
-    Key: string;
-    Description: string;
-    Unit: string;
-    TaskStart: Date | null;
-    Start: Date | null;
-    End: Date | null;
-    TaskEnd: Date | null;
-    Days: number | null;
-    TotalDays: number | null;
-    Cost: number | null;
-    TotalCost: number | null;
+    Project:     number | null;
+    Key:         string;
+    Description: string | null;
+    Unit:        string | null;
+    TaskStart:   Date | null;
+    Start:       Date | null;
+    End:         Date | null;
+    TaskEnd:     Date | null;
+    Days:        number | null;
+    TotalDays:   number | null;
+    Cost:        number | null;
+    TotalCost:   number | null;
   };
   PK: {
     Key: string;
@@ -85,34 +85,34 @@ export interface TasksMonthCashFlowAAU {
 // AAU
 export interface AAU {
   Row: {
-    Key: string;
-    Expand: boolean;
-    Parent: string | null;
+    Key:         string;
+    Expand:      boolean;
+    Parent:      string | null;
     Description: string | null;
-    Unit: string | null;
-    P: number | null;
-    Estimated: number;
+    Unit:        string | null;
+    P:           number | null;
+    Estimated:   number;
   };
   PK: {
-    Key: string | null;
+    Key: string;
   };
 };
 
 // AAUConcretize
 export interface AAUConcretize {
   Row: {
-    Project: number | null;
-    Concreted: boolean;
-    Key: string;
-    Parent: string | null;
-    Expand: boolean;
+    Project:     number | null;
+    Concreted:   boolean;
+    Key:         string;
+    Parent:      string | null;
+    Expand:      boolean;
     Description: string | null;
-    Unit: string | null;
-    P: number | null;
-    Estimated: number;
+    Unit:        string | null;
+    P:           number | null;
+    Estimated:   number;
   };
   PK: {
-    Key: string;
+    Key:     string;
     Project: number | null;
   };
 };
@@ -333,50 +333,33 @@ export interface AEU {
   };
 };
 
-// FACAD-Reports
-export interface FACADReports {
-  Row: {
-    ID: number;
-    BuiltInCategory: string;
-    ReportType: string;
-    Name: string;
-    PathName: string;
-    Field1: string;
-    Field2: string;
-    Field3: string;
-  };
-  PK: {
-    ID: number;
-  };
-};
-
 // FACAD-ParamsBIC
 export interface FACADParamsBIC {
   Row: {
-    ReportType: string;
+    ReportType:      string;
     BuiltInCategory: string;
-    Field: string;
+    Field:           string;
   };
   PK: {
-    ReportType: string;
+    ReportType:      string;
     BuiltInCategory: string;
-    Field: string;
+    Field:           string;
   };
 };
 
 // FACAD-CFT
 export interface FACADCFTAAU {
   Row: {
-    ID: number;
-    Project: number | null;
-    Family: string;
-    Type: string;
-    Key: string;
-    BuiltInCategory: string;
-    ReportType: string;
-    KeynoteField: string | null;
+    ID:              number;
+    Family:          string;
+    Type:            string;
+    Project:         number | null;
+    Key:             string;
+    KeynoteField:    string | null;
     ConstraintField: string | null;
-    QuantityField: string | null;
+    QuantityField:   string | null;
+    BuiltInCategory: string;
+    ReportType:      string;
   };
   PK: {
     ID: number;
@@ -386,12 +369,12 @@ export interface FACADCFTAAU {
 // FACAD-CFTFilters
 export interface FACADCFTFiltersAAU {
   Row: {
-    ID: number;
-    CFTID: number;
-    Field: string;
+    ID:         number;
+    CFTID:      number;
+    Field:      string;
     Comparator: string;
-    Value: string;
-    ValueType: string;
+    Value:      string;
+    ValueType:  string;
   };
   PK: {
     ID: number;
@@ -401,9 +384,9 @@ export interface FACADCFTFiltersAAU {
 // FACAD-preCFT
 export interface FACADpreCFTAAU {
   Row: {
-    ID: number;
-    Family: string;
-    Type: string;
+    ID:       number;
+    Family:   string;
+    Type:     string;
     PathName: string;
   };
   PK: {
@@ -415,13 +398,13 @@ export interface FACADpreCFTAAU {
 export interface FACADpreCFTAAUKey {
   Row: {
     Family: string;
-    Type: string;
-    Key: string | null;
+    Type:   string;
+    Key:    string | null;
   };
   PK: {
     Family: string;
-    Type: string;
-    Key: string | null;
+    Type:   string;
+    Key:    string | null;
   };
 };
 
@@ -435,15 +418,32 @@ export interface FACADBuiltInCategories {
   };
 };
 
+// FACAD-Reports
+export interface FACADReports {
+  Row: {
+    ID:              number;
+    Name:            string;
+    BuiltInCategory: string;
+    ReportType:      string;
+    PathName:        string;
+    Field1:          string;
+    Field2:          string;
+    Field3:          string;
+  };
+  PK: {
+    ID: number;
+  };
+};
+
 // FACAD-ReportFilters
 export interface FACADReportFilters {
   Row: {
-    ID: number;
-    ReportID: number;
-    Field: string;
+    ID:         number;
+    ReportID:   number;
+    Field:      string;
     Comparator: string;
-    Value: string;
-    ValueType: string;
+    Value:      string;
+    ValueType:  string;
   };
   PK: {
     ID: number;
