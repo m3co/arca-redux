@@ -10,6 +10,7 @@ export interface Projects {
   PK: {
     ID: number;
   };
+  Name: 'Projects';
 };
 
 // Contractors
@@ -21,6 +22,7 @@ export interface Contractors {
   PK: {
     ID: number;
   };
+  Name: 'Contractors';
 };
 
 // Budget-AAU
@@ -40,6 +42,7 @@ export interface BudgetAAU {
   PK: {
     Key: string;
   };
+  Name: 'Budget-AAU';
 };
 
 // Budget-AAU-vs-General
@@ -59,6 +62,7 @@ export interface BudgetAAUvsGeneral {
   PK: {
     Key: string;
   };
+  Name: 'Budget-AAU-vs-General';
 };
 
 // Tasks-Month-CashFlow-AAU
@@ -80,6 +84,7 @@ export interface TasksMonthCashFlowAAU {
   PK: {
     Key: string;
   };
+  Name: 'Tasks-Month-CashFlow-AAU';
 };
 
 // AAU
@@ -96,9 +101,10 @@ export interface AAU {
   PK: {
     Key: string;
   };
+  Name: 'AAU';
 };
 
-// AAUConcretize
+// AAU-Concretize
 export interface AAUConcretize {
   Row: {
     Project:     number | null;
@@ -115,6 +121,7 @@ export interface AAUConcretize {
     Key:     string;
     Project: number | null;
   };
+  Name: 'AAU-Concretize';
 };
 
 // AAU-QTO
@@ -129,6 +136,7 @@ export interface AAUQTO {
     Key:        string;
     Constraint: string;
   };
+  Name: 'AAU-QTO';
 };
 
 // AAU-TaskDefinitions
@@ -143,6 +151,7 @@ export interface AAUTaskDefinitions {
     Key:        string;
     Constraint: string;
   };
+  Name: 'AAU-TaskDefinitions';
 };
 
 // AAU-Tasks
@@ -157,6 +166,7 @@ export interface AAUTasks {
     Key:        string;
     Constraint: string;
   };
+  Name: 'AAU-Tasks';
 };
 
 // AAU-Tasks-Gantt
@@ -177,6 +187,7 @@ export interface AAUTasksGantt {
     Key: string;
     Constraint: string | null;
   };
+  Name: 'AAU-Tasks-Gantt';
 };
 
 // APU
@@ -198,6 +209,7 @@ export interface APU {
   PK: {
     ID: number;
   };
+  Name: 'APU';
 };
 
 // APU-QTO
@@ -211,6 +223,7 @@ export interface APUQTO {
     ID:        number;
     Withdrawn: boolean;
   };
+  Name: 'APU-QTO';
 };
 
 // APU-Tasks
@@ -224,6 +237,7 @@ export interface APUTasks {
   PK: {
     ID: number;
   };
+  Name: 'APU-Tasks';
 };
 
 // APU-Tasks-Gantt
@@ -247,6 +261,7 @@ export interface APUTasksGantt {
   PK: {
     ID: number;
   };
+  Name: 'APU-Tasks-Gantt';
 };
 
 // APU-Import-Supplies
@@ -264,6 +279,7 @@ export interface APUImportSupplies {
     APUID:    number;
     SupplyID: number | null;
   };
+  Name: 'APU-Import-Supplies';
 };
 
 // APU-MetaSupplies
@@ -278,7 +294,8 @@ export interface APUMetaSupplies {
   };
   PK: {
     ID: number;
-  }
+  };
+  Name: 'APU-MetaSupplies';
 };
 
 // APU-P-Supplies
@@ -292,6 +309,7 @@ export interface APUPSupplies {
     APUID:    number;
     SupplyID: number;
   };
+  Name: 'APU-P-Supplies';
 }
 
 // APU-Assign
@@ -316,6 +334,7 @@ export interface APUAssign {
     Key:        string;
     Constraint: string;
   };
+  Name: 'APU-Assign';
 }
 
 // AEU
@@ -331,6 +350,7 @@ export interface AEU {
   PK: {
     ID: number;
   };
+  Name: 'AEU'
 };
 
 // FACAD-ParamsBIC
@@ -345,9 +365,10 @@ export interface FACADParamsBIC {
     BuiltInCategory: string;
     Field:           string;
   };
+  Name: 'FACAD-ParamsBIC';
 };
 
-// FACAD-CFT
+// FACAD-CFT-AAU
 export interface FACADCFTAAU {
   Row: {
     ID:              number;
@@ -364,9 +385,10 @@ export interface FACADCFTAAU {
   PK: {
     ID: number;
   };
+  Name: 'FACAD-CFT-AAU';
 };
 
-// FACAD-CFTFilters
+// FACAD-CFT-Filters-AAU
 export interface FACADCFTFiltersAAU {
   Row: {
     ID:         number;
@@ -379,9 +401,10 @@ export interface FACADCFTFiltersAAU {
   PK: {
     ID: number;
   };
+  Name: 'FACAD-CFT-Filters-AAU';
 };
 
-// FACAD-preCFT
+// FACAD-preCFT-AAU
 export interface FACADpreCFTAAU {
   Row: {
     ID:       number;
@@ -392,6 +415,7 @@ export interface FACADpreCFTAAU {
   PK: {
     ID: number;
   };
+  Name: 'FACAD-preCFT-AAU';
 };
 
 // FACAD-preCFT-AAU-Key
@@ -406,6 +430,7 @@ export interface FACADpreCFTAAUKey {
     Type:   string;
     Key:    string | null;
   };
+  Name: 'FACAD-preCFT-AAU-Key';
 };
 
 // FACAD-BuiltInCategories
@@ -416,6 +441,7 @@ export interface FACADBuiltInCategories {
   PK: {
     BuiltInCategory: string;
   };
+  Name: 'FACAD-BuiltInCategories';
 };
 
 // FACAD-Reports
@@ -433,6 +459,7 @@ export interface FACADReports {
   PK: {
     ID: number;
   };
+  Name: 'FACAD-Reports';
 };
 
 // FACAD-ReportFilters
@@ -448,4 +475,5 @@ export interface FACADReportFilters {
   PK: {
     ID: number;
   };
+  Name: 'FACAD-ReportFilters';
 };
