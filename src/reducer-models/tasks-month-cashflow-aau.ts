@@ -1,37 +1,20 @@
 
 import { State, Row, PK, TasksMonthCashFlowAAU } from '../types';
+type TRow = TasksMonthCashFlowAAU["Row"];
 
-export function Update(state: State, row: Row, pk?: PK): State {
-  const Row = row as TasksMonthCashFlowAAU["Row"];
+export function Update(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = pk || { Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["Tasks-Month-CashFlow-AAU"]: {
-        ...state.Source["Tasks-Month-CashFlow-AAU"],
-        Rows: state.Source["Tasks-Month-CashFlow-AAU"].Rows
-          .map((row): TasksMonthCashFlowAAU["Row"] =>
-            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
-      }
-    }
-  };
+  return state.Source["Tasks-Month-CashFlow-AAU"].Rows
+    .map((row): TRow =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
 }
 
-export function Delete(state: State, row: Row): State {
-  const Row = row as TasksMonthCashFlowAAU["Row"];
+export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = { Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["Tasks-Month-CashFlow-AAU"]: {
-        ...state.Source["Tasks-Month-CashFlow-AAU"],
-        Rows: state.Source["Tasks-Month-CashFlow-AAU"].Rows.filter((row): boolean =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? false : true)
-      }
-    }
-  };
+  return state.Source["Tasks-Month-CashFlow-AAU"].Rows.filter((row): boolean =>
+    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
 }

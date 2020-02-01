@@ -1,37 +1,20 @@
 
 import { State, Row, PK, APU } from '../types';
+type TRow = APU["Row"];
 
-export function Update(state: State, row: Row, pk?: PK): State {
-  const Row = row as APU["Row"];
+export function Update(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["APU"]: {
-        ...state.Source["APU"],
-        Rows: state.Source["APU"].Rows
-          .map((row): APU["Row"] =>
-            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
-      }
-    }
-  };
+  return state.Source["APU"].Rows
+    .map((row): TRow =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
 }
 
-export function Delete(state: State, row: Row, pk?: PK): State {
-  const Row = row as APU["Row"];
-  const PK = { ID: Row.ID };
+export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
+  const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["APU"]: {
-        ...state.Source["APU"],
-        Rows: state.Source["APU"].Rows.filter((row): boolean =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? false : true)
-      }
-    }
-  };
+  return state.Source["APU"].Rows.filter((row): boolean =>
+    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
 }

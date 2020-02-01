@@ -185,9 +185,27 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'update':
-      return reducers[action.Source].Update(state, action.Row, action.PK);
+      return {
+        ...state,
+        Source: {
+          ...state.Source,
+          [action.Source]: {
+            ...state.Source[action.Source],
+            Rows: reducers[action.Source].Update(state, action.Row, action.PK)
+          }
+        }
+      };
     case 'delete':
-      return reducers[action.Source].Delete(state, action.Row);
+      return {
+        ...state,
+        Source: {
+          ...state.Source,
+          [action.Source]: {
+            ...state.Source[action.Source],
+            Rows: reducers[action.Source].Delete(state, action.Row, action.PK)
+          }
+        }
+      };
     default:
       return state;
   }

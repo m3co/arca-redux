@@ -1,37 +1,20 @@
 
 import { State, Row, PK, FACADReports } from '../types';
+type TRow = FACADReports["Row"];
 
-export function Update(state: State, row: Row, pk?: PK): State {
-  const Row = row as FACADReports["Row"];
+export function Update(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["FACAD-Reports"]: {
-        ...state.Source["FACAD-Reports"],
-        Rows: state.Source["FACAD-Reports"].Rows
-          .map((row): FACADReports["Row"] =>
-            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
-      }
-    }
-  };
+  return state.Source["FACAD-Reports"].Rows
+    .map((row): TRow =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
 }
 
-export function Delete(state: State, row: Row): State {
-  const Row = row as FACADReports["Row"];
-  const PK = { ID: Row.ID };
+export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
+  const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["FACAD-Reports"]: {
-        ...state.Source["FACAD-Reports"],
-        Rows: state.Source["FACAD-Reports"].Rows.filter((row): boolean =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? false : true)
-      }
-    }
-  };
+  return state.Source["FACAD-Reports"].Rows.filter((row): boolean =>
+    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
 }

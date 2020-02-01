@@ -1,37 +1,20 @@
 
 import { State, Row, PK, BudgetAAUvsGeneral } from '../types';
+type TRow = BudgetAAUvsGeneral["Row"];
 
-export function Update(state: State, row: Row, pk?: PK): State {
-  const Row = row as BudgetAAUvsGeneral["Row"];
+export function Update(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = pk || { Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["Budget-AAU-vs-General"]: {
-        ...state.Source["Budget-AAU-vs-General"],
-        Rows: state.Source["Budget-AAU-vs-General"].Rows
-          .map((row): BudgetAAUvsGeneral["Row"] =>
-            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
-      }
-    }
-  };
+  return state.Source["Budget-AAU-vs-General"].Rows
+    .map((row): TRow =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
 }
 
-export function Delete(state: State, row: Row): State {
-  const Row = row as BudgetAAUvsGeneral["Row"];
+export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = { Key: Row.Key };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["Budget-AAU-vs-General"]: {
-        ...state.Source["Budget-AAU-vs-General"],
-        Rows: state.Source["Budget-AAU-vs-General"].Rows.filter((row): boolean =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? false : true)
-      }
-    }
-  };
+  return state.Source["Budget-AAU-vs-General"].Rows.filter((row): boolean =>
+    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
 }

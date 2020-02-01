@@ -1,37 +1,20 @@
 
 import { State, Row, PK, APUAssign } from '../types';
+type TRow = APUAssign["Row"];
 
-export function Update(state: State, row: Row, pk?: PK): State {
-  const Row = row as APUAssign["Row"];
+export function Update(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
   const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["APU-Assign"]: {
-        ...state.Source["APU-Assign"],
-        Rows: state.Source["APU-Assign"].Rows
-          .map((row): APUAssign["Row"] =>
-            (keys.every((key): boolean => PK[key] === row[key])) ? Row : row)
-      }
-    }
-  };
+  return state.Source["APU-Assign"].Rows
+    .map((row): TRow =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
 }
 
-export function Delete(state: State, row: Row): State {
-  const Row = row as APUAssign["Row"];
-  const PK = { Key: Row.Key, Constraint: Row.Constraint, ID: Row.ID };
+export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+  const Row = row as TRow;
+  const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return {
-    ...state,
-    Source: {
-      ...state.Source,
-      ["APU-Assign"]: {
-        ...state.Source["APU-Assign"],
-        Rows: state.Source["APU-Assign"].Rows.filter((row): boolean =>
-          (keys.every((key): boolean => PK[key] === row[key])) ? false : true)
-      }
-    }
-  };
+  return state.Source["APU-Assign"].Rows.filter((row): boolean =>
+    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
 }
