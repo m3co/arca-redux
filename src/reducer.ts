@@ -57,6 +57,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'AAU-APU-Tasks-Gantt': {
+      Rows: [],
+      Requests: [],
+    },
     'AAU-Concretize': {
       Rows: [],
       Requests: [],

@@ -5,6 +5,7 @@ import * as AAU from './aau';
 import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
 import * as Concretize from './concretize';
+import * as AAUAPUTasksGantt from './aau-apu-tasks-gantt';
 
 import * as APU from './apu';
 import * as APUQTO from './apu-qto';
@@ -91,6 +92,10 @@ export const reducers = {
   'AAU-Tasks-Gantt': {
     Update: AAUTasksGantt.Update,
     Delete: AAUTasksGantt.Delete,
+  },
+  'AAU-APU-Tasks-Gantt': {
+    Update: AAUAPUTasksGantt.Update,
+    Delete: AAUAPUTasksGantt.Delete,
   },
   'AAU-Concretize': {
     Update: Concretize.Update,

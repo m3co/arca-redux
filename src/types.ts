@@ -6,6 +6,7 @@ import {
   AAUConcretize,
   AAUQTO,
   AAUTasksGantt,
+  AAUAPUTasksGantt,
   APU,
   APUImportSupplies,
   APUMetaSupplies,
@@ -64,6 +65,7 @@ export type Fields =
   AAU["Row"] &
   AAUQTO["Row"] &
   AAUTasksGantt["Row"] &
+  AAUAPUTasksGantt["Row"] &
   AAUConcretize["Row"] &
   APU["Row"] &
   APUImportSupplies["Row"] &
@@ -92,6 +94,7 @@ export type Row =
   AAU["Row"] |
   AAUQTO["Row"] |
   AAUTasksGantt["Row"] |
+  AAUAPUTasksGantt["Row"] |
   AAUConcretize["Row"] |
   APU["Row"] |
   APUImportSupplies["Row"] |
@@ -120,6 +123,7 @@ export type PK =
   AAU["PK"] |
   AAUQTO["PK"] |
   AAUTasksGantt["PK"] |
+  AAUAPUTasksGantt["PK"] |
   AAUConcretize["PK"] |
   APU["PK"] |
   APUImportSupplies["PK"] |
@@ -148,6 +152,7 @@ export type Model =
   AAU |
   AAUQTO |
   AAUTasksGantt |
+  AAUAPUTasksGantt |
   AAUConcretize |
   APU |
   APUImportSupplies |
@@ -251,6 +256,12 @@ export interface State {
       Subscribed?: boolean;
       Info?: Info;
     };
+    'AAU-APU-Tasks-Gantt': {
+      Rows: AAUAPUTasksGantt["Row"][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    }
     'AAU-Concretize': {
       Rows: AAUConcretize["Row"][];
       Requests: string[];
