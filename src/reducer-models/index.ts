@@ -53,7 +53,7 @@ export const reducers = {
     Update: FACADReports.Update,
     Delete: FACADReports.Delete,
   },
-  'FACAD-ReportFilters': {
+  'FACAD-Report-Filters': {
     Update: FACADReportFilters.Update,
     Delete: FACADReportFilters.Delete,
   },

@@ -190,7 +190,7 @@ export interface State {
       Subscribed?: boolean;
       Info?: Info;
     };
-    'FACAD-ReportFilters': {
+    'FACAD-Report-Filters': {
       Rows: FACADReportFilters["Row"][];
       Requests: string[];
       Subscribed?: boolean;

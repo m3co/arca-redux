@@ -17,7 +17,7 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
-    'FACAD-ReportFilters': {
+    'FACAD-Report-Filters': {
       Rows: [],
       Requests: [],
     },

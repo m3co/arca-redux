@@ -539,7 +539,7 @@ export interface FACADReports {
   Name: 'FACAD-Reports';
 };
 
-// FACAD-ReportFilters
+// FACAD-Report-Filters
 export interface FACADReportFilters {
   Raw: null;
   Row: {
@@ -553,5 +553,5 @@ export interface FACADReportFilters {
   PK: {
     ID: number;
   };
-  Name: 'FACAD-ReportFilters';
+  Name: 'FACAD-Report-Filters';
 };
