@@ -31,13 +31,13 @@ import * as TasksMonthCashFlowAAU from './tasks-month-cashflow-aau';
 
 import { State, Row, PK } from '../types';
 
-function UpdateDummy(state: State, row: Row, pk?: PK): State {
+function UpdateDummy(state: State, row: Row, pk?: PK): Row[] {
   console.error('Update not implemented for row', row, pk);
-  return state;
+  return [];
 }
-function DeleteDummy(state: State, row: Row): State {
+function DeleteDummy(state: State, row: Row): Row[] {
   console.error('Delete not implemented for row', row);
-  return state;
+  return [];
 }
 
 export const reducers = {
