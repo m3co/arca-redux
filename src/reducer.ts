@@ -155,8 +155,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
             ...state.Source,
             [action.Source]: {
               ...state.Source[action.Source],
-              Rows: action.Result as AAUAPUTasksGantt["Row"][],
-              Aggs: reducers[action.Source].Select(state, action.Result),
+              ...reducers[action.Source].Select(state, action.Result),
             }
           }
         };
@@ -188,18 +187,41 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'insert':
-      const { Row } = action;
+      if (action.Source === 'AAU-APU-Tasks-Gantt') {
+        return {
+          ...state,
+          Source: {
+            ...state.Source,
+            [action.Source]: {
+              ...state.Source[action.Source],
+              ...reducers[action.Source].Insert(state, action.Row, action.PK),
+            }
+          }
+        };
+      }
       return {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: [Row, ...state.Source[action.Source].Rows]
+            Rows: [action.Row, ...state.Source[action.Source].Rows]
           }
         }
       };
     case 'update':
+      if (action.Source === 'AAU-APU-Tasks-Gantt') {
+        return {
+          ...state,
+          Source: {
+            ...state.Source,
+            [action.Source]: {
+              ...state.Source[action.Source],
+              ...reducers[action.Source].Update(state, action.Row, action.PK),
+            }
+          }
+        };
+      }
       return {
         ...state,
         Source: {
@@ -211,6 +233,18 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'delete':
+      if (action.Source === 'AAU-APU-Tasks-Gantt') {
+        return {
+          ...state,
+          Source: {
+            ...state.Source,
+            [action.Source]: {
+              ...state.Source[action.Source],
+              ...reducers[action.Source].Delete(state, action.Row, action.PK),
+            }
+          }
+        };
+      }
       return {
         ...state,
         Source: {

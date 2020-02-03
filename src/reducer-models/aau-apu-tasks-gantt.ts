@@ -3,9 +3,11 @@ import { State, Row, PK, AAUAPUTasksGantt } from '../types';
 type TRow = AAUAPUTasksGantt["Row"];
 type TAgg = AAUAPUTasksGantt["Agg"];
 
-export function Select(state: State, rows: Row[]): TAgg[] {
+export function Select(_: State, rows: Row[]): { Rows: TRow[], Aggs: TAgg[] } {
   const Rows = rows as TRow[];
-  return Rows.reduce((acc, row) => {
+  return {
+    Rows: Rows,
+    Aggs: Rows.reduce((acc, row) => {
     let curr = acc.find(agg =>
       (agg.Key === row.Key) && (agg.Constraint === row.Constraint));
     if (curr) {
@@ -52,22 +54,38 @@ export function Select(state: State, rows: Row[]): TAgg[] {
       });
     }
     return acc;
-  }, [] as TAgg[]);
+  }, [] as TAgg[])};
 }
 
-export function Update(state: State, row: Row, pk?: PK): TRow[] {
+export function Insert(state: State, row: Row, pk?: PK): { Rows: TRow[], Aggs: TAgg[] } {
   const Row = row as TRow;
   const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row["APU-ID"] };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return state.Source["AAU-APU-Tasks-Gantt"].Rows
+  return {
+    Rows: [Row, ...state.Source["AAU-APU-Tasks-Gantt"].Rows],
+    Aggs: []
+  };
+}
+
+export function Update(state: State, row: Row, pk?: PK): { Rows: TRow[], Aggs: TAgg[] } {
+  const Row = row as TRow;
+  const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row["APU-ID"] };
+  const keys = Object.keys(PK) as (keyof typeof PK)[];
+  return {
+    Rows: state.Source["AAU-APU-Tasks-Gantt"].Rows
     .map((row): TRow =>
-      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row),
+    Aggs: []
+  };
 }
 
-export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+export function Delete(state: State, row: Row, pk?: PK): { Rows: TRow[], Aggs: TAgg[] } {
   const Row = row as TRow;
   const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row["APU-ID"] };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return state.Source["AAU-APU-Tasks-Gantt"].Rows.filter((row): boolean =>
-    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
+  return {
+    Rows: state.Source["AAU-APU-Tasks-Gantt"].Rows.filter((row): boolean =>
+    (keys.every((key): boolean => PK[key] === row[key])) ? false : true),
+    Aggs: []
+  };
 }

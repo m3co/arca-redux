@@ -95,6 +95,7 @@ export const reducers = {
   },
   'AAU-APU-Tasks-Gantt': {
     Select: AAUAPUTasksGantt.Select,
+    Insert: AAUAPUTasksGantt.Insert,
     Update: AAUAPUTasksGantt.Update,
     Delete: AAUAPUTasksGantt.Delete,
   },
