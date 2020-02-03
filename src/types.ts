@@ -258,6 +258,7 @@ export interface State {
     };
     'AAU-APU-Tasks-Gantt': {
       Rows: AAUAPUTasksGantt["Row"][];
+      Aggs: AAUAPUTasksGantt["Agg"][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

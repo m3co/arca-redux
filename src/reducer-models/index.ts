@@ -94,6 +94,7 @@ export const reducers = {
     Delete: AAUTasksGantt.Delete,
   },
   'AAU-APU-Tasks-Gantt': {
+    Select: AAUAPUTasksGantt.Select,
     Update: AAUAPUTasksGantt.Update,
     Delete: AAUAPUTasksGantt.Delete,
   },

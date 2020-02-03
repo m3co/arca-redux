@@ -1,6 +1,7 @@
 
 import { Action, State } from './types';
 import { reducers } from './reducer-models';
+import { AAUAPUTasksGantt } from './types-models';
 
 export const initialState: State = {
   Connected: false,
@@ -59,6 +60,7 @@ export const initialState: State = {
     },
     'AAU-APU-Tasks-Gantt': {
       Rows: [],
+      Aggs: [],
       Requests: [],
     },
     'AAU-Concretize': {
@@ -146,6 +148,19 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'Select':
+      if (action.Source === 'AAU-APU-Tasks-Gantt') {
+        return  {
+          ...state,
+          Source: {
+            ...state.Source,
+            [action.Source]: {
+              ...state.Source[action.Source],
+              Rows: action.Result as AAUAPUTasksGantt["Row"][],
+              Aggs: reducers[action.Source].Select(state, action.Result),
+            }
+          }
+        };
+      }
       return {
         ...state,
         Source: {
