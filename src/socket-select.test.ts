@@ -9,11 +9,13 @@ const URL = 'http://localhost:8086';
 const sources: (
   'FACAD-Reports' |
   'FACAD-CFT-AAU' |
-  'FACAD-BuiltInCategories'
+  'FACAD-BuiltInCategories' |
+  'AAU-Tasks-Gantt'
 )[] = [
   'FACAD-Reports',
   'FACAD-CFT-AAU',
-  'FACAD-BuiltInCategories'
+  'FACAD-BuiltInCategories',
+  'AAU-Tasks-Gantt'
 ];
 
 sources.forEach((source): void => {
