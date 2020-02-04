@@ -59,6 +59,7 @@ export const initialState: State = {
     },
     'AAU-APU-Tasks-Gantt': {
       Rows: [],
+      Aggs: [],
       Requests: [],
     },
     'AAU-Concretize': {
@@ -146,13 +147,13 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'Select':
-      return {
+      return  {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: action.Result,
+            ...reducers[action.Source].Select(state, action.Result),
           }
         }
       };
@@ -173,14 +174,13 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'insert':
-      const { Row } = action;
       return {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: [Row, ...state.Source[action.Source].Rows]
+            ...reducers[action.Source].Insert(state, state.Source[action.Source].Rows, action.Row, action.PK),
           }
         }
       };
@@ -191,7 +191,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: reducers[action.Source].Update(state, action.Row, action.PK)
+            ...reducers[action.Source].Update(state, action.Row, action.PK),
           }
         }
       };
@@ -202,7 +202,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: reducers[action.Source].Delete(state, action.Row, action.PK)
+            ...reducers[action.Source].Delete(state, action.Row, action.PK),
           }
         }
       };

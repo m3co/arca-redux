@@ -31,121 +31,189 @@ import * as TasksMonthCashFlowAAU from './tasks-month-cashflow-aau';
 
 import { State, Row, PK } from '../types';
 
-function UpdateDummy(state: State, row: Row, pk?: PK): Row[] {
+function UpdateDummy(_: State, row: Row, pk?: PK): { Rows: Row[] } {
   console.error('Update not implemented for row', row, pk);
-  return [];
+  return {
+    Rows: []
+  };
 }
-function DeleteDummy(state: State, row: Row): Row[] {
+function DeleteDummy(_: State, row: Row): { Rows: Row[] } {
   console.error('Delete not implemented for row', row);
-  return [];
+  return {
+    Rows: []
+  };
+}
+function Select(_: State, Rows: Row[]): { Rows: Row[] } {
+  return {
+    Rows
+  };
+}
+function Insert(_: State, rows: Row[], row: Row): { Rows: Row[] } {
+  return {
+    Rows: [row, ...rows]
+  }
 }
 
 export const reducers = {
   'Projects': {
+    Select: Select,
+    Insert: Insert,
     Update: Projects.Update,
     Delete: Projects.Delete,
   },
   'Contractors': {
+    Select: Select,
+    Insert: Insert,
     Update: Contractors.Update,
     Delete: Contractors.Delete,
   },
   'FACAD-Reports': {
+    Select: Select,
+    Insert: Insert,
     Update: FACADReports.Update,
     Delete: FACADReports.Delete,
   },
   'FACAD-Report-Filters': {
+    Select: Select,
+    Insert: Insert,
     Update: FACADReportFilters.Update,
     Delete: FACADReportFilters.Delete,
   },
   'FACAD-CFT-AAU': {
+    Select: Select,
+    Insert: Insert,
     Update: FACADCFT.Update,
     Delete: FACADCFT.Delete,
   },
   'FACAD-CFT-Filters-AAU': {
+    Select: Select,
+    Insert: Insert,
     Update: FACADCFTFilters.Update,
     Delete: FACADCFTFilters.Delete,
   },
   'FACAD-preCFT-AAU': {
+    Select: Select,
+    Insert: Insert,
     Update: FACADpreCFT.Update,
     Delete: FACADpreCFT.Delete,
   },
   'FACAD-preCFT-AAU-Key': {
+    Select: Select,
+    Insert: Insert,
     Update: FACADpreCFTKey.Update,
     Delete: DeleteDummy,
   },
   'FACAD-BuiltInCategories': {
+    Select: Select,
+    Insert: Insert,
     Update: UpdateDummy,
     Delete: DeleteDummy,
   },
   'FACAD-ParamsBIC': {
+    Select: Select,
+    Insert: Insert,
     Update: UpdateDummy,
     Delete: DeleteDummy,
   },
   'AAU': {
+    Select: Select,
+    Insert: Insert,
     Update: AAU.Update,
     Delete: AAU.Delete,
   },
   'AAU-QTO': {
+    Select: Select,
+    Insert: Insert,
     Update: AAUQTO.Update,
     Delete: AAUQTO.Delete,
   },
   'AAU-Tasks-Gantt': {
+    Select: Select,
+    Insert: Insert,
     Update: AAUTasksGantt.Update,
     Delete: AAUTasksGantt.Delete,
   },
   'AAU-APU-Tasks-Gantt': {
+    Select: AAUAPUTasksGantt.Select,
+    Insert: AAUAPUTasksGantt.Insert,
     Update: AAUAPUTasksGantt.Update,
     Delete: AAUAPUTasksGantt.Delete,
   },
   'AAU-Concretize': {
+    Select: Select,
+    Insert: Insert,
     Update: Concretize.Update,
     Delete: Concretize.Delete,
   },
   'APU': {
+    Select: Select,
+    Insert: Insert,
     Update: APU.Update,
     Delete: APU.Delete,
   },
   'APU-QTO': {
+    Select: Select,
+    Insert: Insert,
     Update: APUQTO.Update,
     Delete: APUQTO.Delete,
   },
   'APU-Tasks': {
+    Select: Select,
+    Insert: Insert,
     Update: APUTasks.Update,
     Delete: APUTasks.Delete,
   },
   'APU-Tasks-Gantt': {
+    Select: Select,
+    Insert: Insert,
     Update: APUTasksGantt.Update,
     Delete: APUTasksGantt.Delete,
   },
   'APU-Import-Supplies': {
+    Select: Select,
+    Insert: Insert,
     Update: APUImportSupplies.Update,
     Delete: APUImportSupplies.Delete,
   },
   'APU-P-Supplies': {
+    Select: Select,
+    Insert: Insert,
     Update: APUPSupplies.Update,
     Delete: APUPSupplies.Delete,
   },
   'APU-MetaSupplies': {
+    Select: Select,
+    Insert: Insert,
     Update: APUMetasupplies.Update,
     Delete: APUMetasupplies.Delete,
   },
   'APU-Assign': {
+    Select: Select,
+    Insert: Insert,
     Update: APUAssign.Update,
     Delete: APUAssign.Delete,
   },
   'AEU': {
+    Select: Select,
+    Insert: Insert,
     Update: AEU.Update,
     Delete: AEU.Delete,
   },
   'Budget-AAU': {
+    Select: Select,
+    Insert: Insert,
     Update: BudgetAAU.Update,
     Delete: BudgetAAU.Delete,
   },
   'Budget-AAU-vs-General': {
+    Select: Select,
+    Insert: Insert,
     Update: BudgetAAUvsGeneral.Update,
     Delete: BudgetAAUvsGeneral.Delete,
   },
   'Tasks-Month-CashFlow-AAU': {
+    Select: Select,
+    Insert: Insert,
     Update: TasksMonthCashFlowAAU.Update,
     Delete: TasksMonthCashFlowAAU.Delete,
   }

@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     // note you must disable the base rule as it can report incorrect errors
     "indent": "off",
-    "@typescript-eslint/indent": ["error", 2]
+    "@typescript-eslint/indent": ["error", 2],
+    "quotes": [2, "single"]
   }
 }

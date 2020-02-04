@@ -1,20 +1,21 @@
 
 import { State, Row, PK, Projects } from '../types';
-type TRow = Projects["Row"];
+type TRow = Projects['Row'];
 
-export function Update(state: State, row: Row, pk?: PK): TRow[] {
+export function Update(state: State, row: Row, pk?: PK): { Rows: TRow[] } {
   const Row = row as TRow;
   const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return state.Source["Projects"].Rows
+  return { Rows: state.Source['Projects'].Rows
     .map((row): TRow =>
-      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row);
+      (keys.every((key): boolean => PK[key] === row[key])) ? Row : row) };
 }
 
-export function Delete(state: State, row: Row, pk?: PK): TRow[] {
+export function Delete(state: State, row: Row, pk?: PK): { Rows: TRow[] } {
   const Row = row as TRow;
   const PK = pk || { ID: Row.ID };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
-  return state.Source["Projects"].Rows.filter((row): boolean =>
-    (keys.every((key): boolean => PK[key] === row[key])) ? false : true);
+  return { Rows: state.Source['Projects'].Rows
+    .filter((row): boolean =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? false : true) };
 }

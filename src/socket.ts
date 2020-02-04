@@ -22,7 +22,7 @@ export class ARCASocket {
     this.io.on('jsonrpc', handleResponse(store));
   }
 
-  public GetInfo = (Source: keyof State["Source"]): void => {
+  public GetInfo = (Source: keyof State['Source']): void => {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'GetInfo',
@@ -32,7 +32,7 @@ export class ARCASocket {
     });
   }
 
-  public Select = (Source: keyof State["Source"], Params?: { [key: string]: number | string }): void => {
+  public Select = (Source: keyof State['Source'], Params?: { [key: string]: number | string }): void => {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'Select',
@@ -43,7 +43,7 @@ export class ARCASocket {
     });
   }
 
-  public Subscribe = (Target: keyof State["Source"]): void => {
+  public Subscribe = (Target: keyof State['Source']): void => {
     this.io.emit('jsonrpc', {
       ID: uuid4(),
       Method: 'Subscribe',
@@ -53,17 +53,17 @@ export class ARCASocket {
     });
   }
 
-  public Delete = (Source: keyof State["Source"], row: Row, Extra?: { ID?: string, PK?: Model["PK"] }): void => {
+  public Delete = (Source: keyof State['Source'], row: Row, Extra?: { ID?: string, PK?: Model['PK'] }): void => {
     const state = this.store.getState();
     const { Info } = state.Source[Source];
     if (Info) {
       const columnsPK = Info.Fields
         .filter((field: Field): boolean => field.Primary)
-        .map((field: Field): keyof Model["PK"] => field.Name as keyof Model["PK"]);
-      const pk = columnsPK.reduce((acc: Model["PK"], column) => {
+        .map((field: Field): keyof Model['PK'] => field.Name as keyof Model['PK']);
+      const pk = columnsPK.reduce((acc: Model['PK'], column) => {
         acc[column] = row[column];
         return acc;
-      }, {} as Model["PK"]);
+      }, {} as Model['PK']);
       const request = {
         ID: Extra?.ID || uuid4(),
         Context: {
@@ -83,17 +83,17 @@ export class ARCASocket {
     }
   }
 
-  public Update = (Source: keyof State["Source"], row: Row, Extra?: { ID?: string, PK?: Model["PK"] }): void => {
+  public Update = (Source: keyof State['Source'], row: Row, Extra?: { ID?: string, PK?: Model['PK'] }): void => {
     const state = this.store.getState();
     const { Info } = state.Source[Source];
     if (Info) {
       const columnsPK = Info.Fields
         .filter((field: Field): boolean => field.Primary)
-        .map((field: Field): keyof Model["PK"] => field.Name as keyof Model["PK"]);
-      const pk = columnsPK.reduce((acc: Model["PK"], column) => {
+        .map((field: Field): keyof Model['PK'] => field.Name as keyof Model['PK']);
+      const pk = columnsPK.reduce((acc: Model['PK'], column) => {
         acc[column] = row[column];
         return acc;
-      }, {} as Model["PK"]);
+      }, {} as Model['PK']);
       const request = {
         ID: Extra?.ID || uuid4(),
         Context: {
@@ -114,7 +114,7 @@ export class ARCASocket {
     }
   }
 
-  public Insert = (Source: keyof State["Source"], row: Row, Extra?: { ID?: string }): string => {
+  public Insert = (Source: keyof State['Source'], row: Row, Extra?: { ID?: string }): string => {
     const request = {
       ID: Extra?.ID || uuid4(),
       Context: {

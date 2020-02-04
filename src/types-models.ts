@@ -1,7 +1,6 @@
 
 // Projects
 export interface Projects {
-  Raw: null;
   Row: {
     ID:          number;
     Name:        string;
@@ -16,7 +15,6 @@ export interface Projects {
 
 // Contractors
 export interface Contractors {
-  Raw: null;
   Row: {
     ID:   number;
     Name: string;
@@ -29,7 +27,6 @@ export interface Contractors {
 
 // Budget-AAU
 export interface BudgetAAU {
-  Raw: null;
   Row: {
     Project:        number;
     Key:            string;
@@ -50,7 +47,6 @@ export interface BudgetAAU {
 
 // Budget-AAU-vs-General
 export interface BudgetAAUvsGeneral {
-  Raw: null;
   Row: {
     Project:        number;
     Key:            string;
@@ -71,7 +67,6 @@ export interface BudgetAAUvsGeneral {
 
 // Tasks-Month-CashFlow-AAU
 export interface TasksMonthCashFlowAAU {
-  Raw: null;
   Row: {
     Project:     number | null;
     Key:         string;
@@ -94,7 +89,6 @@ export interface TasksMonthCashFlowAAU {
 
 // AAU
 export interface AAU {
-  Raw: null;
   Row: {
     Key:         string;
     Expand:      boolean;
@@ -112,7 +106,6 @@ export interface AAU {
 
 // AAU-Concretize
 export interface AAUConcretize {
-  Raw: null;
   Row: {
     Project:     number | null;
     Concreted:   boolean;
@@ -133,7 +126,6 @@ export interface AAUConcretize {
 
 // AAU-QTO
 export interface AAUQTO {
-  Raw: null;
   Row: {
     Key:        string;
     Constraint: string;
@@ -149,7 +141,6 @@ export interface AAUQTO {
 
 // AAU-TaskDefinitions
 export interface AAUTaskDefinitions {
-  Raw: null;
   Row: {
     Key:        string;
     Constraint: string;
@@ -165,7 +156,6 @@ export interface AAUTaskDefinitions {
 
 // AAU-Tasks
 export interface AAUTasks {
-  Raw: null;
   Row: {
     Key:        string;
     Constraint: string;
@@ -181,7 +171,6 @@ export interface AAUTasks {
 
 // AAU-Tasks-Gantt
 export interface AAUTasksGantt {
-  Raw: null;
   Row: {
     Project:     number;
     Key:         string;
@@ -203,46 +192,56 @@ export interface AAUTasksGantt {
 
 // AAU-APU-Tasks-Gantt
 export interface AAUAPUTasksGantt {
-  Raw: null;
   Row: {
-    'APU-ID': number;
-    ContractorID: number;
-    Status: string;
-    Frozen: boolean;
-    ExpiredAt: Date | null;
+    'APU-ID':          number | null;
+    ContractorID:      number | null;
+    Status:            string | null;
+    Frozen:            boolean | null;
+    ExpiredAt:         Date | null;
     'APU-Description': string | null;
-    'APU-Unit': string | null;
-    'APU-P': number | null;
-    'APU-Q': number | null;
-    'APU-T': number | null;
-    'APU-Start': Date | null;
-    'APU-End': Date | null;
-    Project: number;
-    Key: string;
-    Constraint: string;
+    'APU-Unit':        string | null;
+    'APU-P':           number | null;
+    'APU-Q':           number | null;
+    'APU-T':           number | null;
+    'APU-Start':       Date | null;
+    'APU-End':         Date | null;
+    Project:           number;
+    Key:               string;
+    Constraint:        string | null;
     'AAU-Description': string | null;
-    'AAU-Unit': string | null;
-    'AAU-P': number | null;
-    'AAU-Q': number | null;
-    'AAU-T': number | null;
-    'AAU-Start': Date | null;
-    'AAU-End': Date | null;
+    'AAU-Unit':        string | null;
+    'AAU-P':           number | null;
+    'AAU-Q':           number | null;
+    'AAU-T':           number | null;
+    'AAU-Start':       Date | null;
+    'AAU-End':         Date | null;
   };
-  /*
-  Row: {
+  Agg: {
     Project:     number;
     Key:         string;
-    Constraint:  string;
-    Description: string;
+    Constraint:  string | null;
+    Description: string | null;
     Unit:        string | null;
     P:           number | null;
     Q:           number | null;
     T:           number | null;
     Start:       Date | null;
     End:         Date | null;
-    APU: APU["Row"][];
+    APU: {
+      ID:           number | null;
+      ContractorID: number | null;
+      Status:       string | null;
+      Frozen:       boolean | null;
+      ExpiredAt:    Date | null;
+      Description:  string | null;
+      Unit:         string | null;
+      P:            number | null;
+      Q:            number | null;
+      T:            number | null;
+      Start:        Date | null;
+      End:          Date | null;
+    }[];
   };
-  */
   PK: {
     Key: string;
     Constraint: string;
@@ -253,7 +252,6 @@ export interface AAUAPUTasksGantt {
 
 // APU
 export interface APU {
-  Raw: null;
   Row: {
     ID:           number;
     Key:          string;
@@ -276,7 +274,6 @@ export interface APU {
 
 // APU-QTO
 export interface APUQTO {
-  Raw: null;
   Row: {
     ID:        number;
     Withdrawn: boolean;
@@ -291,7 +288,6 @@ export interface APUQTO {
 
 // APU-Tasks
 export interface APUTasks {
-  Raw: null;
   Row: {
     ID:    number;
     T:     number | null;
@@ -306,7 +302,6 @@ export interface APUTasks {
 
 // APU-Tasks-Gantt
 export interface APUTasksGantt {
-  Raw: null;
   Row: {
     ID:           number;
     Key:          string;
@@ -331,7 +326,6 @@ export interface APUTasksGantt {
 
 // APU-Import-Supplies
 export interface APUImportSupplies {
-  Raw: null;
   Row: {
     APUID:       number;
     SupplyID:    number | null;
@@ -350,7 +344,6 @@ export interface APUImportSupplies {
 
 // APU-MetaSupplies
 export interface APUMetaSupplies {
-  Raw: null;
   Row: {
     ID:           number;
     ContractorID: number;
@@ -367,7 +360,6 @@ export interface APUMetaSupplies {
 
 // APU-P-Supplies
 export interface APUPSupplies {
-  Raw: null;
   Row: {
     SupplyID: number;
     APUID:    number;
@@ -382,7 +374,6 @@ export interface APUPSupplies {
 
 // APU-Assign
 export interface APUAssign {
-  Raw: null;
   Row: {
     Project:      number;
     Key:          string;
@@ -408,7 +399,6 @@ export interface APUAssign {
 
 // AEU
 export interface AEU {
-  Raw: null;
   Row: {
     ID:         number;
     ReportedAt: Date;
@@ -425,7 +415,6 @@ export interface AEU {
 
 // FACAD-ParamsBIC
 export interface FACADParamsBIC {
-  Raw: null;
   Row: {
     ReportType:      string;
     BuiltInCategory: string;
@@ -441,7 +430,6 @@ export interface FACADParamsBIC {
 
 // FACAD-CFT-AAU
 export interface FACADCFTAAU {
-  Raw: null;
   Row: {
     ID:              number;
     Family:          string;
@@ -462,7 +450,6 @@ export interface FACADCFTAAU {
 
 // FACAD-CFT-Filters-AAU
 export interface FACADCFTFiltersAAU {
-  Raw: null;
   Row: {
     ID:         number;
     CFTID:      number;
@@ -479,7 +466,6 @@ export interface FACADCFTFiltersAAU {
 
 // FACAD-preCFT-AAU
 export interface FACADpreCFTAAU {
-  Raw: null;
   Row: {
     ID:       number;
     Family:   string;
@@ -494,7 +480,6 @@ export interface FACADpreCFTAAU {
 
 // FACAD-preCFT-AAU-Key
 export interface FACADpreCFTAAUKey {
-  Raw: null;
   Row: {
     Family: string;
     Type:   string;
@@ -510,7 +495,6 @@ export interface FACADpreCFTAAUKey {
 
 // FACAD-BuiltInCategories
 export interface FACADBuiltInCategories {
-  Raw: null;
   Row: {
     BuiltInCategory: string;
   };
@@ -522,7 +506,6 @@ export interface FACADBuiltInCategories {
 
 // FACAD-Reports
 export interface FACADReports {
-  Raw: null;
   Row: {
     ID:              number;
     Name:            string;
@@ -541,7 +524,6 @@ export interface FACADReports {
 
 // FACAD-Report-Filters
 export interface FACADReportFilters {
-  Raw: null;
   Row: {
     ID:         number;
     ReportID:   number;
