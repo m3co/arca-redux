@@ -36,7 +36,7 @@ export interface Combobox {
   Params: {
     [Key: string]: keyof Fields;
   };
-  Source: keyof State["Source"];
+  Source: keyof State['Source'];
   Value: keyof Fields;
 }
 
@@ -60,91 +60,91 @@ export interface Info {
 };
 
 export type Fields =
-  Projects["Row"] &
-  Contractors["Row"] &
-  AAU["Row"] &
-  AAUQTO["Row"] &
-  AAUTasksGantt["Row"] &
-  AAUAPUTasksGantt["Row"] &
-  AAUConcretize["Row"] &
-  APU["Row"] &
-  APUImportSupplies["Row"] &
-  APUMetaSupplies["Row"] &
-  APUPSupplies["Row"] &
-  APUQTO["Row"] &
-  APUTasks["Row"] &
-  APUTasksGantt["Row"] &
-  APUAssign["Row"] &
-  AEU["Row"] &
-  FACADReports["Row"] &
-  FACADParamsBIC["Row"] &
-  FACADCFTAAU["Row"] &
-  FACADCFTFiltersAAU["Row"] &
-  FACADpreCFTAAU["Row"] &
-  FACADpreCFTAAUKey["Row"] &
-  FACADReportFilters["Row"] &
-  FACADBuiltInCategories["Row"] &
-  BudgetAAUvsGeneral["Row"] &
-  BudgetAAU["Row"] &
-  TasksMonthCashFlowAAU["Row"];
+  Projects['Row'] &
+  Contractors['Row'] &
+  AAU['Row'] &
+  AAUQTO['Row'] &
+  AAUTasksGantt['Row'] &
+  AAUAPUTasksGantt['Row'] &
+  AAUConcretize['Row'] &
+  APU['Row'] &
+  APUImportSupplies['Row'] &
+  APUMetaSupplies['Row'] &
+  APUPSupplies['Row'] &
+  APUQTO['Row'] &
+  APUTasks['Row'] &
+  APUTasksGantt['Row'] &
+  APUAssign['Row'] &
+  AEU['Row'] &
+  FACADReports['Row'] &
+  FACADParamsBIC['Row'] &
+  FACADCFTAAU['Row'] &
+  FACADCFTFiltersAAU['Row'] &
+  FACADpreCFTAAU['Row'] &
+  FACADpreCFTAAUKey['Row'] &
+  FACADReportFilters['Row'] &
+  FACADBuiltInCategories['Row'] &
+  BudgetAAUvsGeneral['Row'] &
+  BudgetAAU['Row'] &
+  TasksMonthCashFlowAAU['Row'];
 
 export type Row =
-  Projects["Row"] |
-  Contractors["Row"] |
-  AAU["Row"] |
-  AAUQTO["Row"] |
-  AAUTasksGantt["Row"] |
-  AAUAPUTasksGantt["Row"] |
-  AAUConcretize["Row"] |
-  APU["Row"] |
-  APUImportSupplies["Row"] |
-  APUMetaSupplies["Row"] |
-  APUPSupplies["Row"] |
-  APUQTO["Row"] |
-  APUTasks["Row"] |
-  APUTasksGantt["Row"] |
-  APUAssign["Row"] |
-  AEU["Row"] |
-  FACADReports["Row"] |
-  FACADParamsBIC["Row"] |
-  FACADCFTAAU["Row"] |
-  FACADCFTFiltersAAU["Row"] |
-  FACADpreCFTAAU["Row"] |
-  FACADpreCFTAAUKey["Row"] |
-  FACADReportFilters["Row"] |
-  FACADBuiltInCategories["Row"] |
-  BudgetAAUvsGeneral["Row"] |
-  BudgetAAU["Row"] |
-  TasksMonthCashFlowAAU["Row"];
+  Projects['Row'] |
+  Contractors['Row'] |
+  AAU['Row'] |
+  AAUQTO['Row'] |
+  AAUTasksGantt['Row'] |
+  AAUAPUTasksGantt['Row'] |
+  AAUConcretize['Row'] |
+  APU['Row'] |
+  APUImportSupplies['Row'] |
+  APUMetaSupplies['Row'] |
+  APUPSupplies['Row'] |
+  APUQTO['Row'] |
+  APUTasks['Row'] |
+  APUTasksGantt['Row'] |
+  APUAssign['Row'] |
+  AEU['Row'] |
+  FACADReports['Row'] |
+  FACADParamsBIC['Row'] |
+  FACADCFTAAU['Row'] |
+  FACADCFTFiltersAAU['Row'] |
+  FACADpreCFTAAU['Row'] |
+  FACADpreCFTAAUKey['Row'] |
+  FACADReportFilters['Row'] |
+  FACADBuiltInCategories['Row'] |
+  BudgetAAUvsGeneral['Row'] |
+  BudgetAAU['Row'] |
+  TasksMonthCashFlowAAU['Row'];
 
 export type PK =
-  Projects["PK"] |
-  Contractors["PK"] |
-  AAU["PK"] |
-  AAUQTO["PK"] |
-  AAUTasksGantt["PK"] |
-  AAUAPUTasksGantt["PK"] |
-  AAUConcretize["PK"] |
-  APU["PK"] |
-  APUImportSupplies["PK"] |
-  APUMetaSupplies["PK"] |
-  APUPSupplies["PK"] |
-  APUQTO["PK"] |
-  APUTasks["PK"] |
-  APUTasksGantt["PK"] &
-  APUAssign["PK"] |
-  AEU["PK"] |
-  FACADReports["PK"] |
-  FACADParamsBIC["PK"] |
-  FACADCFTAAU["PK"] |
-  FACADCFTFiltersAAU["PK"] |
-  FACADpreCFTAAU["PK"] |
-  FACADpreCFTAAUKey["PK"] |
-  FACADReportFilters["PK"] |
-  FACADBuiltInCategories["PK"] |
-  BudgetAAUvsGeneral["PK"] |
-  BudgetAAU["PK"] |
-  TasksMonthCashFlowAAU["PK"];
+  Projects['PK'] |
+  Contractors['PK'] |
+  AAU['PK'] |
+  AAUQTO['PK'] |
+  AAUTasksGantt['PK'] |
+  AAUAPUTasksGantt['PK'] |
+  AAUConcretize['PK'] |
+  APU['PK'] |
+  APUImportSupplies['PK'] |
+  APUMetaSupplies['PK'] |
+  APUPSupplies['PK'] |
+  APUQTO['PK'] |
+  APUTasks['PK'] |
+  APUTasksGantt['PK'] &
+  APUAssign['PK'] |
+  AEU['PK'] |
+  FACADReports['PK'] |
+  FACADParamsBIC['PK'] |
+  FACADCFTAAU['PK'] |
+  FACADCFTFiltersAAU['PK'] |
+  FACADpreCFTAAU['PK'] |
+  FACADpreCFTAAUKey['PK'] |
+  FACADReportFilters['PK'] |
+  FACADBuiltInCategories['PK'] |
+  BudgetAAUvsGeneral['PK'] |
+  BudgetAAU['PK'] |
+  TasksMonthCashFlowAAU['PK'];
 
 export type Model =
   Projects |
@@ -179,164 +179,164 @@ export interface State {
   Connected: boolean;
   Source: {
     'Projects': {
-      Rows: Projects["Row"][];
+      Rows: Projects['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'Contractors': {
-      Rows: Contractors["Row"][];
+      Rows: Contractors['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-Report-Filters': {
-      Rows: FACADReportFilters["Row"][];
+      Rows: FACADReportFilters['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-Reports': {
-      Rows: FACADReports["Row"][];
+      Rows: FACADReports['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-ParamsBIC': {
-      Rows: FACADParamsBIC["Row"][];
+      Rows: FACADParamsBIC['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-CFT-AAU': {
-      Rows: FACADCFTAAU["Row"][];
+      Rows: FACADCFTAAU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-CFT-Filters-AAU': {
-      Rows: FACADCFTFiltersAAU["Row"][];
+      Rows: FACADCFTFiltersAAU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-preCFT-AAU': {
-      Rows: FACADpreCFTAAU["Row"][];
+      Rows: FACADpreCFTAAU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-preCFT-AAU-Key': {
-      Rows: FACADpreCFTAAUKey["Row"][];
+      Rows: FACADpreCFTAAUKey['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'FACAD-BuiltInCategories': {
-      Rows: FACADBuiltInCategories["Row"][];
+      Rows: FACADBuiltInCategories['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'AAU': {
-      Rows: AAU["Row"][];
+      Rows: AAU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'AAU-QTO': {
-      Rows: AAUQTO["Row"][];
+      Rows: AAUQTO['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'AAU-Tasks-Gantt': {
-      Rows: AAUTasksGantt["Row"][];
+      Rows: AAUTasksGantt['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'AAU-APU-Tasks-Gantt': {
-      Rows: AAUAPUTasksGantt["Row"][];
-      Aggs: AAUAPUTasksGantt["Agg"][];
+      Rows: AAUAPUTasksGantt['Row'][];
+      Aggs: AAUAPUTasksGantt['Agg'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     }
     'AAU-Concretize': {
-      Rows: AAUConcretize["Row"][];
+      Rows: AAUConcretize['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU': {
-      Rows: APU["Row"][];
+      Rows: APU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-Import-Supplies': {
-      Rows: APUImportSupplies["Row"][];
+      Rows: APUImportSupplies['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-MetaSupplies': {
-      Rows: APUMetaSupplies["Row"][];
+      Rows: APUMetaSupplies['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-P-Supplies': {
-      Rows: APUPSupplies["Row"][];
+      Rows: APUPSupplies['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-QTO': {
-      Rows: APUQTO["Row"][];
+      Rows: APUQTO['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-Tasks': {
-      Rows: APUTasks["Row"][];
+      Rows: APUTasks['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-Tasks-Gantt': {
-      Rows: APUTasksGantt["Row"][];
+      Rows: APUTasksGantt['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'APU-Assign': {
-      Rows: APUAssign["Row"][];
+      Rows: APUAssign['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'AEU': {
-      Rows: AEU["Row"][];
+      Rows: AEU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'Budget-AAU-vs-General': {
-      Rows: BudgetAAUvsGeneral["Row"][];
+      Rows: BudgetAAUvsGeneral['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'Budget-AAU': {
-      Rows: BudgetAAU["Row"][];
+      Rows: BudgetAAU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
     };
     'Tasks-Month-CashFlow-AAU': {
-      Rows: TasksMonthCashFlowAAU["Row"][];
+      Rows: TasksMonthCashFlowAAU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

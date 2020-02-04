@@ -8,10 +8,10 @@ export interface Params {[Key: string]: string | number | null}
 
 interface Response {
   ID: string;
-  Method: "Search";
+  Method: 'Search';
   Context: {
     Field: keyof Fields;
-    Source: keyof State["Source"];
+    Source: keyof State['Source'];
   };
   Result: Params[];
   Error: {} | null;
@@ -43,7 +43,7 @@ class ARCASearchSocket {
     this.io.on('jsonrpc', this.handleResponse);
   }
 
-  public Search = (Source: keyof State["Source"],
+  public Search = (Source: keyof State['Source'],
     Field: keyof Fields, Params: Params, ID?: string): Promise<Response> => {
     return new Promise((
       resolve: (value: Response) => void,
@@ -63,7 +63,7 @@ class ARCASearchSocket {
   }
 }
 
-export const createSearchSocket = (io = Socket()): ARCASearchSocket["Search"] =>
+export const createSearchSocket = (io = Socket()): ARCASearchSocket['Search'] =>
   new ARCASearchSocket(io).Search;
 
-export type SearchMethod = ARCASearchSocket["Search"];
+export type SearchMethod = ARCASearchSocket['Search'];

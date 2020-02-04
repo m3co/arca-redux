@@ -10,7 +10,7 @@ import { Info } from './types';
 interface ResponseGetInfo {
   Method: 'GetInfo';
   Context: {
-    Source: keyof State["Source"];
+    Source: keyof State['Source'];
   };
   Result: Info;
 };
@@ -19,7 +19,7 @@ interface ResponseSubscribe {
   ID: string;
   Method: 'Subscribe';
   Context: {
-    Target: keyof State["Source"];
+    Target: keyof State['Source'];
   };
   Result: 'Success';
 }
@@ -27,7 +27,7 @@ interface ResponseSubscribe {
 interface ResponseSelect {
   Method: 'Select';
   Context: {
-    Source: keyof State["Source"];
+    Source: keyof State['Source'];
   };
   Result: Row[];
 };
@@ -36,7 +36,7 @@ interface ResponseRequest {
   Method: 'Insert' | 'Delete' | 'Update';
   ID: string;
   Context: {
-    Source: keyof State["Source"];
+    Source: keyof State['Source'];
   };
   Result: {
     Success: true; // Tal parece aqui hay que corregir, pues YA perdio sentido
@@ -49,7 +49,7 @@ interface Notificate {
   Method: 'insert' | 'delete' | 'update';
   Context: {
     Source: string;
-    Target: keyof State["Source"];
+    Target: keyof State['Source'];
     Notification: true;
   };
   Row: Row;
