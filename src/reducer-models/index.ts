@@ -48,7 +48,7 @@ function Select(_: State, Rows: Row[]): { Rows: Row[] } {
     Rows
   };
 }
-function Insert(_: State, rows: Row[], row: Row, pk?: PK): { Rows: Row[] } {
+function Insert(_: State, rows: Row[], row: Row): { Rows: Row[] } {
   return {
     Rows: [row, ...rows]
   }
