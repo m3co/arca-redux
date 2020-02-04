@@ -1,7 +1,6 @@
 
 import { Action, State } from './types';
 import { reducers } from './reducer-models';
-import { AAUAPUTasksGantt } from './types-models';
 
 export const initialState: State = {
   Connected: false,
@@ -148,25 +147,13 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'Select':
-      if (action.Source === 'AAU-APU-Tasks-Gantt') {
-        return  {
-          ...state,
-          Source: {
-            ...state.Source,
-            [action.Source]: {
-              ...state.Source[action.Source],
-              ...reducers[action.Source].Select(state, action.Result),
-            }
-          }
-        };
-      }
-      return {
+      return  {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: action.Result,
+            ...reducers[action.Source].Select(state, action.Result),
           }
         }
       };
@@ -187,71 +174,35 @@ export const reducer = (state: State = initialState, action: Action): State => {
         }
       };
     case 'insert':
-      if (action.Source === 'AAU-APU-Tasks-Gantt') {
-        return {
-          ...state,
-          Source: {
-            ...state.Source,
-            [action.Source]: {
-              ...state.Source[action.Source],
-              ...reducers[action.Source].Insert(state, action.Row, action.PK),
-            }
-          }
-        };
-      }
       return {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: [action.Row, ...state.Source[action.Source].Rows]
+            ...reducers[action.Source].Insert(state, state.Source[action.Source].Rows, action.Row, action.PK),
           }
         }
       };
     case 'update':
-      if (action.Source === 'AAU-APU-Tasks-Gantt') {
-        return {
-          ...state,
-          Source: {
-            ...state.Source,
-            [action.Source]: {
-              ...state.Source[action.Source],
-              ...reducers[action.Source].Update(state, action.Row, action.PK),
-            }
-          }
-        };
-      }
       return {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: reducers[action.Source].Update(state, action.Row, action.PK)
+            ...reducers[action.Source].Update(state, action.Row, action.PK),
           }
         }
       };
     case 'delete':
-      if (action.Source === 'AAU-APU-Tasks-Gantt') {
-        return {
-          ...state,
-          Source: {
-            ...state.Source,
-            [action.Source]: {
-              ...state.Source[action.Source],
-              ...reducers[action.Source].Delete(state, action.Row, action.PK),
-            }
-          }
-        };
-      }
       return {
         ...state,
         Source: {
           ...state.Source,
           [action.Source]: {
             ...state.Source[action.Source],
-            Rows: reducers[action.Source].Delete(state, action.Row, action.PK)
+            ...reducers[action.Source].Delete(state, action.Row, action.PK),
           }
         }
       };

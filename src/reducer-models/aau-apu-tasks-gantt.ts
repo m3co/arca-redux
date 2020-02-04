@@ -57,12 +57,13 @@ export function Select(_: State, rows: Row[]): { Rows: TRow[], Aggs: TAgg[] } {
   }, [] as TAgg[])};
 }
 
-export function Insert(state: State, row: Row, pk?: PK): { Rows: TRow[], Aggs: TAgg[] } {
+export function Insert(state: State, rows: Row[], row: Row, pk?: PK): { Rows: TRow[], Aggs: TAgg[] } {
   const Row = row as TRow;
+  const Rows = rows as TRow[];
   const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row["APU-ID"] };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
-    Rows: [Row, ...state.Source["AAU-APU-Tasks-Gantt"].Rows],
+    Rows: [Row, ...Rows],
     Aggs: []
   };
 }
@@ -84,8 +85,9 @@ export function Delete(state: State, row: Row, pk?: PK): { Rows: TRow[], Aggs: T
   const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row["APU-ID"] };
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   return {
-    Rows: state.Source["AAU-APU-Tasks-Gantt"].Rows.filter((row): boolean =>
-    (keys.every((key): boolean => PK[key] === row[key])) ? false : true),
+    Rows: state.Source["AAU-APU-Tasks-Gantt"].Rows
+    .filter((row): boolean =>
+      (keys.every((key): boolean => PK[key] === row[key])) ? false : true),
     Aggs: []
   };
 }
