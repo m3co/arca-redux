@@ -6,6 +6,7 @@ import * as AAUQTO from './aau-qto';
 import * as AAUTasksGantt from './aau-tasks-gantt';
 import * as Concretize from './concretize';
 import * as AAUAPUTasksGantt from './aau-apu-tasks-gantt';
+import * as AAUAPUAEUTasksGantt from './aau-apu-tasks-gantt';
 
 import * as APU from './apu';
 import * as APUQTO from './apu-qto';
@@ -138,6 +139,12 @@ export const reducers = {
     Insert: AAUAPUTasksGantt.Insert,
     Update: AAUAPUTasksGantt.Update,
     Delete: AAUAPUTasksGantt.Delete,
+  },
+  'AAU-APU-AEU-Tasks-Gantt': {
+    Select: AAUAPUAEUTasksGantt.Select,
+    Insert: AAUAPUAEUTasksGantt.Insert,
+    Update: AAUAPUAEUTasksGantt.Update,
+    Delete: AAUAPUAEUTasksGantt.Delete,
   },
   'AAU-Concretize': {
     Select: Select,

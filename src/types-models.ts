@@ -250,6 +250,79 @@ export interface AAUAPUTasksGantt {
   Name: 'AAU-APU-Tasks-Gantt';
 };
 
+// AAU-APU-AEU-Tasks-Gantt
+export interface AAUAPUAEUTasksGantt {
+  Row: {
+    'APU-ID':          number | null;
+    ContractorID:      number | null;
+    Status:            string | null;
+    Frozen:            boolean | null;
+    ExpiredAt:         Date | null;
+    'APU-Description': string | null;
+    'APU-Unit':        string | null;
+    'APU-P':           number | null;
+    'APU-Q':           number | null;
+    'APU-T':           number | null;
+    'APU-Start':       Date | null;
+    'APU-End':         Date | null;
+    Project:           number;
+    Key:               string;
+    Constraint:        string | null;
+    'AAU-Description': string | null;
+    'AAU-Unit':        string | null;
+    'AAU-P':           number | null;
+    'AAU-Q':           number | null;
+    'AAU-T':           number | null;
+    'AAU-Start':       Date | null;
+    'AAU-End':         Date | null;
+    'AEU-ID':          number | null;
+    'ReportedAt':      Date | null;
+    'AEU-Q':           number | null;
+    'AEU-Start':       Date | null;
+    'AEU-End':         Date | null;
+  };
+  Agg: {
+    Project:     number;
+    Key:         string;
+    Constraint:  string | null;
+    Description: string | null;
+    Unit:        string | null;
+    P:           number | null;
+    Q:           number | null;
+    T:           number | null;
+    Start:       Date | null;
+    End:         Date | null;
+    APU: {
+      ID:           number | null;
+      ContractorID: number | null;
+      Status:       string | null;
+      Frozen:       boolean | null;
+      ExpiredAt:    Date | null;
+      Description:  string | null;
+      Unit:         string | null;
+      P:            number | null;
+      Q:            number | null;
+      T:            number | null;
+      Start:        Date | null;
+      End:          Date | null;
+      AEU: {
+        ID:         number | null;
+        ReportedAt: Date | null;
+        Q:          number | null;
+        Start:      Date | null;
+        End:        Date | null;
+      }[];
+    }[];
+  };
+  PK: {
+    Key:        string;
+    Constraint: string | null;
+    'APU-ID':   number | null;
+    'AEU-ID':   number | null;
+  };
+  Name: 'AAU-APU-Tasks-Gantt';
+};
+
 // APU
 export interface APU {
   Row: {

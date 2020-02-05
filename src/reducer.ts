@@ -62,6 +62,11 @@ export const initialState: State = {
       Aggs: [],
       Requests: [],
     },
+    'AAU-APU-AEU-Tasks-Gantt': {
+      Rows: [],
+      Aggs: [],
+      Requests: [],
+    },
     'AAU-Concretize': {
       Rows: [],
       Requests: [],
