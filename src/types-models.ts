@@ -243,9 +243,9 @@ export interface AAUAPUTasksGantt {
     }[];
   };
   PK: {
-    Key: string;
-    Constraint: string;
-    'APU-ID': number;
+    Key:        string;
+    Constraint: string | null;
+    'APU-ID':   number | null;
   };
   Name: 'AAU-APU-Tasks-Gantt';
 };

@@ -72,7 +72,9 @@ export function Insert(_: State, rows: Row[], row: Row, _pk?: PK): { Rows: TRow[
 
 export function Update(state: State, row: Row, pk?: PK): { Rows: TRow[]; Aggs: TAgg[] } {
   const Row = row as TRow;
-  const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row['APU-ID'] };
+  const PK = (pk || { Key: Row.Key }) as AAUAPUTasksGantt['PK'];
+  PK.Constraint = PK.Constraint ? PK.Constraint : Row.Constraint;
+  PK['APU-ID'] = PK['APU-ID'] ? PK['APU-ID'] : Row['APU-ID'];
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   const Rows = state.Source['AAU-APU-Tasks-Gantt'].Rows
     .map((row): TRow =>
@@ -85,7 +87,9 @@ export function Update(state: State, row: Row, pk?: PK): { Rows: TRow[]; Aggs: T
 
 export function Delete(state: State, row: Row, pk?: PK): { Rows: TRow[]; Aggs: TAgg[] } {
   const Row = row as TRow;
-  const PK = pk || { Key: Row.Key, Constraint: Row.Constraint, 'APU-ID': Row['APU-ID'] };
+  const PK = (pk || { Key: Row.Key }) as AAUAPUTasksGantt['PK'];
+  PK.Constraint = PK.Constraint ? PK.Constraint : Row.Constraint;
+  PK['APU-ID'] = PK['APU-ID'] ? PK['APU-ID'] : Row['APU-ID'];
   const keys = Object.keys(PK) as (keyof typeof PK)[];
   const Rows = state.Source['AAU-APU-Tasks-Gantt'].Rows
     .filter((row): boolean =>
