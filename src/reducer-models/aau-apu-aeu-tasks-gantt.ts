@@ -5,24 +5,42 @@ type TAgg = AAUAPUAEUTasksGantt['Agg'];
 
 function ReduceRows(Rows: TRow[]) {
   return Rows.reduce((acc, row) => {
-    let curr = acc.find(agg =>
+    let currAAU = acc.find(agg =>
       (agg.Key === row.Key) && (agg.Constraint === row.Constraint));
-    if (curr) {
-      curr.APU.push({
-        ID:           row['APU-ID'],
-        ContractorID: row.ContractorID,
-        Status:       row.Status,
-        Frozen:       row.Frozen,
-        ExpiredAt:    row.ExpiredAt,
-        Description:  row['APU-Description'],
-        Unit:         row['APU-Unit'],
-        P:            row['APU-P'],
-        Q:            row['APU-Q'],
-        T:            row['APU-T'],
-        Start:        row['APU-Start'],
-        End:          row['APU-End'],
-        AEU: [],
-      });
+    if (currAAU) {
+      let currAPU = currAAU.APU.find(agg =>
+        agg.ID === row['APU-ID']);
+      if (currAPU) {
+        currAPU.AEU.push({
+          ID:         row['AEU-ID'],
+          ReportedAt: row.ReportedAt,
+          Q:          row['AEU-Q'],
+          Start:      row['AEU-Start'],
+          End:        row['AEU-End'],
+        });
+      } else {
+        currAAU.APU.push({
+          ID:           row['APU-ID'],
+          ContractorID: row.ContractorID,
+          Status:       row.Status,
+          Frozen:       row.Frozen,
+          ExpiredAt:    row.ExpiredAt,
+          Description:  row['APU-Description'],
+          Unit:         row['APU-Unit'],
+          P:            row['APU-P'],
+          Q:            row['APU-Q'],
+          T:            row['APU-T'],
+          Start:        row['APU-Start'],
+          End:          row['APU-End'],
+          AEU: [{
+            ID:         row['AEU-ID'],
+            ReportedAt: row.ReportedAt,
+            Q:          row['AEU-Q'],
+            Start:      row['AEU-Start'],
+            End:        row['AEU-End'],
+          }],
+        });
+      }
     } else {
       acc.push({
         Project:     row.Project,
@@ -48,7 +66,13 @@ function ReduceRows(Rows: TRow[]) {
           T:            row['APU-T'],
           Start:        row['APU-Start'],
           End:          row['APU-End'],
-          AEU: [],
+          AEU: [{
+            ID:         row['AEU-ID'],
+            ReportedAt: row.ReportedAt,
+            Q:          row['AEU-Q'],
+            Start:      row['AEU-Start'],
+            End:        row['AEU-End'],
+          }],
         }]
       });
     }
