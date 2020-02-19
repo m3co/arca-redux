@@ -10,6 +10,7 @@ import {
   AAUAPUAEUTasksGantt,
   APU,
   APUImportSupplies,
+  APUImportSuppliesInApp,
   APUMetaSupplies,
   APUPSupplies,
   APUQTO,
@@ -71,6 +72,7 @@ export type Fields =
   AAUConcretize['Row'] &
   APU['Row'] &
   APUImportSupplies['Row'] &
+  APUImportSuppliesInApp['Row'] &
   APUMetaSupplies['Row'] &
   APUPSupplies['Row'] &
   APUQTO['Row'] &
@@ -101,6 +103,7 @@ export type Row =
   AAUConcretize['Row'] |
   APU['Row'] |
   APUImportSupplies['Row'] |
+  APUImportSuppliesInApp['Row'] |
   APUMetaSupplies['Row'] |
   APUPSupplies['Row'] |
   APUQTO['Row'] |
@@ -131,6 +134,7 @@ export type PK =
   AAUConcretize['PK'] |
   APU['PK'] |
   APUImportSupplies['PK'] |
+  APUImportSuppliesInApp['PK'] |
   APUMetaSupplies['PK'] |
   APUPSupplies['PK'] |
   APUQTO['PK'] |
@@ -161,6 +165,7 @@ export type Model =
   AAUConcretize |
   APU |
   APUImportSupplies |
+  APUImportSuppliesInApp |
   APUMetaSupplies |
   APUPSupplies |
   APUQTO |
@@ -289,6 +294,13 @@ export interface State {
     };
     'APU-Import-Supplies': {
       Rows: APUImportSupplies['Row'][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'APU-Import-Supplies-in-App': {
+      Rows: APUImportSuppliesInApp['Row'][];
+      Aggs: APUImportSuppliesInApp['Agg'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

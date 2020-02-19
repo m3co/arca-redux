@@ -13,6 +13,7 @@ import * as APUQTO from './apu-qto';
 import * as APUTasks from './apu-tasks';
 import * as APUTasksGantt from './apu-tasks-gantt';
 import * as APUImportSupplies from './apu-import-supplies';
+import * as APUImportSuppliesInApp from './apu-import-supplies-in-app';
 import * as APUPSupplies from './apu-p-supplies';
 import * as APUMetasupplies from './apu-metasupplies';
 import * as APUAssign from './apu-assign';
@@ -181,6 +182,12 @@ export const reducers = {
     Insert: Insert,
     Update: APUImportSupplies.Update,
     Delete: APUImportSupplies.Delete,
+  },
+  'APU-Import-Supplies-in-App': {
+    Select: APUImportSuppliesInApp.Select,
+    Insert: APUImportSuppliesInApp.Insert,
+    Update: APUImportSuppliesInApp.Update,
+    Delete: APUImportSuppliesInApp.Delete,
   },
   'APU-P-Supplies': {
     Select: Select,

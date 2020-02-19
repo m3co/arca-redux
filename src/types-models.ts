@@ -415,6 +415,55 @@ export interface APUImportSupplies {
   Name: 'APU-Import-Supplies';
 };
 
+// APU-Import-Supplies-in-App
+export interface APUImportSuppliesInApp {
+  Row: {
+    APUID:                     number;
+    "APU-ContractorID":        number;
+    Key:                       string;
+    Constraint:                string;
+    "APU-Description":         string;
+    "APU-Unit":                string;
+    "APU-P":                   number;
+    "APU-Estimated":           number;
+    "APU-Price":               number | null;
+    SupplyID:                  number | null;
+    OwnerID:                   number | null;
+    P:                         number | null;
+    "MetaSupply-Description":  string | null;
+    "MetaSupply-Unit":         string | null;
+    Type:                      string | null;
+    "MetaSupply-Estimated":    number | null;
+    "MetaSupply-ContractorID": number | null;
+  };
+  Agg: {
+    APUID:        number;
+    ContractorID: number;
+    Key:          string;
+    Constraint:   string;
+    Description:  string;
+    Unit:         string;
+    P:            number;
+    Estimated:    number;
+    Price:        number | null;
+    Supplies: {
+      SupplyID:     number | null;
+      OwnerID:      number | null;
+      P:            number | null;
+      Description:  string | null;
+      Unit:         string | null;
+      Type:         string | null;
+      Estimated:    number | null;
+      ContractorID: number | null;
+    }[];
+  }
+  PK: {
+    APUID:    number;
+    SupplyID: number | null;
+  };
+  Name: 'APU-Import-Supplies-in-App';
+};
+
 // APU-MetaSupplies
 export interface APUMetaSupplies {
   Row: {

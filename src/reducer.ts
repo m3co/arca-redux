@@ -79,6 +79,11 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'APU-Import-Supplies-in-App': {
+      Rows: [],
+      Aggs: [],
+      Requests: [],
+    },
     'APU-MetaSupplies': {
       Rows: [],
       Requests: [],
