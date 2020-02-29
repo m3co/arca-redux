@@ -37,5 +37,7 @@ Obtenemos de ésta manera que ARCA-Redux comprende un conjunto de tablas en form
 
 ## Glosario
 
-`Raw-Data` corresponde a
-`Aggregated-Data` es la transformación de `Raw-Data` en una representación más compleja de los datos. Ejemplo: `AAU-APU-Tasks-Gantt` muestra los datos en plano y su representación compleja agrupa bajo una `AAU` cero o más entradas `APU`.
+`Raw-Data` corresponde a el arreglo de datos sin procesar o sin transformar en una tabla agregada.
+
+`Aggregated-Data` es la transformación de `Raw-Data` en una representación agregada de datos. Ejemplo: `AAU-APU-Tasks-Gantt` muestra los datos en plano y su representación compleja agrupa bajo una `AAU` cero o más entradas `APU`.
+
