@@ -4,6 +4,6 @@ type arcaData = {
 
 const arcaData: arcaData =  {
   arcaData: 'arcaData',
-}
+};
 
 export default arcaData;

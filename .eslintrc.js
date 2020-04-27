@@ -4,7 +4,6 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  // extends: ['airbnb-typescript'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -13,6 +12,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  plugins: ['@typescript-eslint'],
   rules: {
     'key-spacing': 'off',
     'max-len': ['error', 140, 2, { 'ignoreTrailingComments': true, 'ignoreUrls': true }],
@@ -27,4 +27,5 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-shadow': 0,
   },
+  parser: '@typescript-eslint/parser',
 };
