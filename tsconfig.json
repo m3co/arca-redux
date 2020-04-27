@@ -8,10 +8,13 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "commonjs",
     "noImplicitAny": true,
     "sourceMap": true,
     "declaration": true,
+    "inlineSources": true,
+    "strict": true,
+    "alwaysStrict": true,
   },
   "include": [
     "./src/**/*"
