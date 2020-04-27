@@ -1,8 +1,8 @@
-type arcaData = {
+type arcaDataType = {
   arcaData: string,
 }
 
-const arcaData: arcaData =  {
+const arcaData: arcaDataType =  {
   arcaData: 'arcaData',
 };
 
