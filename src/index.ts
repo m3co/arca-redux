@@ -1,6 +1,4 @@
-type arcaDataType = {
-  arcaData: string,
-}
+import { arcaDataType } from './types';
 
 const arcaData: arcaDataType =  {
   arcaData: 'arcaData',
