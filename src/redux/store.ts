@@ -6,5 +6,5 @@ const arcaDataReducers = {
   arcaDataReducer,
 };
 
-export const createArcaData = (reducers?: customReducers, enhancers?: Middleware[]) => 
+export const createArcaData = (reducers: customReducers = {}, enhancers?: Middleware[]) => 
  createStore(combineReducers({ ...arcaDataReducers, ...reducers }), enhancers ? applyMiddleware(...enhancers) : undefined);

@@ -1,7 +1,7 @@
 import { Reducer } from 'redux';
 
 export type customReducers = {
-  [key: string]: Reducer,
+  [key: string]: Reducer<any, any>,
 }
 
 export type arcaDataType = {
