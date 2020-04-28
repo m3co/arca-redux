@@ -1,6 +1,6 @@
 {
   "name": "arca-data",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "description": "transfer and storing arca data",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -23,7 +23,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-publish": "npm run build",
       "pre-commit": "npm run eslint && git add ."
     }
   },
