@@ -1,6 +1,6 @@
 {
   "name": "arca-data",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "transfer and storing arca data",
   "main": "build/index.js",
   "types": "build/index.d.ts",
