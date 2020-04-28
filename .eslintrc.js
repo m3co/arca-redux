@@ -26,6 +26,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-underscore-dangle': 0,
     'no-shadow': 0,
+    'quotes': [2, 'single', 'avoid-escape'],
   },
   parser: '@typescript-eslint/parser',
 };
