@@ -323,6 +323,24 @@ export interface AAUAPUAEUTasksGantt {
   Name: 'AAU-APU-Tasks-Gantt';
 };
 
+export interface AAUAPUinApp {
+  Row: {
+    ID:           number | null;
+    Expand:       boolean;
+    Key:          string;
+    Constraint:   string;
+    Description:  string | null;
+    ContractorID: number;
+    ProjectID:    number;
+  };
+  PK: {
+    ID:         number | null;
+    Key:        string;
+    Constraint: string;
+  };
+  Name: 'AAU-APU-in-App';
+}
+
 // APU
 export interface APU {
   Row: {

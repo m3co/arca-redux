@@ -71,6 +71,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'AAU-APU-in-App': {
+      Rows: [],
+      Requests: [],
+    },
     'APU': {
       Rows: [],
       Requests: [],

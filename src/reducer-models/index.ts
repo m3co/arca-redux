@@ -33,6 +33,12 @@ import * as TasksMonthCashFlowAAU from './tasks-month-cashflow-aau';
 
 import { State, Row, PK } from '../types';
 
+function InsertDummy(_: State, __: Row[], row: Row): { Rows: Row[] } {
+  console.error('Insert not implemented for row', row);
+  return {
+    Rows: []
+  }
+}
 function UpdateDummy(_: State, row: Row, pk?: PK): { Rows: Row[] } {
   console.error('Update not implemented for row', row, pk);
   return {
@@ -152,6 +158,12 @@ export const reducers = {
     Insert: Insert,
     Update: Concretize.Update,
     Delete: Concretize.Delete,
+  },
+  'AAU-APU-in-App': {
+    Select: Select,
+    Insert: InsertDummy,
+    Update: UpdateDummy,
+    Delete: DeleteDummy,
   },
   'APU': {
     Select: Select,

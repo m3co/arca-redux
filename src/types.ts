@@ -8,6 +8,7 @@ import {
   AAUTasksGantt,
   AAUAPUTasksGantt,
   AAUAPUAEUTasksGantt,
+  AAUAPUinApp,
   APU,
   APUImportSupplies,
   APUImportSuppliesInApp,
@@ -70,6 +71,7 @@ export type Fields =
   AAUAPUTasksGantt['Row'] &
   AAUAPUAEUTasksGantt['Row'] &
   AAUConcretize['Row'] &
+  AAUAPUinApp['Row'] &
   APU['Row'] &
   APUImportSupplies['Row'] &
   APUImportSuppliesInApp['Row'] &
@@ -101,6 +103,7 @@ export type Row =
   AAUAPUTasksGantt['Row'] |
   AAUAPUAEUTasksGantt['Row'] |
   AAUConcretize['Row'] |
+  AAUAPUinApp['Row'] |
   APU['Row'] |
   APUImportSupplies['Row'] |
   APUImportSuppliesInApp['Row'] |
@@ -132,6 +135,7 @@ export type PK =
   AAUAPUTasksGantt['PK'] |
   AAUAPUAEUTasksGantt['PK'] |
   AAUConcretize['PK'] |
+  AAUAPUinApp['PK'] |
   APU['PK'] |
   APUImportSupplies['PK'] |
   APUImportSuppliesInApp['PK'] |
@@ -139,7 +143,7 @@ export type PK =
   APUPSupplies['PK'] |
   APUQTO['PK'] |
   APUTasks['PK'] |
-  APUTasksGantt['PK'] &
+  APUTasksGantt['PK'] |
   APUAssign['PK'] |
   AEU['PK'] |
   FACADReports['PK'] |
@@ -163,6 +167,7 @@ export type Model =
   AAUAPUTasksGantt |
   AAUAPUAEUTasksGantt |
   AAUConcretize |
+  AAUAPUinApp |
   APU |
   APUImportSupplies |
   APUImportSuppliesInApp |
@@ -282,6 +287,12 @@ export interface State {
     };
     'AAU-Concretize': {
       Rows: AAUConcretize['Row'][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'AAU-APU-in-App': {
+      Rows: AAUAPUinApp['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;
