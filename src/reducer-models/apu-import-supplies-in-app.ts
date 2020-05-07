@@ -7,6 +7,7 @@ function ReduceRows(Rows: TRow[]) {
   return Rows.reduce((acc, row) => {
     let curr = acc.find(agg => agg.APUID === row.APUID);
     if (curr) {
+      row.SupplyID &&
       curr.Supplies.push({
         SupplyID:     row.SupplyID,
         OwnerID:      row.OwnerID,
@@ -18,6 +19,19 @@ function ReduceRows(Rows: TRow[]) {
         ContractorID: row["MetaSupply-ContractorID"],
       });
     } else {
+      const supplies = row.SupplyID 
+        ? [{
+          SupplyID:     row.SupplyID,
+          OwnerID:      row.OwnerID,
+          P:            row.P,
+          Description:  row["MetaSupply-Description"],
+          Unit:         row["MetaSupply-Unit"],
+          Type:         row.Type,
+          Estimated:    row["MetaSupply-Estimated"],
+          ContractorID: row["MetaSupply-ContractorID"],
+        }]
+        : [] 
+
       acc.push({
         APUID:        row['APUID'],
         ContractorID: row['APU-ContractorID'],
@@ -28,16 +42,7 @@ function ReduceRows(Rows: TRow[]) {
         P:            row["APU-P"],
         Estimated:    row["APU-Estimated"],
         Price:        row["APU-Price"],
-        Supplies: [{
-          SupplyID:     row.SupplyID,
-          OwnerID:      row.OwnerID,
-          P:            row.P,
-          Description:  row["MetaSupply-Description"],
-          Unit:         row["MetaSupply-Unit"],
-          Type:         row.Type,
-          Estimated:    row["MetaSupply-Estimated"],
-          ContractorID: row["MetaSupply-ContractorID"],
-        }]
+        Supplies:     [...supplies]
       });
     }
     return acc;
