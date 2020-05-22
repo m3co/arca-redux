@@ -1,10 +1,8 @@
-import { customReducers } from './types';
-import { arcaDataReducer } from './reducers';
+import { customReducers } from '../types';
 import { createStore, combineReducers, applyMiddleware, Middleware } from 'redux';
 
 const arcaDataReducers = {
-  arcaDataReducer,
 };
 
-export const createArcaData = (reducers: customReducers = {}, enhancers?: Middleware[]) => 
+export const createArcaRedux = (reducers: customReducers = {}, enhancers?: Middleware[]) => 
  createStore(combineReducers({ ...arcaDataReducers, ...reducers }), enhancers ? applyMiddleware(...enhancers) : undefined);
