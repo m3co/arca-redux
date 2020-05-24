@@ -1,6 +1,5 @@
-import { State } from '../types/state';
+import { State, Row, PK } from '../types/state';
 import { Action } from '../types/actions';
-import { reducers } from './reducer-models';
 
 export const initialState: State = {
   Source: {
@@ -8,39 +7,30 @@ export const initialState: State = {
   },
 };
 
+const Update = (source: Row[], newRow: Row, pk: PK) => {
+  const keys = Object.keys(pk) as (keyof typeof pk)[];
+
+  return source.map(row => keys.find(key => pk[key] === row[key]) ? newRow : row);
+};
+
+const Delete = (source: Row[], pk: PK) => {
+  const keys = Object.keys(pk) as (keyof typeof pk)[];
+
+  return source.filter(row => !keys.find(key => pk[key] === row[key]));
+};
+
 export const arcaReducer = (state: State = initialState, action: Action): State => {
+  const currentSource = state.Source[action.payload.Source];
+
   switch (action.type) {
-    case 'Subscribe':
-      return {
-        ...state,
-        Source: {
-          ...state.Source,
-          [action.Source]: {
-            ...state.Source[action.Source],
-            Subscribed: action.Subscribed,
-          }
-        }
-      };
     case 'Select':
       return  {
         ...state,
         Source: {
           ...state.Source,
-          [action.Source]: {
-            ...state.Source[action.Source],
-            ...reducers[action.Source].Select(state, action.Result),
-          }
-        }
-      };
-    case 'Insert':
-    case 'Delete':
-    case 'Update':
-      return {
-        ...state,
-        Source: {
-          ...state.Source,
-          [action.Source]: {
-            ...state.Source[action.Source],
+          [action.payload.Source]: {
+            ...currentSource,
+            ...action.payload.Result,
           }
         }
       };
@@ -49,9 +39,9 @@ export const arcaReducer = (state: State = initialState, action: Action): State 
         ...state,
         Source: {
           ...state.Source,
-          [action.Source]: {
-            ...state.Source[action.Source],
-            ...reducers[action.Source].Insert(state, state.Source[action.Source].Rows, action.Row, action.PK),
+          [action.payload.Source]: {
+            ...currentSource,
+            ...[...currentSource, action.payload.Row],
           }
         }
       };
@@ -60,9 +50,9 @@ export const arcaReducer = (state: State = initialState, action: Action): State 
         ...state,
         Source: {
           ...state.Source,
-          [action.Source]: {
-            ...state.Source[action.Source],
-            ...reducers[action.Source].Update(state, action.Row, action.PK),
+          [action.payload.Source]: {
+            ...currentSource,
+            ...Update(currentSource, action.payload.Row, action.payload.PK),
           }
         }
       };
@@ -71,9 +61,9 @@ export const arcaReducer = (state: State = initialState, action: Action): State 
         ...state,
         Source: {
           ...state.Source,
-          [action.Source]: {
-            ...state.Source[action.Source],
-            ...reducers[action.Source].Delete(state, action.Row, action.PK),
+          [action.payload.Source]: {
+            ...currentSource,
+            ...Delete(currentSource, action.payload.PK),
           }
         }
       };

@@ -1,7 +1,7 @@
 import Socket from 'socket.io-client';
 import { v4 as uuid4 } from 'uuid';
 import { Store } from 'redux';
-import { handleResponse } from './responseHandler';
+import { handleResponse } from '../redux/actions';
 import { Model, Row, State } from '../types/state';
 
 export const createArcaSocket = (store: Store) => {
