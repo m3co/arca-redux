@@ -19,54 +19,29 @@ const Delete = (source: Row[], pk: PK) => {
   return source.filter(row => !keys.find(key => pk[key] === row[key]));
 };
 
+const createNewState = (state: State, source: keyof State['Source'], rows: Row[]) => {
+  return {
+    ...state,
+    Source: {
+      ...state.Source,
+      [source]: rows,
+    },
+  };
+};
+
 export const arcaReducer = (state: State = initialState, action: Action): State => {
-  const currentSource = state.Source[action.payload.Source];
+  const { Source } = action.payload;
+  const currentSource = state.Source[Source];
 
   switch (action.type) {
     case 'Select':
-      return  {
-        ...state,
-        Source: {
-          ...state.Source,
-          [action.payload.Source]: {
-            ...currentSource,
-            ...action.payload.Result,
-          }
-        }
-      };
+      return createNewState(state, Source, action.payload.Result);
     case 'insert':
-      return {
-        ...state,
-        Source: {
-          ...state.Source,
-          [action.payload.Source]: {
-            ...currentSource,
-            ...[...currentSource, action.payload.Row],
-          }
-        }
-      };
+      return createNewState(state, Source, [...currentSource, action.payload.Row]);
     case 'update':
-      return {
-        ...state,
-        Source: {
-          ...state.Source,
-          [action.payload.Source]: {
-            ...currentSource,
-            ...Update(currentSource, action.payload.Row, action.payload.PK),
-          }
-        }
-      };
+      return createNewState(state, Source, Update(currentSource, action.payload.Row, action.payload.PK));
     case 'delete':
-      return {
-        ...state,
-        Source: {
-          ...state.Source,
-          [action.payload.Source]: {
-            ...currentSource,
-            ...Delete(currentSource, action.payload.PK),
-          }
-        }
-      };
+      return createNewState(state, Source, Delete(currentSource, action.payload.PK));
     default:
       return state;
   }
