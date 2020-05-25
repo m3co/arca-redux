@@ -1,26 +1,21 @@
-
 import {
   State,
   PK,
   Row,
 } from './state';
 
-interface ActionSelect {
-  type: 'Select';
+interface ActionPossibilityResponse {
+  type: 'insert' | 'delete' | 'update' | 'Select';
   payload: {
-    Source: keyof State['Source'];
-    Result: Row[];
-  }
-}
-
-interface ActionNotificate {
-  type: 'insert' | 'delete' | 'update';
-  payload: {
+    Context: {
+      Source: keyof State['Source'];
+    }
     ID: string;
     Source: keyof State['Source'];
     Row: Row;
     PK: PK;
+    Result: Row[];
   }
 }
 
-export type Action = ActionSelect | ActionNotificate;
+export type Action = ActionPossibilityResponse;
