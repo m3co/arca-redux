@@ -4,7 +4,7 @@ import { arcaReducer } from './reducers';
 import { customReducers } from '../types';
 
 const arcaDataReducers = {
-  arcaReducer,
+  arca: arcaReducer,
 };
 
 export const createArcaRedux = (reducers: customReducers = {}, enhancers: Middleware[] = []): Store => 

@@ -4,7 +4,7 @@ import {
   Row,
 } from './state';
 
-interface ActionPossibilityResponse {
+export type Action = {
   type: 'insert' | 'delete' | 'update' | 'Select';
   payload: {
     Context: {
@@ -16,6 +16,4 @@ interface ActionPossibilityResponse {
     PK: PK;
     Result: Row[];
   }
-}
-
-export type Action = ActionPossibilityResponse;
+};

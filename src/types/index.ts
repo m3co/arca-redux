@@ -4,5 +4,3 @@ import { Reducer } from 'redux';
 export type customReducers = {
   [key: string]: Reducer<any, any>,
 }
-
-// Arca Data
