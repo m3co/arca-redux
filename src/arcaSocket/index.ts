@@ -32,8 +32,9 @@ const subscribe = (io: SocketIOClient.Socket) => (Target: keyof State['Source'])
   sendRequest(io, 'Subscribe', { Params: { Target } });
 };
 
-const select = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], PK: Model['PK']) => {
-  sendRequest(io, 'Select', { Context: { Source }, Params: { PK } });
+const select = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], PK?: Model['PK']) => {
+  const Params = PK ? { Params: { PK } } : {};
+  sendRequest(io, 'Select', { Context: { Source }, ...Params });
 };
 
 const toDelete = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], PK: Model['PK']) => {
