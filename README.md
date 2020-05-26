@@ -1,43 +1,46 @@
+# ARCA-Redux v4
 
-# ARCA-Redux
+Transfer and storing arca data by using redux
 
-Es el Redux para Arca. Aquí deben ir las definiciones de tipos, de tablas, la administración de datos, y todo lo relativo a la conexión entre ARCA-Go y cualquier interfaz web.
+## Usage
+### Setup
 
-## Actividades
+```
 
-- [ ] CRUD sobre `Raw-Data`
-- [ ] CRUD-reflejado en `Aggregated-Data`
-- [ ] Filtros en `Select`.
-- [ ] Validación de datos antes de realizar cualquier pedido
-- [ ] Mocks de cada y una de las tablas
-- [ ] Representación de los tipos de columnas en `Raw-Data`
-- [ ] Organización de busquedas
+import { createArcaRedux, createArcaSocket } from 'arca-redux-v4';
 
-En un principio ésta solución Redux se enfoca en manejar una sola instancia, es decir, al momento de utilizar un objeto Redux, éste puede contener, digamos, una y solamente una sola tabla `AAU`, junto con todas las demás tablas existentes y posibles en ARCA-Go.
+export const store = createArcaRedux();
+export const socket = createArcaSocket(store);
 
-## Organizacion de cada tabla
+```
 
-Vamos a tomar como ejemplo, la tabla `AAU`.
-Hay que definir los casos cuando:
+### Adding custom reducers and enhancers
+Function **createArcaRedux** has two parameters - reducers and enhancers.
 
-- `select * from AAU` y mostrar la tabla -> AAU*
-- Insert, Update, Delete sobre AAU*
-- Todos los casos de validación al momento de hacer Insert, Update sobre AAU*
-- Busqueda de entradas `AAU`
-- Filtrar `select * from AAU where condition = C` y mostrar la tabla -> AAU|C
-- Insert, Update, Delete sobre AAU|C afectando solamente a sus entradas
-- Insert, Update, Delete sobre AAU* afectando a AAU|C
+```
 
-Y como último caso, tomemos como ejemplo la tabla `AAU-APU-Tasks-Gantt`:
+import { firstReducer, secondReducer } = './redux/reducers.ts';
+import logger from 'redux-logger';
 
-- `select * from AAU-APU-Tasks-Gantt` y mostrar la tabla agregada -> T*
-- `select * from AAU-APU-Tasks-Gantt where condition = C` y mostrar la tabla agregada -> T|C
+const reducers = {
+  firstReducer,
+  secondReducer,
+};
 
-Obtenemos de ésta manera que ARCA-Redux comprende un conjunto de tablas en forma de componentes, donde cáda componente tiene su sus particularidades.
+export const createArcaRedux(reducers, [logger]) // enhancers is array
 
-## Glosario
+```
 
-`Raw-Data` corresponde a el arreglo de datos sin procesar o sin transformar en una tabla agregada.
+### Selectors
+ARCA-redux v4 support [reselect!](https://www.npmjs.com/package/reselect)
 
-`Aggregated-Data` es la transformación de `Raw-Data` en una representación agregada de datos. Ejemplo: `AAU-APU-Tasks-Gantt` muestra los datos en plano y su representación compleja agrupa bajo una `AAU` cero o más entradas `APU`.
+* **getArcaSource** - get all arca data;
+* **getSpecificSource** - get arca data by source;
+* **getAggsBySpecificSourceSelector** - get aggregates data by source;
 
+Importing from root:
+```
+
+import { getArcaSource, getSpecificSource, getAggsBySpecificSourceSelector } from 'arca-redux-v4';
+
+```
