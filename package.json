@@ -1,6 +1,6 @@
 {
   "name": "arca-redux-v4",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "transfer and storing arca data by using redux",
   "main": "build/index.js",
   "types": "build/index.d.ts",
