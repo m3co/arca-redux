@@ -6,6 +6,7 @@ import { getAggsBySpecificSource } from '../utils';
 
 export const getArcaSource = (state: Store) => get(state, 'arca.Source', {});
 export const getSpecificSource = (state: Store, source: keyof State['Source']) => get(state, `arca.Source[${source}]`, []);
+export const getSearchResult = (state: Store) => get(state, 'arca.Search', []);
 
 export const getAggsBySpecificSourceSelector = createSelector(
   getArcaSource,
