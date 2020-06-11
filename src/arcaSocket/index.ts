@@ -3,6 +3,7 @@ import { v4 as uuid4 } from 'uuid';
 import { Store } from 'redux';
 import { handleResponse } from '../redux/actions';
 import { Model, Row, State } from '../types/state';
+import { SearchParams } from '../types';
 
 export const createArcaSocket = (store: Store) => {
   const io = Socket();
@@ -51,6 +52,6 @@ const insert = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Ro
   sendRequest(io, 'Insert', { Context: { Source }, Params: { Row } });
 };
 
-const search = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Search: string | number) => {
-  sendRequest(io, 'Insert', { Context: { Source }, Params: { Search } });
+const search = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Params: SearchParams) => {
+  sendRequest(io, 'Insert', { Context: { Source }, ...Params });
 };
