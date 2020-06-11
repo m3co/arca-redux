@@ -1,4 +1,4 @@
-import { State, PK, Row } from './state';
+import { State, PK, Row, SearchResultItem } from './state';
 
 interface ResponseSelect {
   Method: 'Select';
@@ -19,5 +19,13 @@ interface Notificate {
   PK?: PK
 }
 
-export type Response = ResponseSelect | Notificate;
+interface ResponseSearch {
+  Method: 'Search';
+  Context: {
+    Source: keyof State['Source'];
+  };
+  Result: SearchResultItem[];
+}
+
+export type Response = ResponseSelect | Notificate | ResponseSearch;
 export type ResponseHandler = (response: Response) => void;

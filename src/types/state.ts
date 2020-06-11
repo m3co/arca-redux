@@ -127,6 +127,11 @@ export type Model =
   BudgetAAU |
   TasksMonthCashFlowAAU;
 
+export type SearchResultItem = {
+  label: string,
+  PK: PK,
+} 
+
 export interface State {
   Source: {
     'Projects': Projects['Row'][];
@@ -160,4 +165,5 @@ export interface State {
     'Budget-AAU': BudgetAAU['Row'][];
     'Tasks-Month-CashFlow-AAU': TasksMonthCashFlowAAU['Row'][]
   };
+  Search: SearchResultItem[],
 }

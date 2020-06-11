@@ -11,12 +11,13 @@ export const createArcaSocket = (store: Store) => {
   io.on('jsonrpc', handleResponse(store));
 
   return {
-    socket: io,
+    _: io,
     subscribe: subscribe(io),
     select: select(io),
     delete: toDelete(io),
     update: update(io),
     insert: insert(io),
+    search: search(io),
   };
 };
 
@@ -48,4 +49,8 @@ const update = (io: SocketIOClient.Socket) =>
 
 const insert = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Row: Row) => {
   sendRequest(io, 'Insert', { Context: { Source }, Params: { Row } });
+};
+
+const search = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Search: string | number) => {
+  sendRequest(io, 'Insert', { Context: { Source }, Params: { Search } });
 };

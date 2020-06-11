@@ -4,6 +4,7 @@ export const REQUEST_METHODS = {
   Insert: 'Insert',
   Delete: 'Delete',
   Update: 'Update',
+  Search: 'Search',
   insert: 'insert',
   delete: 'delete',
   update: 'update',

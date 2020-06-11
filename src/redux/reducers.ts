@@ -1,4 +1,4 @@
-import { State, Row, PK } from '../types/state';
+import { State, Row, PK, SearchResultItem } from '../types/state';
 import { Action } from '../types/actions';
 
 export const initialState: State = {
@@ -34,6 +34,7 @@ export const initialState: State = {
     'Budget-AAU-vs-General': [],
     'Tasks-Month-CashFlow-AAU': [],
   },
+  Search: [],
 };
 
 const update = (source: Row[], newRow: Row, pk: PK) => {
@@ -65,7 +66,9 @@ export const arcaReducer = (state: State = initialState, action: Action): State 
 
     switch (action.type) {
       case 'Select':
-        return createNewState(state, Source, action.payload.Result);
+        return createNewState(state, Source, action.payload.Result as Row[]);
+      case 'Search':
+        return { ...state, Search: action.payload.Result as SearchResultItem[] };
       case 'insert':
         return createNewState(state, Target, [...currentSource, action.payload.Row]);
       case 'update':

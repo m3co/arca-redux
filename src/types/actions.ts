@@ -2,10 +2,11 @@ import {
   State,
   PK,
   Row,
+  SearchResultItem,
 } from './state';
 
 export type Action = {
-  type: 'insert' | 'delete' | 'update' | 'Select';
+  type: 'insert' | 'delete' | 'update' | 'Select' | 'Search';
   payload: {
     Context: {
       Source: keyof State['Source'];
@@ -15,6 +16,6 @@ export type Action = {
     Source: keyof State['Source'];
     Row: Row;
     PK: PK;
-    Result: Row[];
+    Result: Row[] | SearchResultItem[];
   }
 };

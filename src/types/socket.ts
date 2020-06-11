@@ -1,7 +1,7 @@
 import { State, Model, Row } from './state';
 
 export interface Socket {
-  socket: SocketIOClient.Socket;
+  _: SocketIOClient.Socket;
   subscribe: (Target: keyof State['Source']) => void;
   select: (Source: keyof State['Source'], PK?: Model['PK']) => void;
   delete: (Source: keyof State['Source'], PK: Model['PK']) => void;

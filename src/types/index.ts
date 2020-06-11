@@ -1,3 +1,3 @@
 export * from './socket';
 
-export { State, Row, PK } from './state';
+export { State, Row, PK, SearchResultItem } from './state';
