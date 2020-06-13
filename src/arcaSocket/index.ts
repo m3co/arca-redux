@@ -53,5 +53,5 @@ const insert = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Ro
 };
 
 const search = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], Params: SearchParams) => {
-  sendRequest(io, 'Insert', { Context: { Source }, ...Params });
+  sendRequest(io, 'Search', { Context: { Source }, Params });
 };

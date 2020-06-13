@@ -1,4 +1,4 @@
-import { State, Model, Row, PK } from './state';
+import { State, Model, Row } from './state';
 
 export interface Socket {
   _: SocketIOClient.Socket;
@@ -11,7 +11,7 @@ export interface Socket {
 
 export type SearchParams = {
   Search: string | number,
-  PK?: PK,
+  PK?: Row,
   Limit?: number,
   Tag?: string,
 }

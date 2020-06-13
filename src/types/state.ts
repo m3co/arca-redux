@@ -128,7 +128,7 @@ export type Model =
   TasksMonthCashFlowAAU;
 
 export type SearchResultItem = {
-  label: string,
+  Label: string,
   PK: PK,
 } 
 
