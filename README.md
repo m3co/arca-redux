@@ -37,6 +37,7 @@ ARCA-redux v4 support [reselect!](https://www.npmjs.com/package/reselect)
 * **getArcaSource** - get all arca data;
 * **getSpecificSource** - get arca data by source;
 * **getAggsBySpecificSourceSelector** - get aggregates data by source;
+* **getSearchResult** - get search result (for combobox requests);
 
 Importing from root:
 ```

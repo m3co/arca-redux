@@ -81,7 +81,8 @@ export interface TasksMonthCashFlowAAU {
     TotalCost:   number | null;
   };
   PK: {
-    Key: string;
+    Key?: string;
+    Project: number | null;
   };
   Name: 'Tasks-Month-CashFlow-AAU';
 }
@@ -117,7 +118,7 @@ export interface AAUConcretize {
     Estimated:   number;
   };
   PK: {
-    Key:     string;
+    Key?:     string;
     Project: number | null;
   };
   Name: 'AAU-Concretize';
