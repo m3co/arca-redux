@@ -13,12 +13,12 @@ export const createArcaSocket = (store: Store) => {
 
   return {
     _: io,
-    subscribe: subscribe(io),
     select: select(io),
     delete: toDelete(io),
     update: update(io),
     insert: insert(io),
     search: search(io),
+    customRequest: custom(io),
   };
 };
 
@@ -30,8 +30,11 @@ const sendRequest = (io: SocketIOClient.Socket, Method: string, Params: any) => 
   });
 };
 
-const subscribe = (io: SocketIOClient.Socket) => (Target: keyof State['Source']) => {
-  sendRequest(io, 'Subscribe', { Params: { Target } });
+const custom = (io: SocketIOClient.Socket) => (params: any) => {
+  io.emit('jsonrpc', {
+    ID: uuid4(),
+    ...params,
+  });
 };
 
 const select = (io: SocketIOClient.Socket) => (Source: keyof State['Source'], PK?: Model['PK']) => {
