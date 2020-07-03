@@ -419,7 +419,7 @@ export interface APUTasksGantt {
 export interface APUImportSupplies {
   Row: {
     APUID:       number;
-    SupplyID:    number | null;
+    SupplyID?:    number | null;
     P:           number;
     Description: string | null;
     Unit:        string | null;
@@ -476,8 +476,10 @@ export interface APUImportSuppliesInApp {
     }[];
   }
   PK: {
-    APUID:    number;
-    SupplyID: number | null;
+    APUID?:    number;
+    SupplyID?: number | null;
+    ContractorID?: number;
+    Constraint?: string;
   };
   Name: 'APU-Import-Supplies-in-App';
 }
