@@ -27,6 +27,7 @@ import * as FACADCFTFilters from './facad-cft-filters-aau';
 import * as FACADpreCFT from './facad-precft-aau';
 import * as FACADpreCFTKey from './facad-cft-aau-key';
 
+import * as BudgetAPU from './budget-apu';
 import * as BudgetAAU from './budget-aau';
 import * as BudgetAAUvsGeneral from './budget-aau-vs-general';
 import * as TasksMonthCashFlowAAU from './tasks-month-cashflow-aau';
@@ -230,6 +231,12 @@ export const reducers = {
     Insert: Insert,
     Update: BudgetAAU.Update,
     Delete: BudgetAAU.Delete,
+  },
+  'Budget-APU': {
+    Select: Select,
+    Insert: Insert,
+    Update: BudgetAPU.Update,
+    Delete: BudgetAPU.Delete,
   },
   'Budget-AAU-vs-General': {
     Select: Select,

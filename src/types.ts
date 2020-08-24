@@ -29,6 +29,7 @@ import {
   FACADpreCFTAAUKey,
   BudgetAAUvsGeneral,
   BudgetAAU,
+  BudgetAPU,
   TasksMonthCashFlowAAU,
 } from './types-models';
 
@@ -92,6 +93,7 @@ export type Fields =
   FACADBuiltInCategories['Row'] &
   BudgetAAUvsGeneral['Row'] &
   BudgetAAU['Row'] &
+  BudgetAPU['Row'] &
   TasksMonthCashFlowAAU['Row'];
 
 export type Row =
@@ -124,6 +126,7 @@ export type Row =
   FACADBuiltInCategories['Row'] |
   BudgetAAUvsGeneral['Row'] |
   BudgetAAU['Row'] |
+  BudgetAPU['Row'] |
   TasksMonthCashFlowAAU['Row'];
 
 export type PK =
@@ -156,6 +159,7 @@ export type PK =
   FACADBuiltInCategories['PK'] |
   BudgetAAUvsGeneral['PK'] |
   BudgetAAU['PK'] |
+  BudgetAPU['PK'] |
   TasksMonthCashFlowAAU['PK'];
 
 export type Model =
@@ -188,6 +192,7 @@ export type Model =
   FACADBuiltInCategories |
   BudgetAAUvsGeneral |
   BudgetAAU |
+  BudgetAPU |
   TasksMonthCashFlowAAU;
 
 export interface State {
@@ -366,6 +371,12 @@ export interface State {
     };
     'Budget-AAU': {
       Rows: BudgetAAU['Row'][];
+      Requests: string[];
+      Subscribed?: boolean;
+      Info?: Info;
+    };
+    'Budget-APU': {
+      Rows: BudgetAPU['Row'][];
       Requests: string[];
       Subscribed?: boolean;
       Info?: Info;

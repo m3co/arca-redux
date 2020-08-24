@@ -120,6 +120,10 @@ export const initialState: State = {
       Rows: [],
       Requests: [],
     },
+    'Budget-APU': {
+      Rows: [],
+      Requests: [],
+    },
     'Budget-AAU-vs-General': {
       Rows: [],
       Requests: [],

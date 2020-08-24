@@ -25,11 +25,42 @@ export interface Contractors {
   Name: 'Contractors';
 };
 
+export interface BudgetAPU {
+  Row: {
+    Project:        number;
+    ID:             number;
+    Expand:         boolean;
+    Parent:         string;
+    Key:            string;
+    Constraint:     string;
+    Description:    string;
+    ContractorID:   number;
+    P:              number;
+    Q:              number;
+    Status:         string;
+    Withdrawn:      boolean;
+    Estimated:      number;
+    TotalEstimated: number;
+    SummEstimated:  number;
+    RateEstimated:  number | null;
+    Price:          number | null;
+    TotalPrice:     number | null;
+    SummPrice:      number | null;
+    RatePrice:      number | null;
+  };
+  PK: {
+    ID: number;
+  };
+  Name: 'Budget-APU';
+}
+
 // Budget-AAU
 export interface BudgetAAU {
   Row: {
     Project:        number;
     Key:            string;
+    Expand:         boolean;
+    Parent:         string;
     Description:    string | null;
     Unit:           string | null;
     Q:              number;
@@ -50,6 +81,8 @@ export interface BudgetAAUvsGeneral {
   Row: {
     Project:        number;
     Key:            string;
+    Expand:         boolean;
+    Parent:         string;
     Description:    string | null;
     Unit:           string | null;
     Q:              number;
